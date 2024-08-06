@@ -1,0 +1,30 @@
+#+title: Readme
+
+* Guild Living Campaign
+
+These are my notes playing with [[https://app.roll20.net/lfg/listing/17445/guild-living-campaign][Guild Living Campaign]] on Roll20. For the last 7+
+years, The Guild Living Campaign has been the largest, most active D&D 4e
+campaign on roll20, and now you have a chance to join in on the adventure.
+
+Here's the basic idea for this campaign: It is open to all players, including
+new players, with no specific limit on the number of total players. Each
+session, the players will roll d20 and the top 5 or 6 rolls will get into the
+party for that day; players that don't make it in have an increased chance of
+getting into the next session they want to play.
+
+** My Characters
+- [[file:brodush.org][Brodush]] Level 5 Half-Orc Ranger Archer
+
+** Play Sessions
+- [[file:2024-08-03-session.org][2024-08-03]]: First play session. The Guild is hired to investigate a local
+  temple that has been problematic lately. A priest, Lathandarius, thought he
+  and an assistant could handle it. They haven't been heard from in several
+  days. When we got there, we were attacked by his assistant, Jorian, and a mob
+  of zealot minnions. We killed the zealots and managed to knock Jorian
+  unconscious. Further into the temple we were attacked by Lathandarius and
+  another mob of zealots and undead. We managed to also knock him unconscious
+  rather than killing. We went down into a pit and found the Scourge of Batham:
+  a giant, undead, demigod. It was an intense battle, but we killed him. As it
+  turns out he was controlling Lathandarius and Jorian's minds. Once the Scourge
+  was defeated, both came into their right mind with no memory of the previous
+  days' events.

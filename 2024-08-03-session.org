@@ -1,0 +1,56 @@
+#+title: Play Session <2024-08-03 Sat>
+
+DCs for level 6 are: 11 / 15/ 23
+
+* Character Backgrounds
+ - revenance devil cult anti-messiah tiefling
+   - elementist ranged 3x3
+ - terios minataur war priest
+   - basic attacks/opportunity attacks
+   - bonus to opp attack to close alies
+ - efarian fey - on the hunt for enemies on the order of the church
+   - rogue templar, attack gives benefits to allies
+ - carin old lady, got married out of family circumstances
+   - warlard, lazy lord
+ - ignar melee attacks
+* play session
+ - Lathandarius high priest
+   - went to clear the temple and use palar to protect them
+   - it's been three days with no word
+   - we're going to go find him and his assistant
+ - carin gave +2 to initiative
+ - abyssal language being used
+** play tips:
+- Remember Cunning Strike gives Combat Advantage when the target is isolated
+- Remember that +1 arrows affect to hit
+- Remember Half-Orc Resilience +5 temp hit points first time bloodied
+** things to update:
+- [x] one of the powers is missing the word "damage"
+- [x] add bloodied ability to output any affects that happen when bloodied
+- [x] add ability for eating an apricot
+  http://iws.mx/dnd/?view=item3576
+Effect: You eat the apricot. Unless the apricot has absorbed a healing surge in
+the past 12 hours, you lose a healing surge, and when you do, you regain only
+2d8 hit points. If the apricot has absorbed a healing surge in the past 12
+hours, you can instead spend a healing surge and regain an additional 2d8 hit
+points.
+** first encounter
+in the entrance of the temple a ton of skeletal minions and Jorian
+** second encounter
+inside the main temple area. a few zealot minions, minataur skeletons, and
+Lathandarius. After I knock him unconscious, there is a scream of rage coming
+from the pit.
+** Lathandarius and Jorian are mind controlled
+** third encounter - down the pit
+- stand up, move action
+- apricot minor action? yes
+** rewards: 800XP 900GB
+first, third, fifth
+- Ghststride boots, http://iws.mx/dnd/?view=item1402
+  - These tattered gray boots have a haunting aspect, granting you the
+    elusiveness of a ghost when you need it.
+  - While you are running, you gain a +1 item bonus to AC and become elusiveness
+    of a ghost when you need it
+  - 1800gp
+  - 1/4 gold to sell at random
+  - 1/2 gold to sell to guild

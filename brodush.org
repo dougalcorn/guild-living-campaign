@@ -1,0 +1,575 @@
+#+title: Brodush
+#+STARTUP: overview
+
+* Name: Brodush
+ - Myth-Weavers Character Sheet: https://www.myth-weavers.com/sheets/?id=2925296
+ - [[https://app.roll20.net/campaigns/details/533427/guild-living-campaign][Guild Living Campaign]] -> [[https://app.roll20.net/editor/setcampaign/533427][Launch Game]]
+
+
+* Attributes
+| Class  | Paragon Path | Epic Destiny |
+|--------+--------------+--------------|
+| [[http://iws.mx/dnd/?view=class5][Ranger]] |              |              |
+
+| Race     | Size | Age | Gender | Height | Weight | Align.    | Deity | Adv. Co.  |   XP | Next XP | Level |
+|----------+------+-----+--------+--------+--------+-----------+-------+-----------+------+---------+-------|
+| [[http://iws.mx/dnd/?view=race36][Half-Orc]] | M    |  21 | M      | 6'     |    175 | Unaligned | Kord  | The Guild | 6300 |    7500 |     5 |
+
+| Max HP | Current HP | Bloodied | Healing Surge | Surges/Day | Surges Used |
+|--------+------------+----------+---------------+------------+-------------|
+|     48 |         48 |       24 |            12 |          9 |             |
+
+ - Second Wind [ ]
+ - Death ST Failed [ ] [ ] [ ]
+ - Action Points:
+
+| Initiative | Dex | 1/2 Level | Misc | Temp |
+|------------+-----+-----------+------+------|
+|         11 |   5 |         2 |    4 |    0 |
+#+TBLFM: $1=($2 + $3 + $4 + $5)
+
+| Speed | Base | Armor | Item | Temp |
+|-------+------+-------+------+------|
+|     6 |    6 |     0 |    0 |    0 |
+#+TBLFM: $1=($2 + $3 + $4 + $5)
+
+
+* Abilities
+| Ability | Score | Mod | + 1/2 Lvl |
+|---------+-------+-----+-----------|
+| STR     |    12 |   1 |         3 |
+| CON     |    16 |   3 |         5 |
+| DEX     |    20 |   5 |         7 |
+| INT     |    10 |   0 |         2 |
+| WIS     |    14 |   2 |         4 |
+| CHA     |     8 |  -1 |         1 |
+#+TBLFM: $3='(int-to-string (floor (/ (- $2 10) 2)));N
+#+TBLFM: $4=($3 + 2)
+
+
+* Defense
+:PROPERTIES:
+:VISIBILITY: children
+:END:
+| Total |      | 10 + 1/2 lvl | Armor | Ability | Class | Feat | Enh. | Misc | Temp |
+|-------+------+--------------+-------+---------+-------+------+------+------+------|
+|    21 | AC   |           12 |     3 |       5 |       |      |    1 |      |      |
+|    17 | FORT |           12 |       |       3 |     1 |      |    1 |      |      |
+|    19 | REF  |           12 |       |       5 |     1 |      |    1 |      |      |
+|    15 | WILL |           12 |       |       2 |       |      |    1 |      |      |
+#+TBLFM: $1=($3 + + $4 + $5 + $6 + $7 + $8 + $9 + $10)
+** Bonuses
+:PROPERTIES:
+:VISIBILITY: folded
+:END:
+ - Ranger: +1 Fort, +1 Reflex
+ - [[+1 Cloak of Distortion]]: +1 enhancement bonus to Fort, Ref, Will
+ - [[+1 Serpentskin Armor]]: +1 enhancement bonus to AC
+
+
+| Armor Bonus | Shield Bonus | Check Penalty | Speed Penalty | Heavy? |
+|-------------+--------------+---------------+---------------+--------|
+|           3 |            0 |             0 |             0 | [ ]    |
+** Conditionals
+:PROPERTIES:
+:VISIBILITY: content
+:END:
+- [[Defensive Mobility]]: +2 AC against opportunity attacks
+- [[Bow Expertise]]: +1 to all defenses from a ranged attack more than 5 squares
+- [[Ghoststride Boots]]: +1 item bonus to AC while running
+
+
+* Quick Look Up
+:PROPERTIES:
+:VISIBILITY: children
+:END:
+** Summary
+:PROPERTIES:
+:VISIBILITY: all
+:END:
+| Weapon/Power          | Type      | vs | Attack       | Damage   |     |
+|-----------------------+-----------+----+--------------+----------+-----|
+| [[Melee Basic Attack]]    | At-Will   | AC | 1d20 +3      | 1d8      |     |
+| [[Ranged Basic Attack]]   | At-Will   | AC | 1d20 +11     | 1d12 + 8 |     |
+| [[Twin-Strike]]           | At-Will   | AC | 2x 1d20 +11  | 1d12 + 3 |     |
+| [[Nimble Strike]]         | At-Will   | AC | 1d20 + 11    | 1d12 + 8 |     |
+| [[Disruptive Strike]]     | Encounter | AC | 1d20 +11     | 1d12 + 8 | [ ] |
+| [[Two-Fanged Strike]]     | Encounter | AC | 2x 1d20 + 11 | 1d12 + 8 | [ ] |
+| [[Sure Shot]]             | Daily     | AC | 1d20 + 11    | 3d12 + 8 | [ ] |
+| [[Spitting-Cobra Stance]] | Daily     |    |              |          | [ ] |
+| [[Begin the Hunt]]        | Daily     |    |              |          | [ ] |
+** Conditionals
+:PROPERTIES:
+:VISIBILITY: all
+:END:
+- [[Prime Shot]]: +1 attack if closest to enemy
+- [[Cunning Stalker]]: Combat Advantage (+2 attack) against enemies that have no creates adjacent
+- [[Bow Expertise]]: +1 damage if the target is not adjacent to any other creature
+- [[+1 Foe-Seeking Greatbow]]: +1d6 damage on critical, +1d10 damage on critical if CA
+- Magic Arrows: +1 to attack and damage
+
+** Attack Workspace
+| Weapon/Power        | Attack | 1/2 Level | Ability | Class | Prof | Feat | Enh | Misc |
+|---------------------+--------+-----------+---------+-------+------+------+-----+------|
+| [[Melee Basic Attack]]  |     +3 |         2 |       1 |       |      |      |     |      |
+| [[Ranged Basic Attack]] |    +11 |         2 |       5 |       |    2 |    1 |   1 |      |
+| [[Disruptive Strike]]   |    +11 |         2 |       5 |       |    2 |    1 |   1 |      |
+| [[Twin-Strike]]         |    +11 |         2 |       5 |       |    2 |    1 |   1 |      |
+| [[Nimble Strike]]       |    +11 |         2 |       5 |       |    2 |    1 |   1 |      |
+| [[Two-Fanged Strike]]   |    +11 |         2 |       5 |       |    2 |    1 |   1 |      |
+| [[Sure Shot]]           |    +11 |         2 |       5 |       |    2 |    1 |   1 |      |
+#+TBLFM: $2='(concat "+" (int-to-string (-sum '($3 $4 $5 $6 $7 $8 $9))));N
+*** Bonuses
+- [[+1 Foe-Seeking Greatbow]]: +1 enhancement
+- [[Bow Expertise]]: +1 feat
+- [[Weapon Proficiency: Greatbow]]: +2 proficiency
+
+** Damage Workspace
+| Weapon/Power        | Bonus | Ability | Feat | Enh | Misc | Misc |
+|---------------------+-------+---------+------+-----+------+------|
+| [[Melee Basic Attack]]  |    +0 |       0 |    0 |   0 |    0 |    0 |
+| [[Ranged Basic Attack]] |    +8 |       5 |    0 |   1 |    2 |    0 |
+| [[Disruptive Strike]]   |    +8 |       5 |    0 |   1 |    2 |    0 |
+| [[Twin-Strike]]         |    +3 |         |      |   1 |    2 |      |
+| [[Nimble Strike]]       |    +8 |       5 |      |   1 |    2 |      |
+| [[Two-Fanged Strike]]   |    +8 |       5 |      |   1 |    2 |      |
+| [[Sure Shot]]           |    +8 |       5 |      |   1 |    2 |      |
+#+TBLFM: $2='(concat "+" (int-to-string (-sum '($3 $4 $5 $6))));N
+*** Bonsues
+- [[+1 Foe-Seeking Greatbow]]: +1 enhancement
+- [[Bracers of Archery]]: +2 item bonus to damage
+
+
+* Skills
+| Mod | Name          | Abil. | Train | Mod | 1/2 Lvl | Armor | Misc | Temp |
+|-----+---------------+-------+-------+-----+---------+-------+------+------|
+| +12 | Acrobatics    | Dex   |     1 |   5 |       2 |       |      |      |
+|  +2 | Arcana        | Int   |       |     |       2 |       |      |      |
+|  +3 | Athletics     | Str   |       |   1 |       2 |       |      |      |
+|  +1 | Bluff         | Cha   |       |  -1 |       2 |       |      |      |
+|  +1 | Diplomacy     | Cha   |       |  -1 |       2 |       |      |      |
+|  +9 | Dungeoneering | Wis   |     1 |   2 |       2 |       |      |      |
+|  +7 | Endurance     | Con   |       |   3 |       2 |       |    2 |      |
+|  +9 | Heal          | Wis   |     1 |   2 |       2 |       |      |      |
+|  +2 | History       | Int   |       |     |       2 |       |      |      |
+|  +4 | Insight       | Wis   |       |   2 |       2 |       |      |      |
+|  +3 | Intimidate    | Cha   |       |  -1 |       2 |       |    2 |      |
+|  +4 | Nature        | Wis   |       |   2 |       2 |       |      |      |
+|  +9 | Perception    | Wis   |     1 |   2 |       2 |       |      |      |
+|  +2 | Religion      | Int   |       |     |       2 |       |      |      |
+| +12 | Stealth       | Dex   |     1 |   5 |       2 |       |      |      |
+|  +1 | Streetwise    | Cha   |       |  -1 |       2 |       |      |      |
+|  +7 | Theivery      | Dex   |       |   5 |       2 |       |      |      |
+#+TBLFM: $1='(concat "+" (int-to-string (+ $5 $6 $7 $8 $9 (if (eql $4 1) 5 0))));N
+ - Half-Orc Skill Bonus: +2 Endurance, +2 Intimidate
+
+
+* Powers
+  :PROPERTIES:
+  :COLUMNS: %ITEM %POWERTYPE(Type) %ATTACK %HIT %TARGET
+  :VISIBILITY: children
+  :END:
+** Attack
+   :PROPERTIES:
+   :VISIBILITY: children
+   :END:
+*** Melee Basic Attack
+    :PROPERTIES:
+    :POWERTYPE: At-Will
+    :ATTACK: STR vs AC
+    :HIT: 1[W] + STR
+    :END:
+ - At-Will | Melee Weapon
+ - Standard Action
+ - Target: One creature
+ - Attack: Strength vs AC
+ - Hit: 1[W] + Strength
+   - Increase damage to 2[W] + Strength modifier at 21st level.
+ - Special: Unarmed attacking counts as a weapon when making a melee basic attack.
+ - The melee basic attack is an at-will power available to all characters. It
+   can be performed as part of a basic attack action or a number of other
+   actions, such as charge, coup de grace, or opportunity attack.
+ - Certain at-will powers count as melee basic attacks. They can be used any
+   time a melee basic attack could be used, and are affected by modifiers to
+   melee basic attacks.
+ - A number of other powers can be used in place of the melee basic attack
+   portion of a charge.
+
+*** Ranged Basic Attack
+    :PROPERTIES:
+    :POWERTYPE: At-Will
+    :ATTACK: DEX vs AC
+    :HIT: 1[W] + DEX
+    :END:
+ - At-Will | Ranged Weapon
+ - Standard
+ - Target: One creature
+ - Attack: Dexterity vs AC
+ - Hit: 1[W] + Dexterity
+   - Increase damage to 2[W] + Dexterity modifier at 21st level.
+ - Special: Heavy thrown weapons use Strength instead of Dexterity for both attack and damage rolls for ranged basic attacks.
+*** Twin Strike
+    :PROPERTIES:
+    :POWERTYPE: At-Will
+    :ATTACK: 2x Dex vs AC
+    :URL: http://iws.mx/dnd/?view=power87
+    :HIT: 1[W]
+    :END:
+/If the first attack doesn't kill it, the second one might./
+ - Ranger Attack 1
+ - At-will | Martial, Weapon
+ - Standard Action, Melee or Ranged Weapon
+ - Requirement: You must be wielding two melee weapons or a ranged weapon.
+ - Target: One or two creatures
+ - Attack: Strength vs AC (melee, main weapon and off-hand weapon) or Dexterity vs AC (ranged), two attacks
+ - Hit: 1[W] damage per attack.
+   - Increase damage to 2[W] at 21st level.
+ - http://iws.mx/dnd/?view=power87
+*** Nimble Strike
+    :PROPERTIES:
+    :POWERTYPE: At-Will
+    :ATTACK: Dex vs AC
+    :HIT: 1[W] + Dex
+    :TARGET:   One creature
+    :END:
+/You slink past your enemy's guard to make your attack, or you make your attack
+and then withdraw to a more advantageous position./
+ - Ranger Attack 1
+ - At-Will | Martial, Weapon
+ - Standard Action
+ - Target: One creature
+ - Special: Shift 1 square before or after you attack.
+ - Attack: Dexterity vs AC
+ - Hit 1[W] + Dexterity
+   - Increase damage to 2[W] + Dex at 21st level.
+ - http://iws.mx/dnd/?view=power919
+*** Two-Fanged Strike
+    :PROPERTIES:
+    :LEVEL: Ranger Attack 1
+    :POWERTYPE: Encounter
+    :TARGET:   One creature
+    :ATTACK: 2x Dex vs AC
+    :HIT: 1[W] + DEX*
+    :END:
+/You sink two arrows or both of your blades into the flesh of your enemy,
+causing it to howl in pain./
+ - Encounter | Martial, Weapon
+ - Standard Action | Melee or Ranged weapon
+ - Requirement: You must be wielding two melee weapons or a ranged weapon.
+ - Target: One Creature
+ - Attack: Strength vs AC (melee; main weapon and off-hand weapon) or Dexterity vs AC (ranged), two attacks
+ - Hit: 1[W] + Strength (melee) or 1[W] + Dexterity (ranged) per attack.
+ - Hit: If both attacks hit, you deal extra damage equal to your Wisdom modifier
+ - http://iws.mx/dnd/?view=power2209
+*** Sure Shot
+    :PROPERTIES:
+    :LEVEL: Ranger Attack 1
+    :POWERTYPE: Daily
+    :ATTACK: Dex vs AC
+    :HIT: 3[W] + Dex
+    :TARGET:   One creature
+    :END:
+/You line up your shot with meticulous care to strike at your foe's vital organs./
+ - Daily | Martial, Weapon
+ - Standard Action | Ranged weapon
+ - Target: One creature
+ - Attack: Dexterity vs AC
+ - Hit: 3[W] + Dexterity
+ - Special: You can reroll the attack and damage roll, but must use the second result.
+ - http://iws.mx/dnd/?view=power883
+
+*** Spitting-Cobra Stance
+    :PROPERTIES:
+    :POWERTYPE: Daily
+    :END:
+/You stand ready to launch a quick attack against any foe that menaces you./
+ - Ranger Attack 5
+ - Daily | Martial, Stance, Weapon
+ - Minor Action | Personal
+ - Effect: Until the stance ends, you can make a ranged basic attack as an
+   immediate reaction against any enemy within 5 squares of you that moves
+   closer to you.
+ - http://iws.mx/dnd/?view=power4394
+*** Foe-Seeking Bow
+    :PROPERTIES:
+    :POWERTYPE: Daily
+    :END:
+ - Daily (Free Action)
+ - Trigger: You would use this bow to make an attack against an enemy benefiting from any concealment or cover.
+ - Effect: The enemy loses concealment or cover and grants combat advantage to you for the triggering attack.
+ - http://iws.mx/dnd/?view=weapon1337
+
+*** Bracers of Archery
+    :PROPERTIES:
+    :POWERTYPE: Daily
+    :END:
+ - Daily (Minor Action)
+ - Ignore cover on your next attack this turn when using a bow or a crossbow.
+ - http://iws.mx/dnd/?view=item783
+
+
+** Utility
+   :PROPERTIES:
+   :VISIBILITY: children
+   :END:
+*** Hunter's Quarry
+    :PROPERTIES:
+    :POWERTYPE: At-Will
+    :END:
+  - Hunter's Quarry Power
+  - At-Will
+  - Minor Action
+  - Effect: You can designate the **nearest enemy** to you that you can see as your
+    quarry. Once per round, when you hit your quarry with an attack, the attack
+    deals extra damage based on your level. If you can make multiple attacks in
+    a round, you decide which attack to apply the extra damage to after all the
+    attacks are rolled. If you have dealt Hunter's Quarry damage since the start
+    of your turn, you cannot deal it again until the start of your next turn.
+  - The hunter's quarry effect remains active until the end of the encounter,
+    until the quarry is defeated, or until you designate a different target as
+    your quarry.
+  - You can designate one enemy as your quarry at a time.
+    | Level       | Extra Damage |
+    |-------------+--------------|
+    | 1st - 10th  |         +1d6 |
+    | 11th - 20th |         +2d6 |
+    | 21st - 30th |         +3d6 |
+  - http://iws.mx/dnd/?view=class5
+*** Furious Assault
+    :PROPERTIES:
+    :POWERTYPE: Encounter
+    :END:
+ - Half-Orc Racial Power
+ - Encounter
+ - Free Action | Personal
+ - Trigger: You hit an enemy with an attack.
+ - Effect: The attack deals 1[W] extra damage if it's a weapon attack or 1d8
+   extra damage if it is not a weapon attack.
+ - http://iws.mx/dnd/?view=race36
+*** Begin the Hunt
+    :PROPERTIES:
+    :POWERTYPE: Daily
+    :END:
+ - Ranger Attack 2
+ - Daily | Martial
+ - No Action | Personal
+ - Trigger: You roll initiative
+ - Effect: You gain a +2 bonus to the initiative check, and using your Hunter's
+   Quarry, you designate one creature you can see as your quarry. You gain a +2
+   power bonus to attack rolls against that creature until it is no longer your
+   quarry.
+ - http://iws.mx/dnd/?view=power10605
+
+*** Serpentskin Armor
+    :PROPERTIES:
+    :POWERTYPE: Daily
+    :END:
+ - Daily (Move Action)
+ - Shift 3 squares. This shift can move through enemies' spaces, though you must end your move in a legal space.
+ - http://iws.mx/dnd/?view=weapon2434
+
+
+* Features
+** Archer Ranger
+** Hunter's Quarry
+   :PROPERTIES:
+   :LEVEL: Ranger
+   :URL: http://iws.mx/dnd/?view=class5
+   :END:
+ - Once per turn, you can use your Hunter's Quarry power.
+** Prime Shot
+   :PROPERTIES:
+   :LEVEL: Ranger
+   :URL: http://iws.mx/dnd/?view=class5
+   :END:
+ - If none of your allies are nearer to your target than you are, you receive a
+   +1 bonus to ranged attack rolls against that target. You do not gain this
+   feature if you choose the Beast Mastery fighting style.
+** Furious Assault
+   :PROPERTIES:
+   :LEVEL: Half-Orc
+   :URL: http://iws.mx/dnd/?view=race36
+   :END:
+ - You have the furious assault power
+** Half-Orc Reslience
+   :PROPERTIES:
+   :LEVEL: Half-Orc
+   :URL: http://iws.mx/dnd/?view=race36
+   :END:
+ - The first time you are bloodied during an encounter, you gain 5 temporary hit points.
+ - The temporary hit points increase to 10 at 11th level and to 15 at 21st level
+
+
+
+
+** Dual Heritage
+   :PROPERTIES:
+   :LEVEL: Half-Elf Feature
+   :URL: http://iws.mx/dnd/?view=race6
+   :END:
+ - You can take feats that have either elf or human as a prerequisite (as well
+   as those specifically for half-elves), as long as you meet any other
+   requirements.
+
+
+* Feats
+** Defensive Mobility
+ - Ranger Class Feat
+ - Benefit: You gain a +2 bonus to AC against opportunity attacks.
+ - http://iws.mx/dnd/?view=feat127
+
+** Bow Expertise
+ - Free Feat
+ - Benefit: Choose a weapon group.
+   - You gain a +1 feat bonus to weapon attack rolls that you make with a bow.
+   - In addition, you gain a +1 bonus to the damage roll of any weapon attack you
+     make with a bow against a single creature that is not adjacent to any other
+     creature.
+   - Both of these bonuses increase to +2 at 11th level and +3 at 21st level.
+   - http://iws.mx/dnd/?view=feat1032
+
+** Weapon Proficiency: Greatbow
+ - Free Feat
+ - Benefit: You gain proficiency in a single weapon of your choice.
+ - Special: You can take this feat more than once. Each time you select this feat, choose another weapon.
+ - http://iws.mx/dnd/?view=feat178
+
+** Cunning Stalker
+ - Benefit: You gain combat advantage against enemies that have no creatures adjacent to them other than you.
+ - Level 1 Feat
+ - http://iws.mx/dnd/?view=feat3518
+
+** Improved Initiative
+ - Level 2 Feat
+ - Benefit: You gain a +4 feat bonus to initiative
+ - http://iws.mx/dnd/?view=feat272
+
+
+* Proficiencies
+  | Languages | Tools | Armor   | Weapons         |
+  |-----------+-------+---------+-----------------|
+  | Common    |       | Cloth   | Simple          |
+  | Orc       |       | Leather | Military ranged |
+  |           |       | Hide    | Greatbow        |
+  |           |       |         |                 |
+  |           |       |         |                 |
+  |           |       |         |                 |
+
+
+* Items
+  :PROPERTIES:
+  :VISIBILITY: children
+  :END:
+** Equipment
+:PROPERTIES:
+:VISIBILITY: children
+:END:
+*** List with quantity, cost, and weight
+  | Name                      | Quantity | Cost (gp) | Weight (lbs) | Total Weight (lbs) | Total Cost (gp) |
+  |---------------------------+----------+-----------+--------------+--------------------+-----------------|
+  | +1 Foe-Seeking Greatbow   |        1 |       680 |            5 |                  5 |             680 |
+  | +1 Serpentskin Hide Armor |        1 |       680 |           25 |                 25 |             680 |
+  | Bracers of Archery        |        1 |      1800 |            1 |                  1 |            1800 |
+  | +1 Cloak of Distortion    |        1 |       840 |            5 |                  5 |             840 |
+  | Ghoststride Boots         |        1 |      1800 |            1 |                  1 |            1800 |
+  | +1 Onslaught Arrow        |        0 |        25 |           .1 |                 0. |               0 |
+  | +1 Firestorm Arrow        |        5 |        30 |           .1 |                0.5 |             150 |
+  | +1 Lightning Arrow        |        2 |        30 |           .1 |                0.2 |              60 |
+  | +1 Freezing Arrow         |        3 |        30 |           .1 |                0.3 |              90 |
+  | Arrows                    |       60 |       .05 |           .1 |                 6. |              3. |
+  | Blood Apricot             |        0 |        50 |           .1 |                 0. |               0 |
+  |---------------------------+----------+-----------+--------------+--------------------+-----------------|
+  | Carry Capacity            |      100 |           |              |                44. |           6103. |
+  #+TBLFM: $5=($2 * $4)
+  #+TBLFM: $6=($2 * $3)
+  #+TBLFM: @>$5=vsum(@<<$5..@>>$5)
+  #+TBLFM: @>$6=vsum(@<<$6..@>>$6)
+
+*** Magic Items
+    :PROPERTIES:
+    :VISIBILITY: children
+    :END:
+**** +1 Foe-Seeking Greatbow
+/You feel the bow's hate for cowardly and furtive opponents./
+- +1 enhancement bonus to attack and damage rolls
+- Critical: 1d6 damage per plus, or +1d10 damage per plus against targets granting combat advantage
+- Value: 680g
+- http://iws.mx/dnd/?view=weapon1337
+**** +1 Serpentskin Armor
+/Made from the discarded scales of a giant snake, this armor still carries the serpent's resistance to poison./
+- +1 enhancement bonus AC
+- Value: 680 gp
+- http://iws.mx/dnd/?view=item2434
+**** +1 Cloak of Distortion
+/This cloak roils about you like the rippling air of a scorching desert./
+- Enhancement Bonus: Fortitude, Reflex, and Will
+- Property: You gain an item bonus to all defenses against ranged attacks from
+  more than 5 squares away equal to this item's enhancement bonus.
+- Value: 840 gp
+- http://iws.mx/dnd/?view=item908
+
+**** Bracers of Archery
+/These leather armbands enhance your potency with bows and crossbows./
+- Arms slot
+- Gain a +2 item bonus to damage rolls when attacking with a bow or crossbow.
+- Level 16: Gain a +4 item bonus to damage
+- Level 26: Gain a +6 item bonus to damage
+- Value: 1,800 gp
+- http://iws.mx/dnd/?view=item783
+**** +1 Onslaught Arrow
+/This black arrow trails a bright pennant, flagging its target/
+- Enhancement Bonus: attack rolls and damage rolls
+- Value: 25 gp
+- http://iws.mx/dnd/?view=item2434
+**** +1 Firestorm Arrow
+/The charred wood of this arrow seems to shimmer with heat./
+- Enhancement Bonus: attack rolls and damage rolls
+- Property: When you hit an enemy using this ammunition, that enemy and each creature adjacent to it take 1d6 extra fire damage per plus
+- Value: 30 gp
+- http://iws.mx/dnd/?view=item1292
+
+**** +1 Lightning Arrow
+/This arrow's blue and white streaks thrum with energy./
+- Enhancement Bonus: attack rolls and damage rolls
+- Property: When you hit an enemy using this ammunition, that enemy and each creature adjacent to it take 1d6 extra lightning damage per plus
+- Value: 30 gp
+- http://iws.mx/dnd/?view=item1292
+
+**** +1 Freezing Arrow
+/Ths shaft of this arrow is shaved from unmelting ice./
+- Enhancement Bonus: attack rolls and damage rolls
+- Property: When you hit an enemy using this ammunition, that enemy and each
+  creature adjacent to it take 1d6 extra cold damage per plus and is slowed
+  until the end of its next turn.
+- Value: 30 gp
+- http://iws.mx/dnd/?view=item1357
+**** Ghoststride Boots
+ - Feet slot
+ - Property: While you are running, you gain a +1 item bonus to AC and become insubstantial.
+   - Level 16: Gain a +2 item bonus to AC
+   - Level 26: Gain a +3 item bonus to AC
+ - Value: 1,800 gp
+ - http://iws.mx/dnd/?view=item1402
+**** Blood Apricot
+/A rich orange-red, this small fruit turns much darker if given a taste of blood./
+- Power | Daily Utility (Standard Action)
+  - Effect: You lose a healing surge, bleeding onto the apricot, which absorbs
+    your blood and the healing surge.
+- Power (Healing) | Consumable Utility (Minor Action)
+  - Effect: You eat the apricot. Unless the apricot has absorbed a healing surge in the past 12 hours, you lose a healing surge, and when you do, you regain only 2d8 hit points. If the apricot has absorbed a healing surge in the past 12 hours, you can instead spend a healing surge and regain an additional 2d8 hit points.
+*** Items I want
+**** [[http://iws.mx/dnd/?view=item1379][Gauntlets of Blood]]
+**** [[http://iws.mx/dnd/?view=item843][Caustic Gauntlets]]
+**** [[http://iws.mx/dnd/?view=item883][Circlet of indomitability]]
+**** [[http://iws.mx/dnd/?view=item1156][Eagle Eye Goggles]]
+**** [[http://iws.mx/dnd/?view=item1537][Helm of Able Defense]]
+**** [[http://iws.mx/dnd/?view=item1291][Fireheart Tattoo]]
+**** [[http://iws.mx/dnd/?view=item583][Backlash Tattoo]]
+
+
+** Money
+   | Copper | Silver | Electrum | Gold | Platinum | Total (Gold) |
+   |--------+--------+----------+------+----------+--------------|
+   |        |        |          |  800 |          |          800 |
+   #+TBLFM: $6=(($1 / 100) + ($2 / 10) + ($3 / 2) + $4 + ($5 * 10));N
+
