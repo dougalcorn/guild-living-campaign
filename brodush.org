@@ -401,7 +401,6 @@ causing it to howl in pain./
 
 
 
-
 ** Dual Heritage
    :PROPERTIES:
    :LEVEL: Half-Elf Feature
