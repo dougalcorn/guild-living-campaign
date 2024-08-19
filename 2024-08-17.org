@@ -1,0 +1,28 @@
+#+title: 2024 08 17
+
+* Players
+- Terios, minotaur
+- Dracowhale
+- efarian
+- ophmaeve
+
+* Play notes
+ - heavy set, middle-aged man -- walks to the middle of the room, "I need help"
+ - prison riot: save the guards, put down the riot, return them to their cells
+ - most prisoners are not hardened criminal
+ - once the situation is under control, they'll sort it out
+ - smallish prison, 4 or 5 rooms
+ - 30 - 25 inmates, usually 5 guards.
+ - new, white-eyed elf prisoner. Lianthorn
+ - mind control on all the prisoners
+** First prison room: 6 skinny prisoners throwing shanks, 4 brawlers
+- I got surprised from behind and took several hits that knocked me unconscious
+- twice
+- As nearly the whole party lay unconscious, Lianthorn was finally killed and
+  the prisoners regained their right minds and ceased aggressions
+** rewards
+- 1000 xp, 800g
+- quick bow, lvl 8 +2 attack, damage
+  - crit +1d6
+  - daily free action: Use this power when you hit a target with this weapon. Make a basic attack with this weapon against a target of your choice.
+  - http://iws.mx/dnd/?view=weapon2116
