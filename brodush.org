@@ -1,5 +1,4 @@
 #+title: Brodush
-#+STARTUP: overview
 
 * Name: Brodush
  - Myth-Weavers Character Sheet: https://www.myth-weavers.com/sheets/?id=2925296
@@ -48,9 +47,6 @@
 
 
 * Defense
-:PROPERTIES:
-:VISIBILITY: children
-:END:
 | Total |      | 10 + 1/2 lvl | Armor | Ability | Class | Feat | Enh. | Misc | Temp |
 |-------+------+--------------+-------+---------+-------+------+------+------+------|
 |    21 | AC   |           12 |     3 |       5 |       |      |    1 |      |      |
@@ -59,34 +55,22 @@
 |    15 | WILL |           12 |       |       2 |       |      |    1 |      |      |
 #+TBLFM: $1=($3 + + $4 + $5 + $6 + $7 + $8 + $9 + $10)
 ** Bonuses
-:PROPERTIES:
-:VISIBILITY: folded
-:END:
- - Ranger: +1 Fort, +1 Reflex
- - [[+1 Cloak of Distortion]]: +1 enhancement bonus to Fort, Ref, Will
- - [[+1 Serpentskin Armor]]: +1 enhancement bonus to AC
-
+- Ranger: +1 Fort, +1 Reflex
+- [[+1 Cloak of Distortion]]: +1 enhancement bonus to Fort, Ref, Will
+- [[+1 Serpentskin Armor]]: +1 enhancement bonus to AC
 
 | Armor Bonus | Shield Bonus | Check Penalty | Speed Penalty | Heavy? |
 |-------------+--------------+---------------+---------------+--------|
 |           3 |            0 |             0 |             0 | [ ]    |
+
 ** Conditionals
-:PROPERTIES:
-:VISIBILITY: content
-:END:
 - [[Defensive Mobility]]: +2 AC against opportunity attacks
 - [[Bow Expertise]]: +1 to all defenses from a ranged attack more than 5 squares
 - [[Ghoststride Boots]]: +1 item bonus to AC while running
 
 
 * Quick Look Up
-:PROPERTIES:
-:VISIBILITY: children
-:END:
 ** Summary
-:PROPERTIES:
-:VISIBILITY: all
-:END:
 | Weapon/Power          | Type      | vs | Attack       | Damage   |     |
 |-----------------------+-----------+----+--------------+----------+-----|
 | [[Melee Basic Attack]]    | At-Will   | AC | 1d20 +3      | 1d8      |     |
@@ -104,9 +88,6 @@
 | [[Coin of Good Luck]]     | Daily     |    |              |          | [ ] |
 
 ** Conditionals
-:PROPERTIES:
-:VISIBILITY: all
-:END:
 - [[Prime Shot]]: +1 attack if closest to enemy
 - [[Cunning Stalker]]: +2 attack (CA) against enemies that have no creates adjacent
 - [[Bow Expertise]]: +1 damage if the target is not adjacent to any other creature
@@ -168,194 +149,133 @@
 |  +1 | Streetwise    | Cha   |       |  -1 |       2 |       |      |      |
 |  +7 | Theivery      | Dex   |       |   5 |       2 |       |      |      |
 #+TBLFM: $1='(concat "+" (int-to-string (+ $5 $6 $7 $8 $9 (if (eql $4 1) 5 0))));N
- - Half-Orc Skill Bonus: +2 Endurance, +2 Intimidate
- - Acrobat Boots: +1 Acrobatics
+- Half-Orc Skill Bonus: +2 Endurance, +2 Intimidate
+- Acrobat Boots: +1 Acrobatics
 
 
 * Powers
-  :PROPERTIES:
-  :COLUMNS: %ITEM %POWERTYPE(Type) %ATTACK %HIT %TARGET
-  :VISIBILITY: children
-  :END:
 ** Attack
-   :PROPERTIES:
-   :VISIBILITY: children
-   :END:
 *** Melee Basic Attack                       :atwill:standard:melee:
-    :PROPERTIES:
-    :POWERTYPE: At-Will
-    :ATTACK: STR vs AC
-    :HIT: 1[W] + STR
-    :END:
- - At-Will | Melee Weapon
- - Standard Action
- - Target: One creature
- - Attack: Strength vs AC
- - Hit: 1[W] + Strength
-   - Increase damage to 2[W] + Strength modifier at 21st level.
- - Special: Unarmed attacking counts as a weapon when making a melee basic attack.
- - The melee basic attack is an at-will power available to all characters. It
-   can be performed as part of a basic attack action or a number of other
-   actions, such as charge, coup de grace, or opportunity attack.
- - Certain at-will powers count as melee basic attacks. They can be used any
-   time a melee basic attack could be used, and are affected by modifiers to
-   melee basic attacks.
- - A number of other powers can be used in place of the melee basic attack
-   portion of a charge.
+- At-Will | Melee Weapon
+- Standard Action
+- Target: One creature
+- Attack: Strength vs AC
+- Hit: 1[W] + Strength
+  - Increase damage to 2[W] + Strength modifier at 21st level.
+- Special: Unarmed attacking counts as a weapon when making a melee basic attack.
+- The melee basic attack is an at-will power available to all characters. It can
+  be performed as part of a basic attack action or a number of other actions,
+  such as charge, coup de grace, or opportunity attack.
+- Certain at-will powers count as melee basic attacks. They can be used any time
+  a melee basic attack could be used, and are affected by modifiers to melee
+  basic attacks.
+- A number of other powers can be used in place of the melee basic attack
+  portion of a charge.
 
 *** Ranged Basic Attack                     :atwill:standard:ranged:
-    :PROPERTIES:
-    :POWERTYPE: At-Will
-    :ATTACK: DEX vs AC
-    :HIT: 1[W] + DEX
-    :END:
- - At-Will | Ranged Weapon
- - Standard
- - Target: One creature
- - Attack: Dexterity vs AC
- - Hit: 1[W] + Dexterity
-   - Increase damage to 2[W] + Dexterity modifier at 21st level.
- - Special: Heavy thrown weapons use Strength instead of Dexterity for both attack and damage rolls for ranged basic attacks.
+- At-Will | Ranged Weapon
+- Standard
+- Target: One creature
+- Attack: Dexterity vs AC
+- Hit: 1[W] + Dexterity
+  - Increase damage to 2[W] + Dexterity modifier at 21st level.
+- Special: Heavy thrown weapons use Strength instead of Dexterity for both
+  attack and damage rolls for ranged basic attacks.
 *** Twin Strike                       :atwill:standard:melee:ranged:
-    :PROPERTIES:
-    :POWERTYPE: At-Will
-    :ATTACK: 2x Dex vs AC
-    :URL: http://iws.mx/dnd/?view=power87
-    :HIT: 1[W]
-    :END:
 /If the first attack doesn't kill it, the second one might./
- - Ranger Attack 1
- - At-will | Martial, Weapon
- - Standard Action, Melee or Ranged Weapon
- - Requirement: You must be wielding two melee weapons or a ranged weapon.
- - Target: One or two creatures
- - Attack: Strength vs AC (melee, main weapon and off-hand weapon) or Dexterity vs AC (ranged), two attacks
- - Hit: 1[W] damage per attack.
-   - Increase damage to 2[W] at 21st level.
- - http://iws.mx/dnd/?view=power87
+- Ranger Attack 1
+- At-will | Martial, Weapon
+- Standard Action, Melee or Ranged Weapon
+- Requirement: You must be wielding two melee weapons or a ranged weapon.
+- Target: One or two creatures
+- Attack: Dexterity vs AC (ranged), two attacks
+- Hit: 1[W] damage per attack.
+  - Increase damage to 2[W] at 21st level.
+- http://iws.mx/dnd/?view=power87
 *** Nimble Strike                                  :atwill:standard:
-    :PROPERTIES:
-    :POWERTYPE: At-Will
-    :ATTACK: Dex vs AC
-    :HIT: 1[W] + Dex
-    :TARGET:   One creature
-    :END:
 /You slink past your enemy's guard to make your attack, or you make your attack
 and then withdraw to a more advantageous position./
- - Ranger Attack 1
- - At-Will | Martial, Weapon
- - Standard Action
- - Target: One creature
- - Special: Shift 1 square before or after you attack.
- - Attack: Dexterity vs AC
- - Hit 1[W] + Dexterity
-   - Increase damage to 2[W] + Dex at 21st level.
- - http://iws.mx/dnd/?view=power919
+- Ranger Attack 1
+- At-Will | Martial, Weapon
+- Standard Action
+- Target: One creature
+- Special: Shift 1 square before or after you attack.
+- Attack: Dexterity vs AC
+- Hit 1[W] + Dexterity
+  - Increase damage to 2[W] + Dex at 21st level.
+- http://iws.mx/dnd/?view=power919
 *** Two-Fanged Strike              :encounter:standard:melee:ranged:
-    :PROPERTIES:
-    :LEVEL: Ranger Attack 1
-    :POWERTYPE: Encounter
-    :TARGET:   One creature
-    :ATTACK: 2x Dex vs AC
-    :HIT: 1[W] + DEX*
-    :END:
 /You sink two arrows or both of your blades into the flesh of your enemy,
 causing it to howl in pain./
- - Encounter | Martial, Weapon
- - Standard Action | Melee or Ranged weapon
- - Requirement: You must be wielding two melee weapons or a ranged weapon.
- - Target: One Creature
- - Attack: Strength vs AC (melee; main weapon and off-hand weapon) or Dexterity vs AC (ranged), two attacks
- - Hit: 1[W] + Strength (melee) or 1[W] + Dexterity (ranged) per attack.
- - Hit: If both attacks hit, you deal extra damage equal to your Wisdom modifier
- - http://iws.mx/dnd/?view=power2209
+- Encounter | Martial, Weapon
+- Standard Action | Melee or Ranged weapon
+- Requirement: You must be wielding two melee weapons or a ranged weapon.
+- Target: One Creature
+- Attack: Dexterity vs AC (ranged), two attacks
+- Hit: 1[W] + Dexterity (ranged) per attack.
+- Hit: If both attacks hit, you deal extra damage equal to your Wisdom modifier
+- http://iws.mx/dnd/?view=power2209
 *** Sure Shot                                :daily:standard:ranged:
-    :PROPERTIES:
-    :LEVEL: Ranger Attack 1
-    :POWERTYPE: Daily
-    :ATTACK: Dex vs AC
-    :HIT: 3[W] + Dex
-    :TARGET:   One creature
-    :END:
 /You line up your shot with meticulous care to strike at your foe's vital organs./
- - Daily | Martial, Weapon
- - Standard Action | Ranged weapon
- - Target: One creature
- - Attack: Dexterity vs AC
- - Hit: 3[W] + Dexterity
- - Special: You can reroll the attack and damage roll, but must use the second result.
- - http://iws.mx/dnd/?view=power883
+- Daily | Martial, Weapon
+- Standard Action | Ranged weapon
+- Target: One creature
+- Attack: Dexterity vs AC
+- Hit: 3[W] + Dexterity
+- Special: You can reroll the attack and damage roll, but must use the second result.
+- http://iws.mx/dnd/?view=power883
 *** Disruptive Strike              :encounter:imm_intr:melee:ranged:
-:PROPERTIES:
-:LEVEL: Ranger Attack 3
-:POWERTYPE: Daily
-:ATTACK: Dex vs AC
-:HIT: 1[W] + Dex modifier damage. The target takes a penalty to its attack roll for the triggering attack equal to 3 + your Wisdom modifier.
-:END:
 - Trigger: You or an ally is attacked by a creature.
 - Encounter | Martial, Weapon
 - Immediate Interrupt | Melee or Ranged
 - Target: The attacking creature
 - Attack: Dexterity vs AC
-- Hit: 1[W] + Dex modifier damage. The target takes a penalty to its attack roll for the triggering attack equal to 3 + your Wisdom modifier.
+- Hit: 1[W] + Dex modifier damage. The target takes a penalty to its attack roll
+  for the triggering attack equal to 3 + your Wisdom modifier.
 - http://iws.mx/dnd/?view=power1416
 
 *** Spitting-Cobra Stance                       :daily:minor:stance:
-    :PROPERTIES:
-    :POWERTYPE: Daily
-    :END:
 /You stand ready to launch a quick attack against any foe that menaces you./
- - Ranger Attack 5
- - Daily | Martial, Stance, Weapon
- - Minor Action | Personal
- - Effect: Until the stance ends, you can make a ranged basic attack as an
-   immediate reaction against any enemy within 5 squares of you that moves
-   closer to you.
- - http://iws.mx/dnd/?view=power4394
+- Ranger Attack 5
+- Daily | Martial, Stance, Weapon
+- Minor Action | Personal
+- Effect: Until the stance ends, you can make a ranged basic attack as an
+  immediate reaction against any enemy within 5 squares of you that moves closer
+  to you.
+- http://iws.mx/dnd/?view=power4394
 *** Foe-Seeking Bow                                     :daily:free:
-    :PROPERTIES:
-    :POWERTYPE: Daily
-    :END:
- - Daily (Free Action)
- - Trigger: You would use this bow to make an attack against an enemy benefiting from any concealment or cover.
- - Effect: The enemy loses concealment or cover and grants combat advantage to you for the triggering attack.
- - http://iws.mx/dnd/?view=weapon1337
+- Daily (Free Action)
+- Trigger: You would use this bow to make an attack against an enemy benefiting
+  from any concealment or cover.
+- Effect: The enemy loses concealment or cover and grants combat advantage to
+  you for the triggering attack.
+- http://iws.mx/dnd/?view=weapon1337
 
 *** Bracers of Archery                                 :daily:minor:
-    :PROPERTIES:
-    :POWERTYPE: Daily
-    :END:
- - Daily (Minor Action)
- - Ignore cover on your next attack this turn when using a bow or a crossbow.
- - http://iws.mx/dnd/?view=item783
+- Ignore cover on your next attack this turn when using a bow or a crossbow.
+- http://iws.mx/dnd/?view=item783
 *** Quick Weapon                                        :daily:free:
-- Daily
 - Trigger: When you hit a target with this weapon.
 - Effect: Make a basic attack with this weapon against a target of your choice
 - http://iws.mx/dnd/?view=weapon2116
 
 
 ** Utility
-   :PROPERTIES:
-   :VISIBILITY: children
-   :END:
 *** Hunter's Quarry                                   :atwill:minor:
-    :PROPERTIES:
-    :POWERTYPE: At-Will
-    :END:
-  - Hunter's Quarry Power
-  - At-Will
-  - Minor Action
-  - Effect: You can designate the **nearest enemy** to you that you can see as your
-    quarry. Once per round, when you hit your quarry with an attack, the attack
-    deals extra damage based on your level. If you can make multiple attacks in
-    a round, you decide which attack to apply the extra damage to after all the
-    attacks are rolled. If you have dealt Hunter's Quarry damage since the start
-    of your turn, you cannot deal it again until the start of your next turn.
-  - The hunter's quarry effect remains active until the end of the encounter,
-    until the quarry is defeated, or until you designate a different target as
-    your quarry.
-  - You can designate one enemy as your quarry at a time.
+- Hunter's Quarry Power
+- At-Will
+- Minor Action
+- Effect: You can designate the **nearest enemy** to you that you can see as
+  your quarry. Once per round, when you hit your quarry with an attack, the
+  attack deals extra damage based on your level. If you can make multiple
+  attacks in a round, you decide which attack to apply the extra damage to after
+  all the attacks are rolled. If you have dealt Hunter's Quarry damage since the
+  start of your turn, you cannot deal it again until the start of your next
+  turn.
+- The hunter's quarry effect remains active until the end of the encounter,
+  until the quarry is defeated, or until you designate a different target as
+  your quarry.
+- You can designate one enemy as your quarry at a time.
     | Level       | Extra Damage |
     |-------------+--------------|
     | 1st - 10th  |         +1d6 |
@@ -363,9 +283,6 @@ causing it to howl in pain./
     | 21st - 30th |         +3d6 |
   - http://iws.mx/dnd/?view=class5
 *** Furious Assault                                 :encounter:free:
-    :PROPERTIES:
-    :POWERTYPE: Encounter
-    :END:
  - Half-Orc Racial Power
  - Encounter
  - Free Action | Personal
@@ -374,9 +291,6 @@ causing it to howl in pain./
    extra damage if it is not a weapon attack.
  - http://iws.mx/dnd/?view=race36
 *** Begin the Hunt                                           :daily:
-    :PROPERTIES:
-    :POWERTYPE: Daily
-    :END:
  - Ranger Attack 2
  - Daily | Martial
  - No Action | Personal
@@ -388,16 +302,11 @@ causing it to howl in pain./
  - http://iws.mx/dnd/?view=power10605
 
 *** Serpentskin Shift                                   :daily:move:
-    :PROPERTIES:
-    :POWERTYPE: Daily
-    :END:
  - Daily (Move Action)
- - Shift 3 squares. This shift can move through enemies' spaces, though you must end your move in a legal space.
+ - Shift 3 squares. This shift can move through enemies' spaces, though you must
+   end your move in a legal space.
  - http://iws.mx/dnd/?view=weapon2434
 *** Acrobat Boots                                     :atwill:minor:
-:PROPERTIES:
-:POWERTYPE: At-Will
-:END:
 - At-Will (Minor Action)
 - You stand up from prone.
 - http://iws.mx/dnd/?view=item448
@@ -406,44 +315,25 @@ causing it to howl in pain./
 * Features
 ** Archer Ranger
 ** Hunter's Quarry
-   :PROPERTIES:
-   :LEVEL: Ranger
-   :URL: http://iws.mx/dnd/?view=class5
-   :END:
+ - Ranger
  - Once per turn, you can use your Hunter's Quarry power.
+ - http://iws.mx/dnd/?view=class5
 ** Prime Shot
-   :PROPERTIES:
-   :LEVEL: Ranger
-   :URL: http://iws.mx/dnd/?view=class5
-   :END:
+ - Ranger
  - If none of your allies are nearer to your target than you are, you receive a
    +1 bonus to ranged attack rolls against that target. You do not gain this
    feature if you choose the Beast Mastery fighting style.
+ - http://iws.mx/dnd/?view=class5
 ** Furious Assault
-   :PROPERTIES:
-   :LEVEL: Half-Orc
-   :URL: http://iws.mx/dnd/?view=race36
-   :END:
+ - Half-Orc
  - You have the furious assault power
+ - http://iws.mx/dnd/?view=race36
 ** Half-Orc Reslience
-   :PROPERTIES:
-   :LEVEL: Half-Orc
-   :URL: http://iws.mx/dnd/?view=race36
-   :END:
- - The first time you are bloodied during an encounter, you gain 5 temporary hit points.
+ - Half-Orc
+ - The first time you are bloodied during an encounter, you gain 5 temporary hit
+   points.
  - The temporary hit points increase to 10 at 11th level and to 15 at 21st level
-
-
-
-** Dual Heritage
-   :PROPERTIES:
-   :LEVEL: Half-Elf Feature
-   :URL: http://iws.mx/dnd/?view=race6
-   :END:
- - You can take feats that have either elf or human as a prerequisite (as well
-   as those specifically for half-elves), as long as you meet any other
-   requirements.
-
+ - http://iws.mx/dnd/?view=race36
 
 * Feats
 ** Defensive Mobility
@@ -464,11 +354,13 @@ causing it to howl in pain./
 ** Weapon Proficiency: Greatbow
  - Free Feat
  - Benefit: You gain proficiency in a single weapon of your choice.
- - Special: You can take this feat more than once. Each time you select this feat, choose another weapon.
+ - Special: You can take this feat more than once. Each time you select this
+   feat, choose another weapon.
  - http://iws.mx/dnd/?view=feat178
 
 ** Cunning Stalker
- - Benefit: You gain combat advantage against enemies that have no creatures adjacent to them other than you.
+ - Benefit: You gain combat advantage against enemies that have no creatures
+   adjacent to them other than you.
  - Level 1 Feat
  - http://iws.mx/dnd/?view=feat3518
 
@@ -490,13 +382,7 @@ causing it to howl in pain./
 
 
 * Items
-  :PROPERTIES:
-  :VISIBILITY: children
-  :END:
 ** Equipment
-:PROPERTIES:
-:VISIBILITY: children
-:END:
 *** List with quantity, cost, and weight
   | Name                      | Quantity | Cost (gp) | Weight (lbs) | Total Weight (lbs) | Total Cost (gp) |
   |---------------------------+----------+-----------+--------------+--------------------+-----------------|
@@ -522,24 +408,24 @@ causing it to howl in pain./
   #+TBLFM: @>$6=vsum(@<<$6..@>>$6)
 
 *** Magic Items
-    :PROPERTIES:
-    :VISIBILITY: children
-    :END:
 **** +1 Foe-Seeking Greatbow                   :weapon:l3:uncommon:
 /You feel the bow's hate for cowardly and furtive opponents./
 - +1 enhancement bonus to attack and damage rolls
-- Critical: 1d6 damage per plus, or +1d10 damage per plus against targets granting combat advantage
+- Critical: 1d6 damage per plus, or +1d10 damage per plus against targets
+  granting combat advantage
 - Value: 680g
 - http://iws.mx/dnd/?view=weapon1337
 **** +2 Quick Greatbow                           :weapon:l8:common:
 /You can use this weapon to attack with preternatural speed./
-- Power | Daily Use this power when you hit a target with this weapon. Make a basic attack with this weapon against a target of your choice.
+- Power | Daily Use this power when you hit a target with this weapon. Make a
+  basic attack with this weapon against a target of your choice.
 - Critical: +1d6 damage per plus
 - Value: 3400gp
 - http://iws.mx/dnd/?view=weapon2116
 
 **** +1 Serpentskin Armor                       :armor:l3:uncommon:
-/Made from the discarded scales of a giant snake, this armor still carries the serpent's resistance to poison./
+/Made from the discarded scales of a giant snake, this armor still carries the
+serpent's resistance to poison./
 - +1 enhancement bonus AC
 - Value: 680 gp
 - http://iws.mx/dnd/?view=armor2434
@@ -557,7 +443,8 @@ causing it to howl in pain./
 - Value: 1,800 gp
 - http://iws.mx/dnd/?view=item783
 **** Gauntlets of Blood                         :hands:l4:uncommon:
-/The blood of wounded foes streams along the joints of these rusty-looking steel gauntlets./
+/The blood of wounded foes streams along the joints of these rusty-looking steel
+gauntlets./
 - Level 4: 840gp
 - Gain a +2 bonus to damage rolls against bloodied targets
 - http://iws.mx/dnd/?view=item1379
@@ -574,14 +461,16 @@ causing it to howl in pain./
 **** +1 Firestorm Arrow                                :consumable:
 /The charred wood of this arrow seems to shimmer with heat./
 - Enhancement Bonus: attack rolls and damage rolls
-- Property: When you hit an enemy using this ammunition, that enemy and each creature adjacent to it take 1d6 extra fire damage per plus
+- Property: When you hit an enemy using this ammunition, that enemy and each
+  creature adjacent to it take 1d6 extra fire damage per plus
 - Value: 30 gp
 - http://iws.mx/dnd/?view=weapon1292
 
 **** +1 Lightning Arrow                                :consumable:
 /This arrow's blue and white streaks thrum with energy./
 - Enhancement Bonus: attack rolls and damage rolls
-- Property: When you hit an enemy using this ammunition, that enemy and each creature adjacent to it take 1d6 extra lightning damage per plus
+- Property: When you hit an enemy using this ammunition, that enemy and each
+  creature adjacent to it take 1d6 extra lightning damage per plus
 - Value: 30 gp
 - http://iws.mx/dnd/?view=weapon1292
 
@@ -599,14 +488,21 @@ causing it to howl in pain./
   - Effect: You lose a healing surge, bleeding onto the apricot, which absorbs
     your blood and the healing surge.
 - Power (Healing) | Consumable Utility (Minor Action)
-  - Effect: You eat the apricot. Unless the apricot has absorbed a healing surge in the past 12 hours, you lose a healing surge, and when you do, you regain only 2d8 hit points. If the apricot has absorbed a healing surge in the past 12 hours, you can instead spend a healing surge and regain an additional 2d8 hit points.
+  - Effect: You eat the apricot. Unless the apricot has absorbed a healing surge
+    in the past 12 hours, you lose a healing surge, and when you do, you regain
+    only 2d8 hit points. If the apricot has absorbed a healing surge in the past
+    12 hours, you can instead spend a healing surge and regain an additional 2d8
+    hit points.
 - http://iws.mx/dnd/?view=item3576
 **** Coin of Good Luck                                 :consumable:
-/This shiny gold coin can mean the difference between life and death, brilliant success and utter failure./
+/This shiny gold coin can mean the difference between life and death, brilliant
+success and utter failure./
 - Property: The coin always lands tails up when flipped.
 - Utility Power | Consumable (Free Action)
-  - Effect: Gain a +1 item bonus on an attack roll, skill check, or saving throw you just made
-  - Special: You cannot use the utility power of another coin of good luck until after you've taken an extended rest.
+  - Effect: Gain a +1 item bonus on an attack roll, skill check, or saving throw
+    you just made
+  - Special: You cannot use the utility power of another coin of good luck until
+    after you've taken an extended rest.
   - Cost: 50g
   - https://iws.mx/dnd/?view=item3468
 
@@ -629,15 +525,18 @@ encounter
 - level 9, Common
 - Property: Your ranged weapon attacks ignore cover (but not superior cover).
 **** Gloves of Missile Avoidance               :hands:l11:uncommon:
-/These black leather gloves are limned with an aura of force that shatters or deflects projectiles aimed at you./
+/These black leather gloves are limned with an aura of force that shatters or
+deflects projectiles aimed at you./
 - Level 11, Uncommon
 - Value: 9.000gp
 - Power | Daily (Immediate Interrupt)
   - Trigger: A ranged attack that targets AC or Reflex hits you.
-  - Effect: You gain a +4 power bonus to AC and Reflex against the triggering attack
+  - Effect: You gain a +4 power bonus to AC and Reflex against the triggering
+    attack
 - https://iws.mx/dnd/?view=item1434
 **** Gloves of Missile Deflection              :hands:l13:uncommon:
-/Made of muslin covered with small shield-shaped buttons, these gloves help turn away projectiles./
+/Made of muslin covered with small shield-shaped buttons, these gloves help turn
+away projectiles./
 - Level 13
 - Value 17,000 gp
 - Property: Gain a +1 item bonus to AC against ranged weapon attacks.
@@ -645,7 +544,8 @@ encounter
   ranged weapon attack. Gain resist 15 against that attack.
 - https://iws.mx/dnd/?view=item1435
 **** Gloves of Missile Snaring                 :hands:l15:uncommon:
-/Your gloved hand moves in a blur, plucking your foe's arrow out of midair before you hurl it back as a deadly missile./
+/Your gloved hand moves in a blur, plucking your foe's arrow out of midair
+before you hurl it back as a deadly missile./
 - Level 15
 - Value 25,000gp
 - Utilitye Power | Daily (Immediate Interrupt)
@@ -675,38 +575,48 @@ making ranged attacks./
     including a surprise round).
 - http://iws.mx/dnd/?view=item1537
 **** Helm of Battle                                :head:l9:common:
-- Property: You and each ally within 5 squares of you gain a +1 item bonus to initiative checks
+- Property: You and each ally within 5 squares of you gain a +1 item bonus to
+  initiative checks
 - Level 9: 4,200gp
 - https://iws.mx/dnd/?view=item1538
 **** Mask of Slitering                          :head:l11:uncommon:
-/This serpentine mask allows you to slink out of harm's way and cause another to suffer in your stead./
+/This serpentine mask allows you to slink out of harm's way and cause another to
+suffer in your stead./
 - Level 11
 - Value: 9,000 gp
-- Power | Daily (Immediate Interrupt): Use this power when an enemy makes a melee or ranged attack against you. Gain a +2 bonus to AC and Reflext defense. If the attack misses, then the attacker rerolls the attack against a creature adjacent to you of your choice.
+- Power | Daily (Immediate Interrupt): Use this power when an enemy makes a
+  melee or ranged attack against you. Gain a +2 bonus to AC and Reflext defense.
+  If the attack misses, then the attacker rerolls the attack against a creature
+  adjacent to you of your choice.
 - https://iws.mx/dnd/?view=item1812
 **** Helm of the Eagle                          :head:l12:uncommon:
-/This helm, carved to resemble an eagle, enhances your perception and can be activated to improve a ranged attack./
+/This helm, carved to resemble an eagle, enhances your perception and can be
+activated to improve a ranged attack./
 - https://iws.mx/dnd/?view=item1547
 - Level 12, Uncommon
 - Value 13,000gp
 - Property: Gain a +3 item bonus to Perception checks.
-- Power | Daily (Minor Action): Gain a +2 power bonus to your next ranged attack roll this turn.
+- Power | Daily (Minor Action): Gain a +2 power bonus to your next ranged attack
+  roll this turn.
 
 **** Fireheart Tattoo                          :tattoo:l4:uncommon:
-/As you call upon its power, flames flare and twist around the heart at the center of this tattoo./
+/As you call upon its power, flames flare and twist around the heart at the
+center of this tattoo./
 - Value: 840gp
 - Wondrous Item
 - Property: When you spend an action point to take an extra action, you gain 5
   temporary hit points
 - http://iws.mx/dnd/?view=item1291
 **** Backlash Tattoo                           :tattoo:l9:uncommon:
-/Boars, sharks, and other creatures that enter a frenzy when wounded are used for this tattoo./
+/Boars, sharks, and other creatures that enter a frenzy when wounded are used
+for this tattoo./
 - Wondrous Item: 4,200 gp
 - Property: The first time you're bloodied during an encounter, you can make a
   basic attack as an immediate reaction.
 - http://iws.mx/dnd/?view=item583
 **** Dice of Auspicious Fortune                 :wondrous:l11:rare:
-/The faces of these wooden dice show symbols the halflings associate with good luck./
+/The faces of these wooden dice show symbols the halflings associate with good
+luck./
 - Wondrous Item: 9,000gp
 - Power | Daily (Standard Action): Roll 3 d20s. The results are "stored" in
   these dice until the end of your next extended rest or until you use this
@@ -724,6 +634,8 @@ making ranged attacks./
   - Trigger: You miss an enemy with a ranged weapon attack.
   - Effect: Reroll the attack roll.
 - https://iws.mx/dnd/?view=item2683
+
+
 ** Money
    | Copper | Silver | Electrum | Gold | Platinum | Total (Gold) |
    |--------+--------+----------+------+----------+--------------|
