@@ -315,60 +315,59 @@ causing it to howl in pain./
 * Features
 ** Archer Ranger
 ** Hunter's Quarry
- - Ranger
- - Once per turn, you can use your Hunter's Quarry power.
- - http://iws.mx/dnd/?view=class5
+- Ranger
+- Once per turn, you can use your Hunter's Quarry power.
+- http://iws.mx/dnd/?view=class5
 ** Prime Shot
- - Ranger
- - If none of your allies are nearer to your target than you are, you receive a
-   +1 bonus to ranged attack rolls against that target. You do not gain this
-   feature if you choose the Beast Mastery fighting style.
- - http://iws.mx/dnd/?view=class5
+- Ranger
+- If none of your allies are nearer to your target than you are, you receive a
+  +1 bonus to ranged attack rolls against that target. You do not gain this
+  feature if you choose the Beast Mastery fighting style.
+- http://iws.mx/dnd/?view=class5
 ** Furious Assault
- - Half-Orc
- - You have the furious assault power
- - http://iws.mx/dnd/?view=race36
+- Half-Orc
+- You have the furious assault power
+- http://iws.mx/dnd/?view=race36
 ** Half-Orc Reslience
- - Half-Orc
- - The first time you are bloodied during an encounter, you gain 5 temporary hit
-   points.
- - The temporary hit points increase to 10 at 11th level and to 15 at 21st level
- - http://iws.mx/dnd/?view=race36
+- Half-Orc
+- The first time you are bloodied during an encounter, you gain 5 temporary hit
+  points.
+- The temporary hit points increase to 10 at 11th level and to 15 at 21st level
+- http://iws.mx/dnd/?view=race36
 
 * Feats
 ** Defensive Mobility
- - Ranger Class Feat
- - Benefit: You gain a +2 bonus to AC against opportunity attacks.
- - http://iws.mx/dnd/?view=feat127
+- Ranger Class Feat
+- Benefit: You gain a +2 bonus to AC against opportunity attacks.
+- http://iws.mx/dnd/?view=feat127
 
 ** Bow Expertise
- - Free Feat
- - Benefit: Choose a weapon group.
-   - You gain a +1 feat bonus to weapon attack rolls that you make with a bow.
-   - In addition, you gain a +1 bonus to the damage roll of any weapon attack you
-     make with a bow against a single creature that is not adjacent to any other
-     creature.
-   - Both of these bonuses increase to +2 at 11th level and +3 at 21st level.
-   - http://iws.mx/dnd/?view=feat1032
+- Free Feat
+- You gain a +1 feat bonus to weapon attack rolls that you make with a bow.
+- In addition, you gain a +1 bonus to the damage roll of any weapon attack you
+  make with a bow against a single creature that is not adjacent to any other
+  creature.
+- Both of these bonuses increase to +2 at 11th level and +3 at 21st level.
+- http://iws.mx/dnd/?view=feat1032
 
 ** Weapon Proficiency: Greatbow
- - Free Feat
- - Benefit: You gain proficiency in a single weapon of your choice.
- - Special: You can take this feat more than once. Each time you select this
-   feat, choose another weapon.
- - http://iws.mx/dnd/?view=feat178
-
-** Cunning Stalker
- - Benefit: You gain combat advantage against enemies that have no creatures
-   adjacent to them other than you.
- - Level 1 Feat
- - http://iws.mx/dnd/?view=feat3518
+- Level 1
+- Benefit: You gain proficiency in a single weapon of your choice.
+- Special: You can take this feat more than once. Each time you select this
+  feat, choose another weapon.
+- http://iws.mx/dnd/?view=feat178
 
 ** Improved Initiative
- - Level 2 Feat
- - Benefit: You gain a +4 feat bonus to initiative
- - http://iws.mx/dnd/?view=feat272
+- Level 2
+- Benefit: You gain a +4 feat bonus to initiative
+- http://iws.mx/dnd/?view=feat272
 
+
+** Cunning Stalker
+- Level 4
+- Benefit: You gain combat advantage against enemies that have no creatures
+  adjacent to them other than you.
+- http://iws.mx/dnd/?view=feat3518
 
 * Proficiencies
   | Languages | Tools | Armor   | Weapons         |
@@ -376,9 +375,6 @@ causing it to howl in pain./
   | Common    |       | Cloth   | Simple          |
   | Orc       |       | Leather | Military ranged |
   |           |       | Hide    | Greatbow        |
-  |           |       |         |                 |
-  |           |       |         |                 |
-  |           |       |         |                 |
 
 
 * Items
