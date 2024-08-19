@@ -13,7 +13,7 @@
 
 | Race     | Size | Age | Gender | Height | Weight | Align.    | Deity | Adv. Co.  |   XP | Next XP | Level |
 |----------+------+-----+--------+--------+--------+-----------+-------+-----------+------+---------+-------|
-| [[http://iws.mx/dnd/?view=race36][Half-Orc]] | M    |  21 | M      | 6'     |    175 | Unaligned | Kord  | The Guild | 6300 |    7500 |     5 |
+| [[http://iws.mx/dnd/?view=race36][Half-Orc]] | M    |  21 | M      | 6'     |    175 | Unaligned | Kord  | The Guild | 7300 |    7500 |     5 |
 
 | Max HP | Current HP | Bloodied | Healing Surge | Surges/Day | Surges Used |
 |--------+------------+----------+---------------+------------+-------------|
@@ -90,37 +90,44 @@
 | Weapon/Power          | Type      | vs | Attack       | Damage   |     |
 |-----------------------+-----------+----+--------------+----------+-----|
 | [[Melee Basic Attack]]    | At-Will   | AC | 1d20 +3      | 1d8      |     |
-| [[Ranged Basic Attack]]   | At-Will   | AC | 1d20 +11     | 1d12 + 8 |     |
-| [[Twin-Strike]]           | At-Will   | AC | 2x 1d20 +11  | 1d12 + 3 |     |
-| [[Nimble Strike]]         | At-Will   | AC | 1d20 + 11    | 1d12 + 8 |     |
-| [[Disruptive Strike]]     | Encounter | AC | 1d20 +11     | 1d12 + 8 | [ ] |
-| [[Two-Fanged Strike]]     | Encounter | AC | 2x 1d20 + 11 | 1d12 + 8 | [ ] |
-| [[Sure Shot]]             | Daily     | AC | 1d20 + 11    | 3d12 + 8 | [ ] |
+| [[Ranged Basic Attack]]   | At-Will   | AC | 1d20 +12     | 1d12 + 9 |     |
+| [[Twin-Strike]]           | At-Will   | AC | 2x 1d20 +12  | 1d12 + 4 |     |
+| [[Nimble Strike]]         | At-Will   | AC | 1d20 + 12    | 1d12 + 9 |     |
+| [[Disruptive Strike]]     | Encounter | AC | 1d20 +12     | 1d12 + 9 | [ ] |
+| [[Two-Fanged Strike]]     | Encounter | AC | 2x 1d20 + 12 | 1d12 + 9 | [ ] |
+| [[Furious Assault]]       | Encounter |    |              | 1d12     | [ ] |
+| [[Sure Shot]]             | Daily     | AC | 1d20 + 12    | 3d12 + 9 | [ ] |
 | [[Spitting-Cobra Stance]] | Daily     |    |              |          | [ ] |
 | [[Begin the Hunt]]        | Daily     |    |              |          | [ ] |
+| [[Quick Weapon]]          | Daily     | AC | 1d20 +12     | 1d12 +9  | [ ] |
+| [[Serpentskin Shift]]     | Daily     |    |              |          | [ ] |
+| [[Coin of Good Luck]]     | Daily     |    |              |          | [ ] |
+
 ** Conditionals
 :PROPERTIES:
 :VISIBILITY: all
 :END:
 - [[Prime Shot]]: +1 attack if closest to enemy
-- [[Cunning Stalker]]: Combat Advantage (+2 attack) against enemies that have no creates adjacent
+- [[Cunning Stalker]]: +2 attack (CA) against enemies that have no creates adjacent
 - [[Bow Expertise]]: +1 damage if the target is not adjacent to any other creature
-- [[+1 Foe-Seeking Greatbow]]: +1d6 damage on critical, +1d10 damage on critical if CA
-- Magic Arrows: +1 to attack and damage
+- [[Gauntlets of Blood]]: +2 damage if the target is bloodied
+- [[+2 Quick Greatbow]]: +2d6 damage on critical
+- Magic Arrows: -1 to attack and damage (replaces weapon enhancement)
+- [[Coin of Good Luck]]: +1 item bonus to an attack roll, skill check, or saving throw you just made
 
 ** Attack Workspace
 | Weapon/Power        | Attack | 1/2 Level | Ability | Class | Prof | Feat | Enh | Misc |
 |---------------------+--------+-----------+---------+-------+------+------+-----+------|
 | [[Melee Basic Attack]]  |     +3 |         2 |       1 |       |      |      |     |      |
-| [[Ranged Basic Attack]] |    +11 |         2 |       5 |       |    2 |    1 |   1 |      |
-| [[Disruptive Strike]]   |    +11 |         2 |       5 |       |    2 |    1 |   1 |      |
-| [[Twin-Strike]]         |    +11 |         2 |       5 |       |    2 |    1 |   1 |      |
-| [[Nimble Strike]]       |    +11 |         2 |       5 |       |    2 |    1 |   1 |      |
-| [[Two-Fanged Strike]]   |    +11 |         2 |       5 |       |    2 |    1 |   1 |      |
-| [[Sure Shot]]           |    +11 |         2 |       5 |       |    2 |    1 |   1 |      |
+| [[Ranged Basic Attack]] |    +12 |         2 |       5 |       |    2 |    1 |   2 |      |
+| [[Disruptive Strike]]   |    +12 |         2 |       5 |       |    2 |    1 |   2 |      |
+| [[Twin-Strike]]         |    +12 |         2 |       5 |       |    2 |    1 |   2 |      |
+| [[Nimble Strike]]       |    +12 |         2 |       5 |       |    2 |    1 |   2 |      |
+| [[Two-Fanged Strike]]   |    +12 |         2 |       5 |       |    2 |    1 |   2 |      |
+| [[Sure Shot]]           |    +12 |         2 |       5 |       |    2 |    1 |   2 |      |
 #+TBLFM: $2='(concat "+" (int-to-string (-sum '($3 $4 $5 $6 $7 $8 $9))));N
 *** Bonuses
-- [[+1 Foe-Seeking Greatbow]]: +1 enhancement
+- [[+2 Quick Greatbow]]: +2 enhancement
 - [[Bow Expertise]]: +1 feat
 - [[Weapon Proficiency: Greatbow]]: +2 proficiency
 
@@ -128,15 +135,15 @@
 | Weapon/Power        | Bonus | Ability | Feat | Enh | Misc | Misc |
 |---------------------+-------+---------+------+-----+------+------|
 | [[Melee Basic Attack]]  |    +0 |       0 |    0 |   0 |    0 |    0 |
-| [[Ranged Basic Attack]] |    +8 |       5 |    0 |   1 |    2 |    0 |
-| [[Disruptive Strike]]   |    +8 |       5 |    0 |   1 |    2 |    0 |
-| [[Twin-Strike]]         |    +3 |         |      |   1 |    2 |      |
-| [[Nimble Strike]]       |    +8 |       5 |      |   1 |    2 |      |
-| [[Two-Fanged Strike]]   |    +8 |       5 |      |   1 |    2 |      |
-| [[Sure Shot]]           |    +8 |       5 |      |   1 |    2 |      |
+| [[Ranged Basic Attack]] |    +9 |       5 |    0 |   2 |    2 |    0 |
+| [[Disruptive Strike]]   |    +9 |       5 |    0 |   2 |    2 |    0 |
+| [[Twin-Strike]]         |    +4 |         |      |   2 |    2 |      |
+| [[Nimble Strike]]       |    +9 |       5 |      |   2 |    2 |      |
+| [[Two-Fanged Strike]]   |    +9 |       5 |      |   2 |    2 |      |
+| [[Sure Shot]]           |    +9 |       5 |      |   2 |    2 |      |
 #+TBLFM: $2='(concat "+" (int-to-string (-sum '($3 $4 $5 $6))));N
 *** Bonsues
-- [[+1 Foe-Seeking Greatbow]]: +1 enhancement
+- [[+2 Quick Greatbow]]: +2 enhancement
 - [[Bracers of Archery]]: +2 item bonus to damage
 
 
@@ -174,7 +181,7 @@
    :PROPERTIES:
    :VISIBILITY: children
    :END:
-*** Melee Basic Attack
+*** Melee Basic Attack                       :atwill:standard:melee:
     :PROPERTIES:
     :POWERTYPE: At-Will
     :ATTACK: STR vs AC
@@ -196,7 +203,7 @@
  - A number of other powers can be used in place of the melee basic attack
    portion of a charge.
 
-*** Ranged Basic Attack
+*** Ranged Basic Attack                     :atwill:standard:ranged:
     :PROPERTIES:
     :POWERTYPE: At-Will
     :ATTACK: DEX vs AC
@@ -209,7 +216,7 @@
  - Hit: 1[W] + Dexterity
    - Increase damage to 2[W] + Dexterity modifier at 21st level.
  - Special: Heavy thrown weapons use Strength instead of Dexterity for both attack and damage rolls for ranged basic attacks.
-*** Twin Strike
+*** Twin Strike                       :atwill:standard:melee:ranged:
     :PROPERTIES:
     :POWERTYPE: At-Will
     :ATTACK: 2x Dex vs AC
@@ -226,7 +233,7 @@
  - Hit: 1[W] damage per attack.
    - Increase damage to 2[W] at 21st level.
  - http://iws.mx/dnd/?view=power87
-*** Nimble Strike
+*** Nimble Strike                                  :atwill:standard:
     :PROPERTIES:
     :POWERTYPE: At-Will
     :ATTACK: Dex vs AC
@@ -244,7 +251,7 @@ and then withdraw to a more advantageous position./
  - Hit 1[W] + Dexterity
    - Increase damage to 2[W] + Dex at 21st level.
  - http://iws.mx/dnd/?view=power919
-*** Two-Fanged Strike
+*** Two-Fanged Strike              :encounter:standard:melee:ranged:
     :PROPERTIES:
     :LEVEL: Ranger Attack 1
     :POWERTYPE: Encounter
@@ -262,7 +269,7 @@ causing it to howl in pain./
  - Hit: 1[W] + Strength (melee) or 1[W] + Dexterity (ranged) per attack.
  - Hit: If both attacks hit, you deal extra damage equal to your Wisdom modifier
  - http://iws.mx/dnd/?view=power2209
-*** Sure Shot
+*** Sure Shot                                :daily:standard:ranged:
     :PROPERTIES:
     :LEVEL: Ranger Attack 1
     :POWERTYPE: Daily
@@ -278,8 +285,22 @@ causing it to howl in pain./
  - Hit: 3[W] + Dexterity
  - Special: You can reroll the attack and damage roll, but must use the second result.
  - http://iws.mx/dnd/?view=power883
+*** Disruptive Strike              :encounter:imm_intr:melee:ranged:
+:PROPERTIES:
+:LEVEL: Ranger Attack 3
+:POWERTYPE: Daily
+:ATTACK: Dex vs AC
+:HIT: 1[W] + Dex modifier damage. The target takes a penalty to its attack roll for the triggering attack equal to 3 + your Wisdom modifier.
+:END:
+- Trigger: You or an ally is attacked by a creature.
+- Encounter | Martial, Weapon
+- Immediate Interrupt | Melee or Ranged
+- Target: The attacking creature
+- Attack: Dexterity vs AC
+- Hit: 1[W] + Dex modifier damage. The target takes a penalty to its attack roll for the triggering attack equal to 3 + your Wisdom modifier.
+- http://iws.mx/dnd/?view=power1416
 
-*** Spitting-Cobra Stance
+*** Spitting-Cobra Stance                       :daily:minor:stance:
     :PROPERTIES:
     :POWERTYPE: Daily
     :END:
@@ -291,7 +312,7 @@ causing it to howl in pain./
    immediate reaction against any enemy within 5 squares of you that moves
    closer to you.
  - http://iws.mx/dnd/?view=power4394
-*** Foe-Seeking Bow
+*** Foe-Seeking Bow                                     :daily:free:
     :PROPERTIES:
     :POWERTYPE: Daily
     :END:
@@ -300,20 +321,25 @@ causing it to howl in pain./
  - Effect: The enemy loses concealment or cover and grants combat advantage to you for the triggering attack.
  - http://iws.mx/dnd/?view=weapon1337
 
-*** Bracers of Archery
+*** Bracers of Archery                                 :daily:minor:
     :PROPERTIES:
     :POWERTYPE: Daily
     :END:
  - Daily (Minor Action)
  - Ignore cover on your next attack this turn when using a bow or a crossbow.
  - http://iws.mx/dnd/?view=item783
+*** Quick Weapon                                        :daily:free:
+- Daily
+- Trigger: When you hit a target with this weapon.
+- Effect: Make a basic attack with this weapon against a target of your choice
+- http://iws.mx/dnd/?view=weapon2116
 
 
 ** Utility
    :PROPERTIES:
    :VISIBILITY: children
    :END:
-*** Hunter's Quarry
+*** Hunter's Quarry                                   :atwill:minor:
     :PROPERTIES:
     :POWERTYPE: At-Will
     :END:
@@ -336,7 +362,7 @@ causing it to howl in pain./
     | 11th - 20th |         +2d6 |
     | 21st - 30th |         +3d6 |
   - http://iws.mx/dnd/?view=class5
-*** Furious Assault
+*** Furious Assault                                 :encounter:free:
     :PROPERTIES:
     :POWERTYPE: Encounter
     :END:
@@ -347,7 +373,7 @@ causing it to howl in pain./
  - Effect: The attack deals 1[W] extra damage if it's a weapon attack or 1d8
    extra damage if it is not a weapon attack.
  - http://iws.mx/dnd/?view=race36
-*** Begin the Hunt
+*** Begin the Hunt                                           :daily:
     :PROPERTIES:
     :POWERTYPE: Daily
     :END:
@@ -361,14 +387,14 @@ causing it to howl in pain./
    quarry.
  - http://iws.mx/dnd/?view=power10605
 
-*** Serpentskin Armor
+*** Serpentskin Shift                                   :daily:move:
     :PROPERTIES:
     :POWERTYPE: Daily
     :END:
  - Daily (Move Action)
  - Shift 3 squares. This shift can move through enemies' spaces, though you must end your move in a legal space.
  - http://iws.mx/dnd/?view=weapon2434
-*** Acrobat Boots
+*** Acrobat Boots                                     :atwill:minor:
 :PROPERTIES:
 :POWERTYPE: At-Will
 :END:
@@ -475,18 +501,21 @@ causing it to howl in pain./
   | Name                      | Quantity | Cost (gp) | Weight (lbs) | Total Weight (lbs) | Total Cost (gp) |
   |---------------------------+----------+-----------+--------------+--------------------+-----------------|
   | +1 Foe-Seeking Greatbow   |        1 |       680 |            5 |                  5 |             680 |
+  | +2 Quick Greatbow         |        1 |      3400 |            5 |                  5 |            3400 |
   | +1 Serpentskin Hide Armor |        1 |       680 |           25 |                 25 |             680 |
   | Bracers of Archery        |        1 |      1800 |            1 |                  1 |            1800 |
   | +1 Cloak of Distortion    |        1 |       840 |            5 |                  5 |             840 |
   | Acrobatic Boots           |        1 |       520 |            1 |                  1 |             520 |
-  | +1 Onslaught Arrow        |        0 |        25 |           .1 |                 0. |               0 |
-  | +1 Firestorm Arrow        |        5 |        30 |           .1 |                0.5 |             150 |
-  | +1 Lightning Arrow        |        2 |        30 |           .1 |                0.2 |              60 |
-  | +1 Freezing Arrow         |        3 |        30 |           .1 |                0.3 |              90 |
+  | Gauntlets of Blood        |        1 |       840 |            1 |                  1 |             840 |
+  | +1 Onslaught Arrow        |        6 |        25 |           .1 |                0.6 |             150 |
+  | +1 Firestorm Arrow        |        6 |        30 |           .1 |                0.6 |             180 |
+  | +1 Lightning Arrow        |        6 |        30 |           .1 |                0.6 |             180 |
+  | +1 Freezing Arrow         |        6 |        30 |           .1 |                0.6 |             180 |
   | Arrows                    |       60 |       .05 |           .1 |                 6. |              3. |
-  | Blood Apricot             |        0 |        50 |           .1 |                 0. |               0 |
+  | Blood Apricot             |        2 |        50 |           .1 |                0.2 |             100 |
+  | Coin of Good Luck         |        2 |        50 |           .1 |                0.2 |             100 |
   |---------------------------+----------+-----------+--------------+--------------------+-----------------|
-  | Carry Capacity            |      100 |           |              |                44. |           4823. |
+  | Carry Capacity            |      120 |           |              |               51.8 |           9653. |
   #+TBLFM: $5=($2 * $4)
   #+TBLFM: $6=($2 * $3)
   #+TBLFM: @>$5=vsum(@<<$5..@>>$5)
@@ -496,18 +525,25 @@ causing it to howl in pain./
     :PROPERTIES:
     :VISIBILITY: children
     :END:
-**** +1 Foe-Seeking Greatbow
+**** +1 Foe-Seeking Greatbow                   :weapon:l3:uncommon:
 /You feel the bow's hate for cowardly and furtive opponents./
 - +1 enhancement bonus to attack and damage rolls
 - Critical: 1d6 damage per plus, or +1d10 damage per plus against targets granting combat advantage
 - Value: 680g
 - http://iws.mx/dnd/?view=weapon1337
-**** +1 Serpentskin Armor
+**** +2 Quick Greatbow                           :weapon:l8:common:
+/You can use this weapon to attack with preternatural speed./
+- Power | Daily Use this power when you hit a target with this weapon. Make a basic attack with this weapon against a target of your choice.
+- Critical: +1d6 damage per plus
+- Value: 3400gp
+- http://iws.mx/dnd/?view=weapon2116
+
+**** +1 Serpentskin Armor                       :armor:l3:uncommon:
 /Made from the discarded scales of a giant snake, this armor still carries the serpent's resistance to poison./
 - +1 enhancement bonus AC
 - Value: 680 gp
-- http://iws.mx/dnd/?view=item2434
-**** +1 Cloak of Distortion
+- http://iws.mx/dnd/?view=armor2434
+**** +1 Cloak of Distortion                      :neck:l3:uncommon:
 /This cloak roils about you like the rippling air of a scorching desert./
 - Enhancement Bonus: Fortitude, Reflex, and Will
 - Property: You gain an item bonus to all defenses against ranged attacks from
@@ -515,68 +551,183 @@ causing it to howl in pain./
 - Value: 840 gp
 - http://iws.mx/dnd/?view=item908
 
-**** Bracers of Archery
+**** Bracers of Archery                          :arms:l6:uncommon:
 /These leather armbands enhance your potency with bows and crossbows./
-- Arms slot
 - Gain a +2 item bonus to damage rolls when attacking with a bow or crossbow.
-- Level 16: Gain a +4 item bonus to damage
-- Level 26: Gain a +6 item bonus to damage
 - Value: 1,800 gp
 - http://iws.mx/dnd/?view=item783
-**** Acrobat Boots
+**** Gauntlets of Blood                         :hands:l4:uncommon:
+/The blood of wounded foes streams along the joints of these rusty-looking steel gauntlets./
+- Level 4: 840gp
+- Gain a +2 bonus to damage rolls against bloodied targets
+- http://iws.mx/dnd/?view=item1379
+**** Acrobat Boots                               :foot:l2:uncommon:
 /These enchanted boots enhance your acrobatic skills./
-- Feet slot
 - Property: You gain a +1 item bonus to Acrobatics checks
 - Power | At-Will (Minor Action) - You stand up from prone.
 - http://iws.mx/dnd/?view=item448
-**** +1 Onslaught Arrow
+**** +1 Onslaught Arrow                                :consumable:
 /This black arrow trails a bright pennant, flagging its target/
 - Enhancement Bonus: attack rolls and damage rolls
 - Value: 25 gp
-- http://iws.mx/dnd/?view=item2434
-**** +1 Firestorm Arrow
+- http://iws.mx/dnd/?view=weapon2434
+**** +1 Firestorm Arrow                                :consumable:
 /The charred wood of this arrow seems to shimmer with heat./
 - Enhancement Bonus: attack rolls and damage rolls
 - Property: When you hit an enemy using this ammunition, that enemy and each creature adjacent to it take 1d6 extra fire damage per plus
 - Value: 30 gp
-- http://iws.mx/dnd/?view=item1292
+- http://iws.mx/dnd/?view=weapon1292
 
-**** +1 Lightning Arrow
+**** +1 Lightning Arrow                                :consumable:
 /This arrow's blue and white streaks thrum with energy./
 - Enhancement Bonus: attack rolls and damage rolls
 - Property: When you hit an enemy using this ammunition, that enemy and each creature adjacent to it take 1d6 extra lightning damage per plus
 - Value: 30 gp
-- http://iws.mx/dnd/?view=item1292
+- http://iws.mx/dnd/?view=weapon1292
 
-**** +1 Freezing Arrow
+**** +1 Freezing Arrow                                 :consumable:
 /Ths shaft of this arrow is shaved from unmelting ice./
 - Enhancement Bonus: attack rolls and damage rolls
 - Property: When you hit an enemy using this ammunition, that enemy and each
   creature adjacent to it take 1d6 extra cold damage per plus and is slowed
   until the end of its next turn.
 - Value: 30 gp
-- http://iws.mx/dnd/?view=item1357
-**** Blood Apricot
+- http://iws.mx/dnd/?view=weapon1357
+**** Blood Apricot                                     :consumable:
 /A rich orange-red, this small fruit turns much darker if given a taste of blood./
 - Power | Daily Utility (Standard Action)
   - Effect: You lose a healing surge, bleeding onto the apricot, which absorbs
     your blood and the healing surge.
 - Power (Healing) | Consumable Utility (Minor Action)
   - Effect: You eat the apricot. Unless the apricot has absorbed a healing surge in the past 12 hours, you lose a healing surge, and when you do, you regain only 2d8 hit points. If the apricot has absorbed a healing surge in the past 12 hours, you can instead spend a healing surge and regain an additional 2d8 hit points.
+- http://iws.mx/dnd/?view=item3576
+**** Coin of Good Luck                                 :consumable:
+/This shiny gold coin can mean the difference between life and death, brilliant success and utter failure./
+- Property: The coin always lands tails up when flipped.
+- Utility Power | Consumable (Free Action)
+  - Effect: Gain a +1 item bonus on an attack roll, skill check, or saving throw you just made
+  - Special: You cannot use the utility power of another coin of good luck until after you've taken an extended rest.
+  - Cost: 50g
+  - https://iws.mx/dnd/?view=item3468
+
 *** Items I want
-**** [[http://iws.mx/dnd/?view=item1379][Gauntlets of Blood]]
-**** [[http://iws.mx/dnd/?view=item843][Caustic Gauntlets]]
-**** [[http://iws.mx/dnd/?view=item883][Circlet of indomitability]]
-**** [[http://iws.mx/dnd/?view=item1156][Eagle Eye Goggles]]
-**** [[http://iws.mx/dnd/?view=item1537][Helm of Able Defense]]
-**** [[http://iws.mx/dnd/?view=item1291][Fireheart Tattoo]]
-**** [[http://iws.mx/dnd/?view=item583][Backlash Tattoo]]
+**** Caustic Gauntlets                          :hands:l6:uncommon:
+- Level 6: 1,800gp
+- Power (Acid) | Daily (Free Action)
+Use this power when you make a ranged attack. Change the damage type dealty by
+that attack to acid. Hit or miss, creatures adjaced to the target of the attack
+take 1d6 acid damage. Also, you deal an extra 1 acid damage on successful ranged
+attacks until the end of the encounter.
 
+If you reached at least one milestone today, instead deal an extra 2 acid damage
+on successful ranged attacks with the acid keyword until the end of the
+encounter
+- http://iws.mx/dnd/?view=item843
+**** Sure Shot Gloves                             :hands:l9:common:
+/These slick gloves guide your shots unerringly./
+- https://iws.mx/dnd/?view=item2732
+- level 9, Common
+- Property: Your ranged weapon attacks ignore cover (but not superior cover).
+**** Gloves of Missile Avoidance               :hands:l11:uncommon:
+/These black leather gloves are limned with an aura of force that shatters or deflects projectiles aimed at you./
+- Level 11, Uncommon
+- Value: 9.000gp
+- Power | Daily (Immediate Interrupt)
+  - Trigger: A ranged attack that targets AC or Reflex hits you.
+  - Effect: You gain a +4 power bonus to AC and Reflex against the triggering attack
+- https://iws.mx/dnd/?view=item1434
+**** Gloves of Missile Deflection              :hands:l13:uncommon:
+/Made of muslin covered with small shield-shaped buttons, these gloves help turn away projectiles./
+- Level 13
+- Value 17,000 gp
+- Property: Gain a +1 item bonus to AC against ranged weapon attacks.
+- Power | Daily (Immediate Interrupt) Use this power when you are hit by a
+  ranged weapon attack. Gain resist 15 against that attack.
+- https://iws.mx/dnd/?view=item1435
+**** Gloves of Missile Snaring                 :hands:l15:uncommon:
+/Your gloved hand moves in a blur, plucking your foe's arrow out of midair before you hurl it back as a deadly missile./
+- Level 15
+- Value 25,000gp
+- Utilitye Power | Daily (Immediate Interrupt)
+  - Trigger: An enemy hits you with a ranged weapon attack.
+  - Effect: You gain a +4 power bonus to all defenses against the attack. If
+    this bonus causes the attack to miss you, the enemy is hit by the attack
+    instead.
+- https://iws.mx/dnd/?view=item3222
+**** Eagle Eye Goggles                           :head:l2:uncommon:
+/Though these leather goggles have dark eye pieces, they sharpen your sight when
+making ranged attacks./
+- Level 2, 520gp
+- Property: Gain a +1 item bonus to ranged basic attack rolls
+- http://iws.mx/dnd/?view=item1156
+**** Circlet of indomitability                     :head:l8:common:
+/This simple golden circlet fortifies your mind./
+- Level 8: 3,400gp
+- Gain a +1 bonus to Will defense
+- http://iws.mx/dnd/?view=item883
+**** Helm of Able Defense                       :head:l14:uncommon:
+- Level 14 : Uncommon
+- Value: 21,000
+- Properties
+  - You gain a +1 item bonus to Will.
+  - At the start of each encounter, you gain a +2 bonus to all defenses until
+    you take damage for the first time after the end of your first turn (not
+    including a surprise round).
+- http://iws.mx/dnd/?view=item1537
+**** Helm of Battle                                :head:l9:common:
+- Property: You and each ally within 5 squares of you gain a +1 item bonus to initiative checks
+- Level 9: 4,200gp
+- https://iws.mx/dnd/?view=item1538
+**** Mask of Slitering                          :head:l11:uncommon:
+/This serpentine mask allows you to slink out of harm's way and cause another to suffer in your stead./
+- Level 11
+- Value: 9,000 gp
+- Power | Daily (Immediate Interrupt): Use this power when an enemy makes a melee or ranged attack against you. Gain a +2 bonus to AC and Reflext defense. If the attack misses, then the attacker rerolls the attack against a creature adjacent to you of your choice.
+- https://iws.mx/dnd/?view=item1812
+**** Helm of the Eagle                          :head:l12:uncommon:
+/This helm, carved to resemble an eagle, enhances your perception and can be activated to improve a ranged attack./
+- https://iws.mx/dnd/?view=item1547
+- Level 12, Uncommon
+- Value 13,000gp
+- Property: Gain a +3 item bonus to Perception checks.
+- Power | Daily (Minor Action): Gain a +2 power bonus to your next ranged attack roll this turn.
 
+**** Fireheart Tattoo                          :tattoo:l4:uncommon:
+/As you call upon its power, flames flare and twist around the heart at the center of this tattoo./
+- Value: 840gp
+- Wondrous Item
+- Property: When you spend an action point to take an extra action, you gain 5
+  temporary hit points
+- http://iws.mx/dnd/?view=item1291
+**** Backlash Tattoo                           :tattoo:l9:uncommon:
+/Boars, sharks, and other creatures that enter a frenzy when wounded are used for this tattoo./
+- Wondrous Item: 4,200 gp
+- Property: The first time you're bloodied during an encounter, you can make a
+  basic attack as an immediate reaction.
+- http://iws.mx/dnd/?view=item583
+**** Dice of Auspicious Fortune                 :wondrous:l11:rare:
+/The faces of these wooden dice show symbols the halflings associate with good luck./
+- Wondrous Item: 9,000gp
+- Power | Daily (Standard Action): Roll 3 d20s. The results are "stored" in
+  these dice until the end of your next extended rest or until you use this
+  power again. Using this power removes any results previously stored in the
+  dice.
+- Power | Encounter (No Action) When you make an attack, instead of making an
+  attack roll, you can use one of the results stored in the dice. Using the
+  result removes the store result from the dice.
+- https://iws.mx/dnd/?view=item1086
+
+**** Stone of the Wind                          :wondrous:l12:rare:
+/This pale blue zircon is scribed with the arcane symbol for “air.”/
+- Wondrous Item: 13,000gp
+- Power | Daily (Free Action)
+  - Trigger: You miss an enemy with a ranged weapon attack.
+  - Effect: Reroll the attack roll.
+- https://iws.mx/dnd/?view=item2683
 ** Money
    | Copper | Silver | Electrum | Gold | Platinum | Total (Gold) |
    |--------+--------+----------+------+----------+--------------|
-   |        |        |          |  730 |           |          800 |
+   |        |        |          |  100 |          |          100 |
    #+TBLFM: $6=(($1 / 100) + ($2 / 10) + ($3 / 2) + $4 + ($5 * 10));N
 
 ** Trades
@@ -590,3 +741,13 @@ causing it to howl in pain./
  - Value: 1,800 gp
  - http://iws.mx/dnd/?view=item1402
 *** Buy Acrobat Boots: 520g -> 730g
+*** Encounter rewards:
+**** 800g -> 1530g
+**** +2 Quick Greatbow
+*** Buy coin of good luck x2: 1530 -> 1330g
+*** Buy arrows: 390 -> 940g
+**** Onslaught 6 x 25g: 125
+**** Firestorm Arrows 1 x 30g
+**** Lightning Arrow 4 x 30g
+**** Freezing Arrow 3 x 30g
+*** Buy Gauntlets of Blood: 940g -> 100g
