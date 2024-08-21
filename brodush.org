@@ -172,7 +172,9 @@
 | +12 | Stealth       | Dex   |     1 |   5 |       2 |       |      |      |
 |  +1 | Streetwise    | Cha   |       |  -1 |       2 |       |      |      |
 |  +7 | Theivery      | Dex   |       |   5 |       2 |       |      |      |
+#+TBLFM: $6='(org-entry-get nil "HALFLEVEL" t)
 #+TBLFM: $1='(concat "+" (int-to-string (+ $5 $6 $7 $8 $9 (if (eql $4 1) 5 0))));N
+** Bonuses
 - Half-Orc Skill Bonus: +2 Endurance, +2 Intimidate
 - Acrobat Boots: +1 Acrobatics
 
