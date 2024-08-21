@@ -1,3 +1,12 @@
+:PROPERTIES:
+:NAME: Brodush
+:RACE: Half-Orc
+:CLASS: Ranger
+:XP: 7300
+:NEXTXP: 7500
+:LEVEL: 5
+:HALFLEVEL: 2
+:END:
 #+title: Brodush
 
 * Name: Brodush
@@ -10,21 +19,25 @@
 |--------+--------------+--------------|
 | [[http://iws.mx/dnd/?view=class5][Ranger]] |              |              |
 
-| Race     | Size | Age | Gender | Height | Weight | Align.    | Deity | Adv. Co.  |   XP | Next XP | Level |
-|----------+------+-----+--------+--------+--------+-----------+-------+-----------+------+---------+-------|
-| [[http://iws.mx/dnd/?view=race36][Half-Orc]] | M    |  21 | M      | 6'     |    175 | Unaligned | Kord  | The Guild | 7300 |    7500 |     5 |
+| Race     | Size | Age | Gender | Height | Weight |
+|----------+------+-----+--------+--------+--------|
+| [[http://iws.mx/dnd/?view=race36][Half-Orc]] | M    |  21 | M      | 6'     |    175 |
 
-| Max HP | Current HP | Bloodied | Healing Surge | Surges/Day | Surges Used |
-|--------+------------+----------+---------------+------------+-------------|
-|     48 |         48 |       24 |            12 |          9 |             |
+|   XP | Next XP | Level |
+|------+---------+-------|
+| 7300 |    7500 |     5 |
+#+TBLFM: $1='(org-entry-get nil "XP" t)
+#+TBLFM: $2='(org-entry-get nil "NEXTXP" t)
+#+TBLFM: $3='(org-entry-get nil "LEVEL" t)
 
- - Second Wind [ ]
- - Death ST Failed [ ] [ ] [ ]
- - Action Points:
+| Align.    | Deity | Adv. Co.  |
+|-----------+-------+-----------|
+| Unaligned | Kord  | The Guild |
 
-| Initiative | Dex | 1/2 Level | Misc | Temp |
-|------------+-----+-----------+------+------|
-|         11 |   5 |         2 |    4 |    0 |
+| Initiative | Dex | 1/2L | Misc | Temp |
+|------------+-----+------+------+------|
+|         11 |   5 |    2 |    4 |    0 |
+#+TBLFM: $3='(org-entry-get nil "HALFLEVEL" t)
 #+TBLFM: $1=($2 + $3 + $4 + $5)
 
 | Speed | Base | Armor | Item | Temp |
@@ -32,28 +45,39 @@
 |     6 |    6 |     0 |    0 |    0 |
 #+TBLFM: $1=($2 + $3 + $4 + $5)
 
-
 * Abilities
-| Ability | Score | Mod | + 1/2 Lvl |
-|---------+-------+-----+-----------|
-| STR     |    12 |   1 |         3 |
-| CON     |    16 |   3 |         5 |
-| DEX     |    20 |   5 |         7 |
-| INT     |    10 |   0 |         2 |
-| WIS     |    14 |   2 |         4 |
-| CHA     |     8 |  -1 |         1 |
+| Ability | Score | Mod | +1/2L |
+|---------+-------+-----+-------|
+| STR     |    12 |   1 |     3 |
+| CON     |    16 |   3 |     5 |
+| DEX     |    20 |   5 |     7 |
+| INT     |    10 |   0 |     2 |
+| WIS     |    14 |   2 |     4 |
+| CHA     |     8 |  -1 |     1 |
 #+TBLFM: $3='(int-to-string (floor (/ (- $2 10) 2)));N
-#+TBLFM: $4=($3 + 2)
+#+TBLFM: $4='(+ $3 (string-to-number (org-entry-get nil "HALFLEVEL" t)));N
 
+
+* Health
+** Hit Points (HP): 48/48
+** Bloodied: 24
+** Healing Surge: 12
+** Surges: 9/9
+** [ ] Second Wind
+** [ ] [ ] [ ] Death ST Failed
+** Action Points:
 
 * Defense
-| Total |      | 10 + 1/2 lvl | Armor | Ability | Class | Feat | Enh. | Misc | Temp |
-|-------+------+--------------+-------+---------+-------+------+------+------+------|
-|    21 | AC   |           12 |     3 |       5 |       |      |    1 |      |      |
-|    17 | FORT |           12 |       |       3 |     1 |      |    1 |      |      |
-|    19 | REF  |           12 |       |       5 |     1 |      |    1 |      |      |
-|    15 | WILL |           12 |       |       2 |       |      |    1 |      |      |
-#+TBLFM: $1=($3 + + $4 + $5 + $6 + $7 + $8 + $9 + $10)
+| Total |      | 10 + | Arm. | Abil. | Class | Feat | Enh. | Misc | Temp |
+|       |      | 1/2L |      |       |       |      |      |      |      |
+|-------+------+------+------+-------+-------+------+------+------+------|
+|    21 | AC   |   12 |    3 |     5 |       |      |    1 |      |      |
+|    17 | FORT |   12 |      |     3 |     1 |      |    1 |      |      |
+|    19 | REF  |   12 |      |     5 |     1 |      |    1 |      |      |
+|    15 | WILL |   12 |      |     2 |       |      |    1 |      |      |
+#+TBLFM: $3='(+ 10 (string-to-number (org-entry-get nil "HALFLEVEL" t)))
+#+TBLFM: $1='(+ $3 $4 $5 $6 $7 $8 $9 $10 );N
+
 ** Bonuses
 - Ranger: +1 Fort, +1 Reflex
 - [[+1 Cloak of Distortion]]: +1 enhancement bonus to Fort, Ref, Will
@@ -66,11 +90,9 @@
 ** Conditionals
 - [[Defensive Mobility]]: +2 AC against opportunity attacks
 - [[Bow Expertise]]: +1 to all defenses from a ranged attack more than 5 squares
-- [[Ghoststride Boots]]: +1 item bonus to AC while running
 
 
 * Quick Look Up
-** Summary
 | Weapon/Power          | Type      | vs | Attack       | Damage   |     |
 |-----------------------+-----------+----+--------------+----------+-----|
 | [[Melee Basic Attack]]    | At-Will   | AC | 1d20 +3      | 1d8      |     |
@@ -97,16 +119,17 @@
 - [[Coin of Good Luck]]: +1 item bonus to an attack roll, skill check, or saving throw you just made
 
 ** Attack Workspace
-| Weapon/Power        | Attack | 1/2 Level | Ability | Class | Prof | Feat | Enh | Misc |
-|---------------------+--------+-----------+---------+-------+------+------+-----+------|
-| [[Melee Basic Attack]]  |     +3 |         2 |       1 |       |      |      |     |      |
-| [[Ranged Basic Attack]] |    +12 |         2 |       5 |       |    2 |    1 |   2 |      |
-| [[Disruptive Strike]]   |    +12 |         2 |       5 |       |    2 |    1 |   2 |      |
-| [[Twin-Strike]]         |    +12 |         2 |       5 |       |    2 |    1 |   2 |      |
-| [[Nimble Strike]]       |    +12 |         2 |       5 |       |    2 |    1 |   2 |      |
-| [[Two-Fanged Strike]]   |    +12 |         2 |       5 |       |    2 |    1 |   2 |      |
-| [[Sure Shot]]           |    +12 |         2 |       5 |       |    2 |    1 |   2 |      |
-#+TBLFM: $2='(concat "+" (int-to-string (-sum '($3 $4 $5 $6 $7 $8 $9))));N
+| Weapon/Power        | Attack | 1/2L | Ability | Class | Prof | Feat | Enh | Misc |
+|---------------------+--------+------+---------+-------+------+------+-----+------|
+| [[Melee Basic Attack]]  |     +3 |    2 |       1 |       |      |      |     |      |
+| [[Ranged Basic Attack]] |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
+| [[Disruptive Strike]]   |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
+| [[Twin-Strike]]         |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
+| [[Nimble Strike]]       |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
+| [[Two-Fanged Strike]]   |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
+| [[Sure Shot]]           |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
+#+TBLFM: $3='(org-entry-get nil "HALFLEVEL" t)
+#+TBLFM: $2='(concat "+" (int-to-string (+ $3 $4 $5 $6 $7 $8 $9)));N
 *** Bonuses
 - [[+2 Quick Greatbow]]: +2 enhancement
 - [[Bow Expertise]]: +1 feat
@@ -378,8 +401,7 @@ causing it to howl in pain./
 
 
 * Items
-** Equipment
-*** List with quantity, cost, and weight
+** List with quantity, cost, and weight
   | Name                      | Quantity | Cost (gp) | Weight (lbs) | Total Weight (lbs) | Total Cost (gp) |
   |---------------------------+----------+-----------+--------------+--------------------+-----------------|
   | +1 Foe-Seeking Greatbow   |        1 |       680 |            5 |                  5 |             680 |
@@ -403,7 +425,7 @@ causing it to howl in pain./
   #+TBLFM: @>$5=vsum(@<<$5..@>>$5)
   #+TBLFM: @>$6=vsum(@<<$6..@>>$6)
 
-*** Magic Items
+** Magic Items
 **** +1 Foe-Seeking Greatbow                   :weapon:l3:uncommon:
 /You feel the bow's hate for cowardly and furtive opponents./
 - +1 enhancement bonus to attack and damage rolls
