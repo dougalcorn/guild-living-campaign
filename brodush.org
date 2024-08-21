@@ -78,78 +78,76 @@
 |    15 | WILL |   12 |      |     2 |       |      |    1 |      |      |
 #+TBLFM: $3='(+ 10 (string-to-number (org-entry-get nil "HALFLEVEL" t)))
 #+TBLFM: $1='(+ $3 $4 $5 $6 $7 $8 $9 $10 );N
-
 ** Bonuses
 - Ranger: +1 Fort, +1 Reflex
-- [[+1 Cloak of Distortion]]: +1 enhancement bonus to Fort, Ref, Will
-- [[+1 Serpentskin Armor]]: +1 enhancement bonus to AC
+- +1 Cloak of Distortion: +1 enhancement bonus to Fort, Ref, Will
+- +1 Serpentskin Armor: +1 enhancement bonus to AC
 
 | Armor Bonus | Shield Bonus | Check Penalty | Speed Penalty | Heavy? |
 |-------------+--------------+---------------+---------------+--------|
 |           3 |            0 |             0 |             0 | [ ]    |
 
 ** Conditionals
-- [[Defensive Mobility]]: +2 AC against opportunity attacks
-- [[Bow Expertise]]: +1 to all defenses from a ranged attack more than 5 squares
+- Defensive Mobility: +2 AC against opportunity attacks
+- Bow Expertise: +1 to all defenses from a ranged attack more than 5 squares
 
 
 * Quick Look Up
 | Weapon/Power          | Type      | vs | Attack       | Damage   |     |
 |-----------------------+-----------+----+--------------+----------+-----|
-| [[Melee Basic Attack]]    | At-Will   | AC | 1d20 +3      | 1d8      |     |
-| [[Ranged Basic Attack]]   | At-Will   | AC | 1d20 +12     | 1d12 + 9 |     |
-| [[Twin-Strike]]           | At-Will   | AC | 2x 1d20 +12  | 1d12 + 4 |     |
-| [[Nimble Strike]]         | At-Will   | AC | 1d20 + 12    | 1d12 + 9 |     |
-| [[Disruptive Strike]]     | Encounter | AC | 1d20 +12     | 1d12 + 9 | [ ] |
-| [[Two-Fanged Strike]]     | Encounter | AC | 2x 1d20 + 12 | 1d12 + 9 | [ ] |
-| [[Furious Assault]]       | Encounter |    |              | 1d12     | [ ] |
-| [[Sure Shot]]             | Daily     | AC | 1d20 + 12    | 3d12 + 9 | [ ] |
-| [[Spitting-Cobra Stance]] | Daily     |    |              |          | [ ] |
-| [[Begin the Hunt]]        | Daily     |    |              |          | [ ] |
-| [[Quick Weapon]]          | Daily     | AC | 1d20 +12     | 1d12 +9  | [ ] |
-| [[Serpentskin Shift]]     | Daily     |    |              |          | [ ] |
-| [[Coin of Good Luck]]     | Daily     |    |              |          | [ ] |
-
+| Melee Basic Attack    | At-Will   | AC | 1d20 +3      | 1d8      |     |
+| Ranged Basic Attack   | At-Will   | AC | 1d20 +12     | 1d12 + 9 |     |
+| Twin-Strike           | At-Will   | AC | 2x 1d20 +12  | 1d12 + 4 |     |
+| Nimble Strike         | At-Will   | AC | 1d20 + 12    | 1d12 + 9 |     |
+| Disruptive Strike     | Encounter | AC | 1d20 +12     | 1d12 + 9 | [ ] |
+| Two-Fanged Strike     | Encounter | AC | 2x 1d20 + 12 | 1d12 + 9 | [ ] |
+| Furious Assault       | Encounter |    |              | 1d12     | [ ] |
+| Sure Shot             | Daily     | AC | 1d20 + 12    | 3d12 + 9 | [ ] |
+| Spitting-Cobra Stance | Daily     |    |              |          | [ ] |
+| Begin the Hunt        | Daily     |    |              |          | [ ] |
+| Quick Weapon          | Daily     | AC | 1d20 +12     | 1d12 +9  | [ ] |
+| Serpentskin Shift     | Daily     |    |              |          | [ ] |
+| Coin of Good Luck     | Daily     |    |              |          | [ ] |
 ** Conditionals
-- [[Prime Shot]]: +1 attack if closest to enemy
-- [[Cunning Stalker]]: +2 attack (CA) against enemies that have no creates adjacent
-- [[Bow Expertise]]: +1 damage if the target is not adjacent to any other creature
-- [[Gauntlets of Blood]]: +2 damage if the target is bloodied
-- [[+2 Quick Greatbow]]: +2d6 damage on critical
+- Prime Shot: +1 attack if closest to enemy
+- Cunning Stalker: +2 attack (CA) against enemies that have no creates adjacent
+- Bow Expertise: +1 damage if the target is not adjacent to any other creature
+- Gauntlets of Blood: +2 damage if the target is bloodied
+- +2 Quick Greatbow: +2d6 damage on critical
 - Magic Arrows: -1 to attack and damage (replaces weapon enhancement)
-- [[Coin of Good Luck]]: +1 item bonus to an attack roll, skill check, or saving throw you just made
+- Coin of Good Luck: +1 item bonus to an attack roll, skill check, or saving throw you just made
 
 ** Attack Workspace
 | Weapon/Power        | Attack | 1/2L | Ability | Class | Prof | Feat | Enh | Misc |
 |---------------------+--------+------+---------+-------+------+------+-----+------|
-| [[Melee Basic Attack]]  |     +3 |    2 |       1 |       |      |      |     |      |
-| [[Ranged Basic Attack]] |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
-| [[Disruptive Strike]]   |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
-| [[Twin-Strike]]         |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
-| [[Nimble Strike]]       |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
-| [[Two-Fanged Strike]]   |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
-| [[Sure Shot]]           |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
+| Melee Basic Attack  |     +3 |    2 |       1 |       |      |      |     |      |
+| Ranged Basic Attack |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
+| Disruptive Strike   |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
+| Twin-Strike         |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
+| Nimble Strike       |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
+| Two-Fanged Strike   |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
+| Sure Shot           |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
 #+TBLFM: $3='(org-entry-get nil "HALFLEVEL" t)
 #+TBLFM: $2='(concat "+" (int-to-string (+ $3 $4 $5 $6 $7 $8 $9)));N
 *** Bonuses
-- [[+2 Quick Greatbow]]: +2 enhancement
-- [[Bow Expertise]]: +1 feat
-- [[Weapon Proficiency: Greatbow]]: +2 proficiency
+- +2 Quick Greatbow: +2 enhancement
+- Bow Expertise: +1 feat
+- Weapon Proficiency: Greatbow: +2 proficiency
 
 ** Damage Workspace
 | Weapon/Power        | Bonus | Ability | Feat | Enh | Misc | Misc |
 |---------------------+-------+---------+------+-----+------+------|
-| [[Melee Basic Attack]]  |    +0 |       0 |    0 |   0 |    0 |    0 |
-| [[Ranged Basic Attack]] |    +9 |       5 |    0 |   2 |    2 |    0 |
-| [[Disruptive Strike]]   |    +9 |       5 |    0 |   2 |    2 |    0 |
-| [[Twin-Strike]]         |    +4 |         |      |   2 |    2 |      |
-| [[Nimble Strike]]       |    +9 |       5 |      |   2 |    2 |      |
-| [[Two-Fanged Strike]]   |    +9 |       5 |      |   2 |    2 |      |
-| [[Sure Shot]]           |    +9 |       5 |      |   2 |    2 |      |
+| Melee Basic Attack  |    +0 |         |      |     |      |      |
+| Ranged Basic Attack |    +9 |       5 |      |   2 |    2 |      |
+| Disruptive Strike   |    +9 |       5 |      |   2 |    2 |      |
+| Twin-Strike         |    +4 |         |      |   2 |    2 |      |
+| Nimble Strike       |    +9 |       5 |      |   2 |    2 |      |
+| Two-Fanged Strike   |    +9 |       5 |      |   2 |    2 |      |
+| Sure Shot           |    +9 |       5 |      |   2 |    2 |      |
 #+TBLFM: $2='(concat "+" (int-to-string (-sum '($3 $4 $5 $6))));N
 *** Bonsues
-- [[+2 Quick Greatbow]]: +2 enhancement
-- [[Bracers of Archery]]: +2 item bonus to damage
+- +2 Quick Greatbow: +2 enhancement
+- Bracers of Archery: +2 item bonus to damage
 
 
 * Skills
@@ -694,23 +692,10 @@ luck./
 - https://iws.mx/dnd/?view=item2683
 
 
-** Money
-   | Copper | Silver | Electrum | Gold | Platinum | Total (Gold) |
-   |--------+--------+----------+------+----------+--------------|
-   |        |        |          |  100 |          |          100 |
-   #+TBLFM: $6=(($1 / 100) + ($2 / 10) + ($3 / 2) + $4 + ($5 * 10));N
-
-
-** Trades
+** Money: 100g
+*** Trades
 *** [[https://docs.google.com/document/d/1Py21g5j5ex1HJvPHVUp-BlBoXzpIoq80cpOqgHAfbRI/edit][Guild Items For Sale]]
 *** Sell Ghoststride boots in the market for 1/4 price: 450g -> 1,250g
-**** Ghoststride Boots
- - Feet slot
- - Property: While you are running, you gain a +1 item bonus to AC and become insubstantial.
-   - Level 16: Gain a +2 item bonus to AC
-   - Level 26: Gain a +3 item bonus to AC
- - Value: 1,800 gp
- - http://iws.mx/dnd/?view=item1402
 *** Buy Acrobat Boots: 520g -> 730g
 *** Encounter rewards:
 **** 800g -> 1530g
