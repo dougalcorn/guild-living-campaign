@@ -67,6 +67,7 @@
 ** [ ] [ ] [ ] Death ST Failed
 ** Action Points:
 
+
 * Defense
 | Total |      | 10 + | Arm. | Abil. | Class | Feat | Enh. | Misc | Temp |
 |       |      | 1/2L |      |       |       |      |      |      |      |
@@ -358,6 +359,7 @@ causing it to howl in pain./
 - The temporary hit points increase to 10 at 11th level and to 15 at 21st level
 - http://iws.mx/dnd/?view=race36
 
+
 * Feats
 ** Defensive Mobility
 - Ranger Class Feat
@@ -385,12 +387,12 @@ causing it to howl in pain./
 - Benefit: You gain a +4 feat bonus to initiative
 - http://iws.mx/dnd/?view=feat272
 
-
 ** Cunning Stalker
 - Level 4
 - Benefit: You gain combat advantage against enemies that have no creatures
   adjacent to them other than you.
 - http://iws.mx/dnd/?view=feat3518
+
 
 * Proficiencies
   | Languages | Tools | Armor   | Weapons         |
@@ -659,6 +661,7 @@ luck./
    |--------+--------+----------+------+----------+--------------|
    |        |        |          |  100 |          |          100 |
    #+TBLFM: $6=(($1 / 100) + ($2 / 10) + ($3 / 2) + $4 + ($5 * 10));N
+
 
 ** Trades
 *** [[https://docs.google.com/document/d/1Py21g5j5ex1HJvPHVUp-BlBoXzpIoq80cpOqgHAfbRI/edit][Guild Items For Sale]]
