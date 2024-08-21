@@ -10,8 +10,8 @@
 #+title: Brodush
 
 * Name: Brodush
- - Myth-Weavers Character Sheet: https://www.myth-weavers.com/sheets/?id=2925296
- - [[https://app.roll20.net/campaigns/details/533427/guild-living-campaign][Guild Living Campaign]] -> [[https://app.roll20.net/editor/setcampaign/533427][Launch Game]]
+- Myth-Weavers Character Sheet: https://www.myth-weavers.com/sheets/?id=2925296
+- [[https://app.roll20.net/campaigns/details/533427/guild-living-campaign][Guild Living Campaign]] -> [[https://app.roll20.net/editor/setcampaign/533427][Launch Game]]
 
 
 * Attributes
@@ -23,16 +23,16 @@
 |----------+------+-----+--------+--------+--------|
 | [[http://iws.mx/dnd/?view=race36][Half-Orc]] | M    |  21 | M      | 6'     |    175 |
 
+| Align.    | Deity | Adv. Co.  |
+|-----------+-------+-----------|
+| Unaligned | Kord  | The Guild |
+
 |   XP | Next XP | Level |
 |------+---------+-------|
 | 7300 |    7500 |     5 |
 #+TBLFM: $1='(org-entry-get nil "XP" t)
 #+TBLFM: $2='(org-entry-get nil "NEXTXP" t)
 #+TBLFM: $3='(org-entry-get nil "LEVEL" t)
-
-| Align.    | Deity | Adv. Co.  |
-|-----------+-------+-----------|
-| Unaligned | Kord  | The Guild |
 
 | Initiative | Dex | 1/2L | Misc | Temp |
 |------------+-----+------+------+------|
@@ -205,6 +205,7 @@
   - Increase damage to 2[W] + Dexterity modifier at 21st level.
 - Special: Heavy thrown weapons use Strength instead of Dexterity for both
   attack and damage rolls for ranged basic attacks.
+
 *** Twin Strike                       :atwill:standard:melee:ranged:
 /If the first attack doesn't kill it, the second one might./
 - Ranger Attack 1
@@ -216,6 +217,7 @@
 - Hit: 1[W] damage per attack.
   - Increase damage to 2[W] at 21st level.
 - http://iws.mx/dnd/?view=power87
+
 *** Nimble Strike                                  :atwill:standard:
 /You slink past your enemy's guard to make your attack, or you make your attack
 and then withdraw to a more advantageous position./
@@ -228,6 +230,7 @@ and then withdraw to a more advantageous position./
 - Hit 1[W] + Dexterity
   - Increase damage to 2[W] + Dex at 21st level.
 - http://iws.mx/dnd/?view=power919
+
 *** Two-Fanged Strike              :encounter:standard:melee:ranged:
 /You sink two arrows or both of your blades into the flesh of your enemy,
 causing it to howl in pain./
@@ -239,6 +242,7 @@ causing it to howl in pain./
 - Hit: 1[W] + Dexterity (ranged) per attack.
 - Hit: If both attacks hit, you deal extra damage equal to your Wisdom modifier
 - http://iws.mx/dnd/?view=power2209
+
 *** Sure Shot                                :daily:standard:ranged:
 /You line up your shot with meticulous care to strike at your foe's vital organs./
 - Daily | Martial, Weapon
@@ -248,6 +252,7 @@ causing it to howl in pain./
 - Hit: 3[W] + Dexterity
 - Special: You can reroll the attack and damage roll, but must use the second result.
 - http://iws.mx/dnd/?view=power883
+
 *** Disruptive Strike              :encounter:imm_intr:melee:ranged:
 - Trigger: You or an ally is attacked by a creature.
 - Encounter | Martial, Weapon
@@ -267,6 +272,7 @@ causing it to howl in pain./
   immediate reaction against any enemy within 5 squares of you that moves closer
   to you.
 - http://iws.mx/dnd/?view=power4394
+
 *** Foe-Seeking Bow                                     :daily:free:
 - Daily (Free Action)
 - Trigger: You would use this bow to make an attack against an enemy benefiting
@@ -278,6 +284,7 @@ causing it to howl in pain./
 *** Bracers of Archery                                 :daily:minor:
 - Ignore cover on your next attack this turn when using a bow or a crossbow.
 - http://iws.mx/dnd/?view=item783
+
 *** Quick Weapon                                        :daily:free:
 - Trigger: When you hit a target with this weapon.
 - Effect: Make a basic attack with this weapon against a target of your choice
@@ -306,6 +313,7 @@ causing it to howl in pain./
     | 11th - 20th |         +2d6 |
     | 21st - 30th |         +3d6 |
   - http://iws.mx/dnd/?view=class5
+
 *** Furious Assault                                 :encounter:free:
  - Half-Orc Racial Power
  - Encounter
@@ -314,6 +322,7 @@ causing it to howl in pain./
  - Effect: The attack deals 1[W] extra damage if it's a weapon attack or 1d8
    extra damage if it is not a weapon attack.
  - http://iws.mx/dnd/?view=race36
+
 *** Begin the Hunt                                           :daily:
  - Ranger Attack 2
  - Daily | Martial
@@ -330,6 +339,7 @@ causing it to howl in pain./
  - Shift 3 squares. This shift can move through enemies' spaces, though you must
    end your move in a legal space.
  - http://iws.mx/dnd/?view=weapon2434
+
 *** Acrobat Boots                                     :atwill:minor:
 - At-Will (Minor Action)
 - You stand up from prone.
@@ -338,20 +348,24 @@ causing it to howl in pain./
 
 * Features
 ** Archer Ranger
+
 ** Hunter's Quarry
 - Ranger
 - Once per turn, you can use your Hunter's Quarry power.
 - http://iws.mx/dnd/?view=class5
+
 ** Prime Shot
 - Ranger
 - If none of your allies are nearer to your target than you are, you receive a
   +1 bonus to ranged attack rolls against that target. You do not gain this
   feature if you choose the Beast Mastery fighting style.
 - http://iws.mx/dnd/?view=class5
+
 ** Furious Assault
 - Half-Orc
 - You have the furious assault power
 - http://iws.mx/dnd/?view=race36
+
 ** Half-Orc Reslience
 - Half-Orc
 - The first time you are bloodied during an encounter, you gain 5 temporary hit
@@ -403,6 +417,7 @@ causing it to howl in pain./
 
 
 * Items
+
 ** List with quantity, cost, and weight
   | Name                      | Quantity | Cost (gp) | Weight (lbs) | Total Weight (lbs) | Total Cost (gp) |
   |---------------------------+----------+-----------+--------------+--------------------+-----------------|
@@ -427,6 +442,7 @@ causing it to howl in pain./
   #+TBLFM: @>$5=vsum(@<<$5..@>>$5)
   #+TBLFM: @>$6=vsum(@<<$6..@>>$6)
 
+
 ** Magic Items
 **** +1 Foe-Seeking Greatbow                   :weapon:l3:uncommon:
 /You feel the bow's hate for cowardly and furtive opponents./
@@ -435,6 +451,7 @@ causing it to howl in pain./
   granting combat advantage
 - Value: 680g
 - http://iws.mx/dnd/?view=weapon1337
+
 **** +2 Quick Greatbow                           :weapon:l8:common:
 /You can use this weapon to attack with preternatural speed./
 - Power | Daily Use this power when you hit a target with this weapon. Make a
@@ -449,6 +466,7 @@ serpent's resistance to poison./
 - +1 enhancement bonus AC
 - Value: 680 gp
 - http://iws.mx/dnd/?view=armor2434
+
 **** +1 Cloak of Distortion                      :neck:l3:uncommon:
 /This cloak roils about you like the rippling air of a scorching desert./
 - Enhancement Bonus: Fortitude, Reflex, and Will
@@ -462,22 +480,26 @@ serpent's resistance to poison./
 - Gain a +2 item bonus to damage rolls when attacking with a bow or crossbow.
 - Value: 1,800 gp
 - http://iws.mx/dnd/?view=item783
+
 **** Gauntlets of Blood                         :hands:l4:uncommon:
 /The blood of wounded foes streams along the joints of these rusty-looking steel
 gauntlets./
 - Level 4: 840gp
 - Gain a +2 bonus to damage rolls against bloodied targets
 - http://iws.mx/dnd/?view=item1379
+
 **** Acrobat Boots                               :foot:l2:uncommon:
 /These enchanted boots enhance your acrobatic skills./
 - Property: You gain a +1 item bonus to Acrobatics checks
 - Power | At-Will (Minor Action) - You stand up from prone.
 - http://iws.mx/dnd/?view=item448
+
 **** +1 Onslaught Arrow                                :consumable:
 /This black arrow trails a bright pennant, flagging its target/
 - Enhancement Bonus: attack rolls and damage rolls
 - Value: 25 gp
 - http://iws.mx/dnd/?view=weapon2434
+
 **** +1 Firestorm Arrow                                :consumable:
 /The charred wood of this arrow seems to shimmer with heat./
 - Enhancement Bonus: attack rolls and damage rolls
@@ -502,6 +524,7 @@ gauntlets./
   until the end of its next turn.
 - Value: 30 gp
 - http://iws.mx/dnd/?view=weapon1357
+
 **** Blood Apricot                                     :consumable:
 /A rich orange-red, this small fruit turns much darker if given a taste of blood./
 - Power | Daily Utility (Standard Action)
@@ -514,6 +537,7 @@ gauntlets./
     12 hours, you can instead spend a healing surge and regain an additional 2d8
     hit points.
 - http://iws.mx/dnd/?view=item3576
+
 **** Coin of Good Luck                                 :consumable:
 /This shiny gold coin can mean the difference between life and death, brilliant
 success and utter failure./
@@ -539,11 +563,13 @@ If you reached at least one milestone today, instead deal an extra 2 acid damage
 on successful ranged attacks with the acid keyword until the end of the
 encounter
 - http://iws.mx/dnd/?view=item843
+
 **** Sure Shot Gloves                             :hands:l9:common:
 /These slick gloves guide your shots unerringly./
 - https://iws.mx/dnd/?view=item2732
 - level 9, Common
 - Property: Your ranged weapon attacks ignore cover (but not superior cover).
+
 **** Gloves of Missile Avoidance               :hands:l11:uncommon:
 /These black leather gloves are limned with an aura of force that shatters or
 deflects projectiles aimed at you./
@@ -554,6 +580,7 @@ deflects projectiles aimed at you./
   - Effect: You gain a +4 power bonus to AC and Reflex against the triggering
     attack
 - https://iws.mx/dnd/?view=item1434
+
 **** Gloves of Missile Deflection              :hands:l13:uncommon:
 /Made of muslin covered with small shield-shaped buttons, these gloves help turn
 away projectiles./
@@ -563,6 +590,7 @@ away projectiles./
 - Power | Daily (Immediate Interrupt) Use this power when you are hit by a
   ranged weapon attack. Gain resist 15 against that attack.
 - https://iws.mx/dnd/?view=item1435
+
 **** Gloves of Missile Snaring                 :hands:l15:uncommon:
 /Your gloved hand moves in a blur, plucking your foe's arrow out of midair
 before you hurl it back as a deadly missile./
@@ -574,17 +602,20 @@ before you hurl it back as a deadly missile./
     this bonus causes the attack to miss you, the enemy is hit by the attack
     instead.
 - https://iws.mx/dnd/?view=item3222
+
 **** Eagle Eye Goggles                           :head:l2:uncommon:
 /Though these leather goggles have dark eye pieces, they sharpen your sight when
 making ranged attacks./
 - Level 2, 520gp
 - Property: Gain a +1 item bonus to ranged basic attack rolls
 - http://iws.mx/dnd/?view=item1156
+
 **** Circlet of indomitability                     :head:l8:common:
 /This simple golden circlet fortifies your mind./
 - Level 8: 3,400gp
 - Gain a +1 bonus to Will defense
 - http://iws.mx/dnd/?view=item883
+
 **** Helm of Able Defense                       :head:l14:uncommon:
 - Level 14 : Uncommon
 - Value: 21,000
@@ -594,11 +625,13 @@ making ranged attacks./
     you take damage for the first time after the end of your first turn (not
     including a surprise round).
 - http://iws.mx/dnd/?view=item1537
+
 **** Helm of Battle                                :head:l9:common:
 - Property: You and each ally within 5 squares of you gain a +1 item bonus to
   initiative checks
 - Level 9: 4,200gp
 - https://iws.mx/dnd/?view=item1538
+
 **** Mask of Slitering                          :head:l11:uncommon:
 /This serpentine mask allows you to slink out of harm's way and cause another to
 suffer in your stead./
@@ -609,6 +642,7 @@ suffer in your stead./
   If the attack misses, then the attacker rerolls the attack against a creature
   adjacent to you of your choice.
 - https://iws.mx/dnd/?view=item1812
+
 **** Helm of the Eagle                          :head:l12:uncommon:
 /This helm, carved to resemble an eagle, enhances your perception and can be
 activated to improve a ranged attack./
@@ -627,6 +661,7 @@ center of this tattoo./
 - Property: When you spend an action point to take an extra action, you gain 5
   temporary hit points
 - http://iws.mx/dnd/?view=item1291
+
 **** Backlash Tattoo                           :tattoo:l9:uncommon:
 /Boars, sharks, and other creatures that enter a frenzy when wounded are used
 for this tattoo./
@@ -634,6 +669,7 @@ for this tattoo./
 - Property: The first time you're bloodied during an encounter, you can make a
   basic attack as an immediate reaction.
 - http://iws.mx/dnd/?view=item583
+
 **** Dice of Auspicious Fortune                 :wondrous:l11:rare:
 /The faces of these wooden dice show symbols the halflings associate with good
 luck./
