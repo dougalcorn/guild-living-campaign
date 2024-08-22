@@ -34,6 +34,7 @@
 |     6 |    6 |     0 |    0 |    0 |
 #+TBLFM: $1=($2 + $3 + $4 + $5)
 
+
 * Abilities
 #+TBLNAME: Abilities
 | Ability | Score | Mod | +1/2L |
@@ -84,6 +85,7 @@
 
 * Quick Look Up
 ** Workspace
+*** Attack
 #+TBLNAME: attack
 | Weapon/Power        | Attack | Abil. | Mod+ | Class | Prof | Feat | Enh | Misc |
 |                     |        |       | 1/2L |       |      |      |     |      |
@@ -102,6 +104,7 @@
   - Bow Expertise: +1 feat
   - Weapon Proficiency: Greatbow: +2 proficiency
 
+*** Damage
 #+TBLNAME: damage
 | Weapon/Power        | Bonus | Abil. | Mod+ | Feat | Enh | Misc | Misc |
 |                     |       |       | 1/2L |      |     |      |      |
