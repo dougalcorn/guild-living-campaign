@@ -1,13 +1,5 @@
-:PROPERTIES:
-:NAME: Brodush
-:RACE: Half-Orc
-:CLASS: Ranger
-:XP: 7300
-:NEXTXP: 7500
-:LEVEL: 5
-:HALFLEVEL: 2
-:END:
 #+title: Brodush
+#+CONSTANTS: halflevel=2
 
 * Name: Brodush
 - Myth-Weavers Character Sheet: https://www.myth-weavers.com/sheets/?id=2925296
@@ -30,14 +22,11 @@
 |   XP | Next XP | Level |
 |------+---------+-------|
 | 7300 |    7500 |     5 |
-#+TBLFM: $1='(org-entry-get nil "XP" t)
-#+TBLFM: $2='(org-entry-get nil "NEXTXP" t)
-#+TBLFM: $3='(org-entry-get nil "LEVEL" t)
 
 | Initiative | Dex | 1/2L | Misc | Temp |
 |------------+-----+------+------+------|
 |         11 |   5 |    2 |    4 |    0 |
-#+TBLFM: $3='(org-entry-get nil "HALFLEVEL" t)
+#+TBLFM: $3=$halflevel
 #+TBLFM: $1=($2 + $3 + $4 + $5)
 
 | Speed | Base | Armor | Item | Temp |
@@ -46,6 +35,7 @@
 #+TBLFM: $1=($2 + $3 + $4 + $5)
 
 * Abilities
+#+TBLNAME: Abilities
 | Ability | Score | Mod | +1/2L |
 |---------+-------+-----+-------|
 | STR     |    12 |   1 |     3 |
@@ -54,8 +44,8 @@
 | INT     |    10 |   0 |     2 |
 | WIS     |    14 |   2 |     4 |
 | CHA     |     8 |  -1 |     1 |
-#+TBLFM: $3='(int-to-string (floor (/ (- $2 10) 2)));N
-#+TBLFM: $4='(+ $3 (string-to-number (org-entry-get nil "HALFLEVEL" t)));N
+#+TBLFM: $3=floor(($2-10)/2);N
+#+TBLFM: $4=($3 + $halflevel);N
 
 
 * Health
@@ -69,15 +59,15 @@
 
 
 * Defense
-| Total |      | 10 + | Arm. | Abil. | Class | Feat | Enh. | Misc | Temp |
-|       |      | 1/2L |      |       |       |      |      |      |      |
+| Total |      | Base | Arm. | Abil. | Class | Feat | Enh. | Misc | Temp |
 |-------+------+------+------+-------+-------+------+------+------+------|
 |    21 | AC   |   12 |    3 |     5 |       |      |    1 |      |      |
-|    17 | FORT |   12 |      |     3 |     1 |      |    1 |      |      |
-|    19 | REF  |   12 |      |     5 |     1 |      |    1 |      |      |
+|    17 | FORT |   12 |      |     3 |       |      |    1 |      |      |
+|    19 | REF  |   12 |      |     5 |       |      |    1 |      |      |
 |    15 | WILL |   12 |      |     2 |       |      |    1 |      |      |
-#+TBLFM: $3='(+ 10 (string-to-number (org-entry-get nil "HALFLEVEL" t)))
-#+TBLFM: $1='(+ $3 $4 $5 $6 $7 $8 $9 $10 );N
+#+TBLFM: $3=(10 + $halflevel)
+#+TBLFM: $6='(or (org-lookup-first $5 '(remote(Abilities,@2$1..@>$1)) '(remote(Abilities,@2$3..@>$3))) "")
+#+TBLFM: $1=($3 + $4 + $6 + $7 + $8 + $9 + $10 + $11)
 ** Bonuses
 - Ranger: +1 Fort, +1 Reflex
 - +1 Cloak of Distortion: +1 enhancement bonus to Fort, Ref, Will
@@ -93,22 +83,63 @@
 
 
 * Quick Look Up
-| Weapon/Power          | Type      | vs | Attack       | Damage   |     |
-|-----------------------+-----------+----+--------------+----------+-----|
-| Melee Basic Attack    | At-Will   | AC | 1d20 +3      | 1d8      |     |
-| Ranged Basic Attack   | At-Will   | AC | 1d20 +12     | 1d12 + 9 |     |
-| Twin-Strike           | At-Will   | AC | 2x 1d20 +12  | 1d12 + 4 |     |
-| Nimble Strike         | At-Will   | AC | 1d20 + 12    | 1d12 + 9 |     |
-| Disruptive Strike     | Encounter | AC | 1d20 +12     | 1d12 + 9 | [ ] |
-| Two-Fanged Strike     | Encounter | AC | 2x 1d20 + 12 | 1d12 + 9 | [ ] |
-| Furious Assault       | Encounter |    |              | 1d12     | [ ] |
-| Sure Shot             | Daily     | AC | 1d20 + 12    | 3d12 + 9 | [ ] |
-| Quick Weapon          | Daily     | AC | 1d20 +12     | 1d12 +9  | [ ] |
-| Spitting-Cobra Stance | Daily     |    |              |          | [ ] |
-| Begin the Hunt        | Daily     |    |              |          | [ ] |
-| Serpentskin Shift     | Daily     |    |              |          | [ ] |
-| Coin of Good Luck     | Daily     |    |              |          | [ ] |
-** Conditionals
+** Workspace
+#+TBLNAME: attack
+| Weapon/Power        | Attack | Abil. | Mod+ | Class | Prof | Feat | Enh | Misc |
+|                     |        |       | 1/2L |       |      |      |     |      |
+|---------------------+--------+-------+------+-------+------+------+-----+------|
+| Melee Basic Attack  |     +3 | STR   |    3 |       |      |      |     |      |
+| Ranged Basic Attack |    +12 | DEX   |    7 |       |    2 |    1 |   2 |      |
+| Disruptive Strike   |    +12 | DEX   |    7 |       |    2 |    1 |   2 |      |
+| Twin-Strike         |    +12 | DEX   |    7 |       |    2 |    1 |   2 |      |
+| Nimble Strike       |    +12 | DEX   |    7 |       |    2 |    1 |   2 |      |
+| Two-Fanged Strike   |    +12 | DEX   |    7 |       |    2 |    1 |   2 |      |
+| Sure Shot           |    +12 | DEX   |    7 |       |    2 |    1 |   2 |      |
+#+TBLFM: $4='(or (org-lookup-first $3 '(remote(Abilities,@2$1..@>$1)) '(remote(Abilities,@2$4..@>$4))) "")
+#+TBLFM: $2='(concat "+" (int-to-string (+ $4 $5 $6 $7 $8 $9)));N
+- Bonuses:
+  - +2 Quick Greatbow: +2 enhancement
+  - Bow Expertise: +1 feat
+  - Weapon Proficiency: Greatbow: +2 proficiency
+
+#+TBLNAME: damage
+| Weapon/Power        | Bonus | Abil. | Mod+ | Feat | Enh | Misc | Misc |
+|                     |       |       | 1/2L |      |     |      |      |
+|---------------------+-------+-------+------+------+-----+------+------|
+| Melee Basic Attack  |    +1 | STR   |    1 |      |     |      |      |
+| Ranged Basic Attack |    +9 | DEX   |    5 |      |   2 |    2 |      |
+| Disruptive Strike   |    +9 | DEX   |    5 |      |   2 |    2 |      |
+| Twin-Strike         |    +9 | DEX   |    5 |      |   2 |    2 |      |
+| Nimble Strike       |    +9 | DEX   |    5 |      |   2 |    2 |      |
+| Two-Fanged Strike   |    +9 | DEX   |    5 |      |   2 |    2 |      |
+| Sure Shot           |    +9 | DEX   |    5 |      |   2 |    2 |      |
+#+TBLFM: $4='(or (org-lookup-first $3 '(remote(Abilities,@2$1..@>$1)) '(remote(Abilities,@2$3..@>$3))) "")
+#+TBLFM: $2='(concat "+" (int-to-string (-sum '($4 $5 $6 $7))));N
+- Bonsues
+  - +2 Quick Greatbow: +2 enhancement
+  - Bracers of Archery: +2 item bonus to damage
+
+
+** Summary
+| Weapon/Power          | Type      | vs |     Att |   Att |  Dmg |   Dmg |     |
+|                       |           |    |     Die | Bonus |  Die | Bonus |     |
+|-----------------------+-----------+----+---------+-------+------+-------+-----|
+| Melee Basic Attack    | At-Will   | AC |         |    +3 |  1d8 |    +1 |     |
+| Ranged Basic Attack   | At-Will   | AC |    1d20 |   +12 | 1d12 |    +9 |     |
+| Twin-Strike           | At-Will   | AC | 2x 1d20 |   +12 | 1d12 |    +9 |     |
+| Nimble Strike         | At-Will   | AC |    1d20 |   +12 | 1d12 |    +9 |     |
+| Disruptive Strike     | Encounter | AC |    1d20 |   +12 | 1d12 |    +9 | [ ] |
+| Two-Fanged Strike     | Encounter | AC | 2x 1d20 |   +12 | 1d12 |    +9 | [ ] |
+| Furious Assault       | Encounter |    |         |       | 1d12 |       | [ ] |
+| Sure Shot             | Daily     | AC |    1d20 |   +12 | 3d12 |    +9 | [ ] |
+| Quick Weapon          | Daily     | AC |    1d20 |       | 1d12 |       | [ ] |
+| Spitting-Cobra Stance | Daily     |    |         |       |      |       | [ ] |
+| Begin the Hunt        | Daily     |    |         |       |      |       | [ ] |
+| Serpentskin Shift     | Daily     |    |         |       |      |       | [ ] |
+| Coin of Good Luck     | Daily     |    |         |       |      |       | [ ] |
+#+TBLFM: $5='(or (org-lookup-first $1 '(remote(attack,@2$1..@>$1)) '(remote(attack,@2$2..@>$2))) "")
+#+TBLFM: $7='(or (org-lookup-first $1 '(remote(damage,@2$1..@>$1)) '(remote(damage,@2$2..@>$2))) "")
+*** Conditionals
 - Prime Shot: +1 attack if closest to enemy
 - Cunning Stalker: +2 attack (CA) against enemies that have no creates adjacent
 - Bow Expertise: +1 damage if the target is not adjacent to any other creature
@@ -117,61 +148,29 @@
 - Magic Arrows: -1 to attack and damage (replaces weapon enhancement)
 - Coin of Good Luck: +1 item bonus to an attack roll, skill check, or saving throw you just made
 
-** Attack Workspace
-| Weapon/Power        | Attack | 1/2L | Ability | Class | Prof | Feat | Enh | Misc |
-|---------------------+--------+------+---------+-------+------+------+-----+------|
-| Melee Basic Attack  |     +3 |    2 |       1 |       |      |      |     |      |
-| Ranged Basic Attack |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
-| Disruptive Strike   |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
-| Twin-Strike         |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
-| Nimble Strike       |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
-| Two-Fanged Strike   |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
-| Sure Shot           |    +12 |    2 |       5 |       |    2 |    1 |   2 |      |
-#+TBLFM: $3='(org-entry-get nil "HALFLEVEL" t)
-#+TBLFM: $2='(concat "+" (int-to-string (+ $3 $4 $5 $6 $7 $8 $9)));N
-*** Bonuses
-- +2 Quick Greatbow: +2 enhancement
-- Bow Expertise: +1 feat
-- Weapon Proficiency: Greatbow: +2 proficiency
-
-** Damage Workspace
-| Weapon/Power        | Bonus | Ability | Feat | Enh | Misc | Misc |
-|---------------------+-------+---------+------+-----+------+------|
-| Melee Basic Attack  |    +0 |         |      |     |      |      |
-| Ranged Basic Attack |    +9 |       5 |      |   2 |    2 |      |
-| Disruptive Strike   |    +9 |       5 |      |   2 |    2 |      |
-| Twin-Strike         |    +4 |         |      |   2 |    2 |      |
-| Nimble Strike       |    +9 |       5 |      |   2 |    2 |      |
-| Two-Fanged Strike   |    +9 |       5 |      |   2 |    2 |      |
-| Sure Shot           |    +9 |       5 |      |   2 |    2 |      |
-#+TBLFM: $2='(concat "+" (int-to-string (-sum '($3 $4 $5 $6))));N
-*** Bonsues
-- +2 Quick Greatbow: +2 enhancement
-- Bracers of Archery: +2 item bonus to damage
-
-
 * Skills
-| Mod | Name          | Abil. | Train | Mod | 1/2 Lvl | Armor | Misc | Temp |
-|-----+---------------+-------+-------+-----+---------+-------+------+------|
-| +13 | Acrobatics    | Dex   |     1 |   5 |       2 |       |    1 |      |
-|  +2 | Arcana        | Int   |       |     |       2 |       |      |      |
-|  +3 | Athletics     | Str   |       |   1 |       2 |       |      |      |
-|  +1 | Bluff         | Cha   |       |  -1 |       2 |       |      |      |
-|  +1 | Diplomacy     | Cha   |       |  -1 |       2 |       |      |      |
-|  +9 | Dungeoneering | Wis   |     1 |   2 |       2 |       |      |      |
-|  +7 | Endurance     | Con   |       |   3 |       2 |       |    2 |      |
-|  +9 | Heal          | Wis   |     1 |   2 |       2 |       |      |      |
-|  +2 | History       | Int   |       |     |       2 |       |      |      |
-|  +4 | Insight       | Wis   |       |   2 |       2 |       |      |      |
-|  +3 | Intimidate    | Cha   |       |  -1 |       2 |       |    2 |      |
-|  +4 | Nature        | Wis   |       |   2 |       2 |       |      |      |
-|  +9 | Perception    | Wis   |     1 |   2 |       2 |       |      |      |
-|  +2 | Religion      | Int   |       |     |       2 |       |      |      |
-| +12 | Stealth       | Dex   |     1 |   5 |       2 |       |      |      |
-|  +1 | Streetwise    | Cha   |       |  -1 |       2 |       |      |      |
-|  +7 | Theivery      | Dex   |       |   5 |       2 |       |      |      |
-#+TBLFM: $6='(org-entry-get nil "HALFLEVEL" t)
-#+TBLFM: $1='(concat "+" (int-to-string (+ $5 $6 $7 $8 $9 (if (eql $4 1) 5 0))));N
+| Mod | Name          | Abil. | Train | Mod+ | Armor | Misc | Temp |
+|     |               |       |       | 1/2L |       |      |      |
+|-----+---------------+-------+-------+------+-------+------+------|
+| +13 | Acrobatics    | DEX   |     5 |    7 |       |    1 |      |
+|  +2 | Arcana        | INT   |       |    2 |       |      |      |
+|  +3 | Athletics     | STR   |       |    3 |       |      |      |
+|  +1 | Bluff         | CHA   |       |    1 |       |      |      |
+|  +1 | Diplomacy     | CHA   |       |    1 |       |      |      |
+|  +9 | Dungeoneering | WIS   |     5 |    4 |       |      |      |
+|  +7 | Endurance     | CON   |       |    5 |       |    2 |      |
+|  +9 | Heal          | WIS   |     5 |    4 |       |      |      |
+|  +2 | History       | INT   |       |    2 |       |      |      |
+|  +4 | Insight       | WIS   |       |    4 |       |      |      |
+|  +3 | Intimidate    | CHA   |       |    1 |       |    2 |      |
+|  +4 | Nature        | WIS   |       |    4 |       |      |      |
+|  +9 | Perception    | WIS   |     5 |    4 |       |      |      |
+|  +2 | Religion      | INT   |       |    2 |       |      |      |
+| +12 | Stealth       | DEX   |     5 |    7 |       |      |      |
+|  +1 | Streetwise    | CHA   |       |    1 |       |      |      |
+|  +7 | Theivery      | DEX   |       |    7 |       |      |      |
+#+TBLFM: $5='(blank-if-zero (org-lookup-first $3 '(remote(Abilities,@2$1..@>$1)) '(remote(Abilities,@2$4..@>$4))))
+#+TBLFM: $1='(concat "+" (int-to-string (+ $5 $6 $7 $8 $4)));N
 ** Bonuses
 - Half-Orc Skill Bonus: +2 Endurance, +2 Intimidate
 - Acrobat Boots: +1 Acrobatics
