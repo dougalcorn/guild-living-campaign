@@ -103,9 +103,9 @@
 | Two-Fanged Strike     | Encounter | AC | 2x 1d20 + 12 | 1d12 + 9 | [ ] |
 | Furious Assault       | Encounter |    |              | 1d12     | [ ] |
 | Sure Shot             | Daily     | AC | 1d20 + 12    | 3d12 + 9 | [ ] |
+| Quick Weapon          | Daily     | AC | 1d20 +12     | 1d12 +9  | [ ] |
 | Spitting-Cobra Stance | Daily     |    |              |          | [ ] |
 | Begin the Hunt        | Daily     |    |              |          | [ ] |
-| Quick Weapon          | Daily     | AC | 1d20 +12     | 1d12 +9  | [ ] |
 | Serpentskin Shift     | Daily     |    |              |          | [ ] |
 | Coin of Good Luck     | Daily     |    |              |          | [ ] |
 ** Conditionals
