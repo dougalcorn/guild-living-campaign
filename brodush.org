@@ -1,5 +1,5 @@
 #+title: Brodush
-#+CONSTANTS: halflevel=2
+#+CONSTANTS: halflevel=3
 
 * Name: Brodush
 - Myth-Weavers Character Sheet: https://www.myth-weavers.com/sheets/?id=2925296
@@ -21,13 +21,15 @@
 
 |   XP | Next XP | Level |
 |------+---------+-------|
-| 7300 |    7500 |     5 |
+| 8100 |   10000 |     6 |
 
 | Initiative | Dex | 1/2L | Misc | Temp |
 |------------+-----+------+------+------|
-|         11 |   5 |    2 |    4 |    0 |
+|         14 |   5 |    3 |    6 |    0 |
 #+TBLFM: $3=$halflevel
 #+TBLFM: $1=($2 + $3 + $4 + $5)
+- Improved Initiative: +4
+- Weapon of Speed: +2
 
 | Speed | Base | Armor | Item | Temp |
 |-------+------+-------+------+------|
@@ -39,19 +41,19 @@
 #+TBLNAME: Abilities
 | Ability | Score | Mod | +1/2L |
 |---------+-------+-----+-------|
-| STR     |    12 |   1 |     3 |
-| CON     |    16 |   3 |     5 |
-| DEX     |    20 |   5 |     7 |
-| INT     |    10 |   0 |     2 |
-| WIS     |    14 |   2 |     4 |
-| CHA     |     8 |  -1 |     1 |
+| STR     |    12 |   1 |     4 |
+| CON     |    16 |   3 |     6 |
+| DEX     |    20 |   5 |     8 |
+| INT     |    10 |   0 |     3 |
+| WIS     |    14 |   2 |     5 |
+| CHA     |     8 |  -1 |     2 |
 #+TBLFM: $3=floor(($2-10)/2);N
 #+TBLFM: $4=($3 + $halflevel);N
 
 
 * Health
-** Hit Points (HP): 48/48
-** Bloodied: 24
+** Hit Points (HP): 53/53
+** Bloodied: 26
 ** Healing Surge: 12
 ** Surges: 9/9
 ** [ ] Second Wind
@@ -62,10 +64,10 @@
 * Defense
 | Total |      | Base | Arm. | Abil. | Mod. | Class | Feat | Enh. | Misc | Temp |
 |-------+------+------+------+-------+------+-------+------+------+------+------|
-|    21 | AC   |   12 |    3 | DEX   |    5 |       |      |    1 |      |      |
-|    17 | FORT |   12 |      | CON   |    3 |     1 |      |    1 |      |      |
-|    19 | REF  |   12 |      | DEX   |    5 |     1 |      |    1 |      |      |
-|    15 | WILL |   12 |      | WIS   |    2 |       |      |    1 |      |      |
+|    22 | AC   |   13 |    3 | DEX   |    5 |       |      |    1 |      |      |
+|    18 | FORT |   13 |      | CON   |    3 |     1 |      |    1 |      |      |
+|    20 | REF  |   13 |      | DEX   |    5 |     1 |      |    1 |      |      |
+|    16 | WILL |   13 |      | WIS   |    2 |       |      |    1 |      |      |
 #+TBLFM: $3=(10 + $halflevel)
 #+TBLFM: $6='(or (org-lookup-first $5 '(remote(Abilities,@2$1..@>$1)) '(remote(Abilities,@2$3..@>$3))) "")
 #+TBLFM: $1=($3 + $4 + $6 + $7 + $8 + $9 + $10 + $11)
@@ -90,64 +92,67 @@
 | Weapon/Power        | Attack | Abil. | Mod+ | Class | Prof | Feat | Enh | Misc |
 |                     |        |       | 1/2L |       |      |      |     |      |
 |---------------------+--------+-------+------+-------+------+------+-----+------|
-| Melee Basic Attack  |     +3 | STR   |    3 |       |      |      |     |      |
-| Ranged Basic Attack |    +12 | DEX   |    7 |       |    2 |    1 |   2 |      |
-| Disruptive Strike   |    +12 | DEX   |    7 |       |    2 |    1 |   2 |      |
-| Twin-Strike         |    +12 | DEX   |    7 |       |    2 |    1 |   2 |      |
-| Nimble Strike       |    +12 | DEX   |    7 |       |    2 |    1 |   2 |      |
-| Two-Fanged Strike   |    +12 | DEX   |    7 |       |    2 |    1 |   2 |      |
-| Sure Shot           |    +12 | DEX   |    7 |       |    2 |    1 |   2 |      |
+| Melee Basic Attack  |     +4 | STR   |    4 |       |      |      |     |      |
+| Ranged Basic Attack |    +14 | DEX   |    8 |       |    2 |    1 |   2 |    1 |
+| Disruptive Strike   |    +13 | DEX   |    8 |       |    2 |    1 |   2 |      |
+| Twin-Strike         |    +13 | DEX   |    8 |       |    2 |    1 |   2 |      |
+| Nimble Strike       |    +13 | DEX   |    8 |       |    2 |    1 |   2 |      |
+| Two-Fanged Strike   |    +13 | DEX   |    8 |       |    2 |    1 |   2 |      |
+| Sure Shot           |    +13 | DEX   |    8 |       |    2 |    1 |   2 |      |
 #+TBLFM: $4='(or (org-lookup-first $3 '(remote(Abilities,@2$1..@>$1)) '(remote(Abilities,@2$4..@>$4))) "")
 #+TBLFM: $2='(concat "+" (int-to-string (+ $4 $5 $6 $7 $8 $9)));N
 - Bonuses:
   - +2 Quick Greatbow: +2 enhancement
   - Bow Expertise: +1 feat
   - Weapon Proficiency: Greatbow: +2 proficiency
+  - Eagle Eye Goggles: +1 item bonus to RBA
 
 *** Damage
 #+TBLNAME: damage
-| Weapon/Power        | Bonus | Abil. | Mod+ | Feat | Enh | Misc | Misc |
-|                     |       |       | 1/2L |      |     |      |      |
-|---------------------+-------+-------+------+------+-----+------+------|
-| Melee Basic Attack  |    +1 | STR   |    1 |      |     |      |      |
-| Ranged Basic Attack |    +9 | DEX   |    5 |      |   2 |    2 |      |
-| Disruptive Strike   |    +9 | DEX   |    5 |      |   2 |    2 |      |
-| Twin-Strike         |    +9 | DEX   |    5 |      |   2 |    2 |      |
-| Nimble Strike       |    +9 | DEX   |    5 |      |   2 |    2 |      |
-| Two-Fanged Strike   |    +9 | DEX   |    5 |      |   2 |    2 |      |
-| Sure Shot           |    +9 | DEX   |    5 |      |   2 |    2 |      |
+| Weapon/Power        | Bonus | Abil. | Mod | Feat | Enh | Misc | Misc |
+|---------------------+-------+-------+-----+------+-----+------+------|
+| Melee Basic Attack  |    +1 | STR   |   1 |      |     |      |      |
+| Ranged Basic Attack |   +10 | DEX   |   5 |    1 |   2 |    2 |      |
+| Disruptive Strike   |   +10 | DEX   |   5 |    1 |   2 |    2 |      |
+| Twin-Strike         |   +10 | DEX   |   5 |    1 |   2 |    2 |      |
+| Nimble Strike       |   +10 | DEX   |   5 |    1 |   2 |    2 |      |
+| Two-Fanged Strike   |   +10 | DEX   |   5 |    1 |   2 |    2 |      |
+| Sure Shot           |   +10 | DEX   |   5 |    1 |   2 |    2 |      |
 #+TBLFM: $4='(or (org-lookup-first $3 '(remote(Abilities,@2$1..@>$1)) '(remote(Abilities,@2$3..@>$3))) "")
-#+TBLFM: $2='(concat "+" (int-to-string (-sum '($4 $5 $6 $7))));N
+#+TBLFM: $2='(concat "+" (int-to-string (-sum '($4 $5 $6 $7 $8))));N
 - Bonsues
   - +2 Quick Greatbow: +2 enhancement
   - Bracers of Archery: +2 item bonus to damage
+  - Weapon Focus: +1 feat bonus
 
 
 ** Summary
-| Weapon/Power          | Type      | vs |     Att |   Att |  Dmg |   Dmg |     |
-|                       |           |    |     Die | Bonus |  Die | Bonus |     |
-|-----------------------+-----------+----+---------+-------+------+-------+-----|
-| Melee Basic Attack    | At-Will   | AC |         |    +3 |  1d8 |    +1 |     |
-| Ranged Basic Attack   | At-Will   | AC |    1d20 |   +12 | 1d12 |    +9 |     |
-| Twin-Strike           | At-Will   | AC | 2x 1d20 |   +12 | 1d12 |    +9 |     |
-| Nimble Strike         | At-Will   | AC |    1d20 |   +12 | 1d12 |    +9 |     |
-| Disruptive Strike     | Encounter | AC |    1d20 |   +12 | 1d12 |    +9 | [ ] |
-| Two-Fanged Strike     | Encounter | AC | 2x 1d20 |   +12 | 1d12 |    +9 | [ ] |
-| Furious Assault       | Encounter |    |         |       | 1d12 |       | [ ] |
-| Sure Shot             | Daily     | AC |    1d20 |   +12 | 3d12 |    +9 | [ ] |
-| Quick Weapon          | Daily     | AC |    1d20 |       | 1d12 |       | [ ] |
-| Spitting-Cobra Stance | Daily     |    |         |       |      |       | [ ] |
-| Begin the Hunt        | Daily     |    |         |       |      |       | [ ] |
-| Serpentskin Shift     | Daily     |    |         |       |      |       | [ ] |
-| Coin of Good Luck     | Daily     |    |         |       |      |       | [ ] |
+| Weapon/Power             | Type      | vs |     Att |   Att |  Dmg |   Dmg |     |
+|                          |           |    |     Die | Bonus |  Die | Bonus |     |
+|--------------------------+-----------+----+---------+-------+------+-------+-----|
+| Melee Basic Attack       | At-Will   | AC |         |    +4 |  1d8 |    +1 |     |
+| Ranged Basic Attack      | At-Will   | AC |    1d20 |   +14 | 1d12 |   +10 |     |
+| Twin-Strike              | At-Will   | AC | 2x 1d20 |   +13 | 1d12 |   +10 |     |
+| Nimble Strike            | At-Will   | AC |    1d20 |   +13 | 1d12 |   +10 |     |
+| Disruptive Strike        | Encounter | AC |    1d20 |   +13 | 1d12 |   +10 | [ ] |
+| Two-Fanged Strike        | Encounter | AC | 2x 1d20 |   +13 | 1d12 |   +10 | [ ] |
+| Furious Assault          | Encounter |    |         |       | 1d12 |       | [ ] |
+| Weapon of Speed          | Encounter | AC |    1d20 |   +14 | 1d12 |   +10 | [ ] |
+| Sure Shot                | Daily     | AC |    1d20 |   +13 | 3d12 |   +10 | [ ] |
+| Step of the Morning Mist | Daily     |    |         |       |      |       | [ ] |
+| Spitting-Cobra Stance    | Daily     |    |         |       |      |       | [ ] |
+| Begin the Hunt           | Daily     |    |         |       |      |       | [ ] |
+| Serpentskin Shift        | Daily     |    |         |       |      |       | [ ] |
+| Bracers of Archery       | Daily     |    |         |       |      |       | [ ] |
+| Coin of Good Luck        | Daily     |    |         |       |      |       | [ ] |
 #+TBLFM: $5='(or (org-lookup-first $1 '(remote(attack,@2$1..@>$1)) '(remote(attack,@2$2..@>$2))) "")
 #+TBLFM: $7='(or (org-lookup-first $1 '(remote(damage,@2$1..@>$1)) '(remote(damage,@2$2..@>$2))) "")
 *** Conditionals
 - Prime Shot: +1 attack if closest to enemy
-- Cunning Stalker: +2 attack (CA) against enemies that have no creates adjacent
+- Cunning Stalker: +2 attack (CA) against enemies that have no creatures adjacent
 - Bow Expertise: +1 damage if the target is not adjacent to any other creature
 - Gauntlets of Blood: +2 damage if the target is bloodied
-- +2 Quick Greatbow: +2d6 damage on critical
+- +2 Greatbow of Speed: +2d8 damage on critical
 - Magic Arrows: -1 to attack and damage (replaces weapon enhancement)
 - Coin of Good Luck: +1 item bonus to an attack roll, skill check, or saving throw you just made
 
@@ -155,23 +160,23 @@
 | Mod | Name          | Abil. | Train | Mod+ | Armor | Misc | Temp |
 |     |               |       |       | 1/2L |       |      |      |
 |-----+---------------+-------+-------+------+-------+------+------|
-| +13 | Acrobatics    | DEX   |     5 |    7 |       |    1 |      |
-|  +2 | Arcana        | INT   |       |    2 |       |      |      |
-|  +3 | Athletics     | STR   |       |    3 |       |      |      |
-|  +1 | Bluff         | CHA   |       |    1 |       |      |      |
-|  +1 | Diplomacy     | CHA   |       |    1 |       |      |      |
-|  +9 | Dungeoneering | WIS   |     5 |    4 |       |      |      |
-|  +7 | Endurance     | CON   |       |    5 |       |    2 |      |
-|  +9 | Heal          | WIS   |     5 |    4 |       |      |      |
-|  +2 | History       | INT   |       |    2 |       |      |      |
-|  +4 | Insight       | WIS   |       |    4 |       |      |      |
-|  +3 | Intimidate    | CHA   |       |    1 |       |    2 |      |
-|  +4 | Nature        | WIS   |       |    4 |       |      |      |
-|  +9 | Perception    | WIS   |     5 |    4 |       |      |      |
-|  +2 | Religion      | INT   |       |    2 |       |      |      |
-| +12 | Stealth       | DEX   |     5 |    7 |       |      |      |
-|  +1 | Streetwise    | CHA   |       |    1 |       |      |      |
-|  +7 | Theivery      | DEX   |       |    7 |       |      |      |
+| +14 | Acrobatics    | DEX   |     5 |    8 |       |    1 |      |
+|  +3 | Arcana        | INT   |       |    3 |       |      |      |
+|  +4 | Athletics     | STR   |       |    4 |       |      |      |
+|  +2 | Bluff         | CHA   |       |    2 |       |      |      |
+|  +2 | Diplomacy     | CHA   |       |    2 |       |      |      |
+| +10 | Dungeoneering | WIS   |     5 |    5 |       |      |      |
+|  +8 | Endurance     | CON   |       |    6 |       |    2 |      |
+| +10 | Heal          | WIS   |     5 |    5 |       |      |      |
+|  +3 | History       | INT   |       |    3 |       |      |      |
+|  +5 | Insight       | WIS   |       |    5 |       |      |      |
+|  +4 | Intimidate    | CHA   |       |    2 |       |    2 |      |
+|  +5 | Nature        | WIS   |       |    5 |       |      |      |
+| +10 | Perception    | WIS   |     5 |    5 |       |      |      |
+|  +3 | Religion      | INT   |       |    3 |       |      |      |
+| +13 | Stealth       | DEX   |     5 |    8 |       |      |      |
+|  +2 | Streetwise    | CHA   |       |    2 |       |      |      |
+|  +8 | Theivery      | DEX   |       |    8 |       |      |      |
 #+TBLFM: $5='(blank-if-zero (org-lookup-first $3 '(remote(Abilities,@2$1..@>$1)) '(remote(Abilities,@2$4..@>$4))))
 #+TBLFM: $1='(concat "+" (int-to-string (+ $5 $6 $7 $8 $4)));N
 ** Bonuses
@@ -207,7 +212,6 @@
   - Increase damage to 2[W] + Dexterity modifier at 21st level.
 - Special: Heavy thrown weapons use Strength instead of Dexterity for both
   attack and damage rolls for ranged basic attacks.
-
 *** Twin Strike                       :atwill:standard:melee:ranged:
 /If the first attack doesn't kill it, the second one might./
 - Ranger Attack 1
@@ -274,6 +278,22 @@ causing it to howl in pain./
   immediate reaction against any enemy within 5 squares of you that moves closer
   to you.
 - http://iws.mx/dnd/?view=power4394
+*** Step of the Morning Mist       :daily:move:primal:teleportation:
+/A magical mist wraps around you, letting you cross the battlefield in the blink
+of an eye, then clinging to you as a protective shroud./
+- Ranger Utility level 6
+- Daily | Primal, Teleportation
+- Move Action, Personal
+- Effect: You teleport up to 5 squares, then gain a +5 power bonus to all
+  defenses until the end of your next turn.
+- https://iws.mx/dnd/?view=power13626
+
+*** Bracers of Archery                                 :daily:minor:
+- Ignore cover on your next attack this turn when using a bow or a crossbow.
+- http://iws.mx/dnd/?view=item783
+
+*** Weapon of Speed                         :encounter:minor:ranged:
+- You make a ranged basic attack with this weapon
 
 *** Foe-Seeking Bow                                     :daily:free:
 - Daily (Free Action)
@@ -283,16 +303,10 @@ causing it to howl in pain./
   you for the triggering attack.
 - http://iws.mx/dnd/?view=weapon1337
 
-*** Bracers of Archery                                 :daily:minor:
-- Ignore cover on your next attack this turn when using a bow or a crossbow.
-- http://iws.mx/dnd/?view=item783
-
 *** Quick Weapon                                        :daily:free:
 - Trigger: When you hit a target with this weapon.
 - Effect: Make a basic attack with this weapon against a target of your choice
 - http://iws.mx/dnd/?view=weapon2116
-
-
 ** Utility
 *** Hunter's Quarry                                   :atwill:minor:
 - Hunter's Quarry Power
@@ -408,6 +422,20 @@ causing it to howl in pain./
 - Benefit: You gain combat advantage against enemies that have no creatures
   adjacent to them other than you.
 - http://iws.mx/dnd/?view=feat3518
+** Weapon Focus
+- Level 6
+- Benefit: Choose a weapon group, such as spear or heavy blade. You gain a +1
+  feat bonus to the damage rolls of weapon attacks that you make with a weapon
+  from that group. This bonus increases to +2 at 11th level and +3 at 21st
+  level.
+- https://iws.mx/dnd/?view=feat233
+
+** Feats to consider:
+*** [[https://iws.mx/dnd/?view=feat2595][Grounding Shot]] - ignore penalty on ranged attacks to prone enemeis
+*** [[https://iws.mx/dnd/?view=feat2462][Second Shot]] - second-nearest ememy as quarry
+*** [[https://iws.mx/dnd/?view=feat2629][Vicious Advantage]]- CA against immobilized or slowed
+*** [[https://iws.mx/dnd/?view=feat3119][Aggressive Advantage]] - CA all enemies first turn
+
 
 
 * Proficiencies
@@ -425,6 +453,7 @@ causing it to howl in pain./
   |---------------------------+----------+-----------+--------------+--------------------+-----------------|
   | +1 Foe-Seeking Greatbow   |        1 |       680 |            5 |                  5 |             680 |
   | +2 Quick Greatbow         |        1 |      3400 |            5 |                  5 |            3400 |
+  | +2 Greatbow of Speed      |        1 |     5,000 |            5 |                  5 |            3400 |
   | +1 Serpentskin Hide Armor |        1 |       680 |           25 |                 25 |             680 |
   | Bracers of Archery        |        1 |      1800 |            1 |                  1 |            1800 |
   | +1 Cloak of Distortion    |        1 |       840 |            5 |                  5 |             840 |
@@ -446,7 +475,7 @@ causing it to howl in pain./
 
 
 ** Magic Items
-**** +1 Foe-Seeking Greatbow                   :weapon:l3:uncommon:
+**** +1 Foe-Seeking Greatbow (for sale)        :weapon:l3:uncommon:
 /You feel the bow's hate for cowardly and furtive opponents./
 - +1 enhancement bonus to attack and damage rolls
 - Critical: 1d6 damage per plus, or +1d10 damage per plus against targets
@@ -454,7 +483,7 @@ causing it to howl in pain./
 - Value: 680g
 - http://iws.mx/dnd/?view=weapon1337
 
-**** +2 Quick Greatbow                           :weapon:l8:common:
+**** +2 Quick Greatbow  (for sale)               :weapon:l8:common:
 /You can use this weapon to attack with preternatural speed./
 - Power | Daily Use this power when you hit a target with this weapon. Make a
   basic attack with this weapon against a target of your choice.
@@ -462,6 +491,16 @@ causing it to howl in pain./
 - Value: 3400gp
 - http://iws.mx/dnd/?view=weapon2116
 
+**** +2 Weapon of Speed                           :weapon:l10:rare:
+/Even before your first attack with this weapon hits its mark, you follow it up
+with another one./
+- Level 10, +2, 5,000gp
+- Weapon: any ranged or any thrown
+- Enhancement Bonus: Attack rolls and damage rolls
+- Critical: +1d8 damage per plus
+- Property: While holding this weapon, you gain an item bonus to initiative
+  checks equal to the weapon's enhancement bonus.
+- Attack Power | Encounter (Minor Action) You make a ranged basic attack with this weapon.
 **** +1 Serpentskin Armor                       :armor:l3:uncommon:
 /Made from the discarded scales of a giant snake, this armor still carries the
 serpent's resistance to poison./
@@ -496,6 +535,13 @@ gauntlets./
 - Power | At-Will (Minor Action) - You stand up from prone.
 - http://iws.mx/dnd/?view=item448
 
+**** Eagle Eye Goggles                           :head:l2:uncommon:
+/Though these leather goggles have dark eye pieces, they sharpen your sight when
+making ranged attacks./
+- Level 2, 520gp
+- Property: Gain a +1 item bonus to ranged basic attack rolls
+- http://iws.mx/dnd/?view=item1156
+
 **** +1 Onslaught Arrow                                :consumable:
 /This black arrow trails a bright pennant, flagging its target/
 - Enhancement Bonus: attack rolls and damage rolls
@@ -526,6 +572,14 @@ gauntlets./
   until the end of its next turn.
 - Value: 30 gp
 - http://iws.mx/dnd/?view=weapon1357
+**** Eye of Accuracy                  :minor:consumable:l6:rare:l2:
+/Carved from the bones of a true marksman, this device temporarily confers the
+skill of that bone's owner to the weapon it touches./
+- Consumable: 150gp
+- Utility Power | Consumable (Minor Action)
+- Effect: When touched to a thrown weapon or piece of ammunition, the eye of
+  accuracy confers a +4 enhancement bonus to attack rolls and damage rolls for
+  the next ranged attack made with the item.
 
 **** Blood Apricot                                     :consumable:
 /A rich orange-red, this small fruit turns much darker if given a taste of blood./
@@ -604,13 +658,6 @@ before you hurl it back as a deadly missile./
     this bonus causes the attack to miss you, the enemy is hit by the attack
     instead.
 - https://iws.mx/dnd/?view=item3222
-
-**** Eagle Eye Goggles                           :head:l2:uncommon:
-/Though these leather goggles have dark eye pieces, they sharpen your sight when
-making ranged attacks./
-- Level 2, 520gp
-- Property: Gain a +1 item bonus to ranged basic attack rolls
-- http://iws.mx/dnd/?view=item1156
 
 **** Circlet of indomitability                     :head:l8:common:
 /This simple golden circlet fortifies your mind./
@@ -692,9 +739,22 @@ luck./
   - Trigger: You miss an enemy with a ranged weapon attack.
   - Effect: Reroll the attack roll.
 - https://iws.mx/dnd/?view=item2683
+**** Hrothmar's Guantlets                      :hands:l18:uncommon:
+/These massive, black iron gauntlets are dotted with red metal studs. They
+create shock waves that hurl foes to the ground./
+- Hands slot: 85,000GP
+- Property: Prone creatures don't gain the normal +2 bonus to all defenses
+  against your ranged attacks
+- Power | Daily (Minor Action) Make an attack: close burst 5; targets each enemy in burst
+**** Gloves of Accuracy                        :hands:l16:uncommon:
+/While wearing these fingerless deerskin gloves, your shots bypass obstacles./
+- Hands Slot: 45,000gp
+- Power | At-Will (Minor Action) Your ranged attacks ignore concealment and
+  cover (but not total concealment or superior cover) until the end of your
+  turn.
 
 
-** Money: 100g
+** Money: 160g
 *** Trades
 *** [[https://docs.google.com/document/d/1Py21g5j5ex1HJvPHVUp-BlBoXzpIoq80cpOqgHAfbRI/edit][Guild Items For Sale]]
 *** Sell Ghoststride boots in the market for 1/4 price: 450g -> 1,250g
@@ -709,3 +769,7 @@ luck./
 **** Lightning Arrow 4 x 30g
 **** Freezing Arrow 3 x 30g
 *** Buy Gauntlets of Blood: 940g -> 100g
+*** Encounter rewards (2024-08-24):
+**** 600g
+**** +2 Greatbow of Speed
+*** Buy Eagle Eye Goggles: 520gp -> 160g
