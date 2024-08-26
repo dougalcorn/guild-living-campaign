@@ -54,7 +54,7 @@
 * Health
 ** Hit Points (HP): 53/53
 ** Bloodied: 26
-** Healing Surge: 12
+** Healing Surge: 13
 ** Surges: 9/9
 ** [ ] Second Wind
 ** [ ] [ ] [ ] Death ST Failed
@@ -114,7 +114,7 @@
 | Melee Basic Attack  |    +1 | STR   |   1 |      |     |      |      |
 | Ranged Basic Attack |   +10 | DEX   |   5 |    1 |   2 |    2 |      |
 | Disruptive Strike   |   +10 | DEX   |   5 |    1 |   2 |    2 |      |
-| Twin-Strike         |   +10 | DEX   |   5 |    1 |   2 |    2 |      |
+| Twin-Strike         |    +5 |       |     |    1 |   2 |    2 |      |
 | Nimble Strike       |   +10 | DEX   |   5 |    1 |   2 |    2 |      |
 | Two-Fanged Strike   |   +10 | DEX   |   5 |    1 |   2 |    2 |      |
 | Sure Shot           |   +10 | DEX   |   5 |    1 |   2 |    2 |      |
@@ -132,7 +132,7 @@
 |--------------------------+-----------+----+---------+-------+------+-------+-----|
 | Melee Basic Attack       | At-Will   | AC |         |    +4 |  1d8 |    +1 |     |
 | Ranged Basic Attack      | At-Will   | AC |    1d20 |   +14 | 1d12 |   +10 |     |
-| Twin-Strike              | At-Will   | AC | 2x 1d20 |   +13 | 1d12 |   +10 |     |
+| Twin-Strike              | At-Will   | AC | 2x 1d20 |   +13 | 1d12 |    +5 |     |
 | Nimble Strike            | At-Will   | AC |    1d20 |   +13 | 1d12 |   +10 |     |
 | Disruptive Strike        | Encounter | AC |    1d20 |   +13 | 1d12 |   +10 | [ ] |
 | Two-Fanged Strike        | Encounter | AC | 2x 1d20 |   +13 | 1d12 |   +10 | [ ] |
