@@ -4,6 +4,20 @@
 * Name: Brodush
 - Myth-Weavers Character Sheet: https://www.myth-weavers.com/sheets/?id=2925296
 - [[https://app.roll20.net/campaigns/details/533427/guild-living-campaign][Guild Living Campaign]] -> [[https://app.roll20.net/editor/setcampaign/533427][Launch Game]]
+Brodush's human mother was captured by a band of orcs and kept as a slave. The
+tribe abused him because he was small and the son of a slave. He had to be quick
+to avoid deadly battleaxes. He looted a greatbow after a tribal skirmish. Using
+it it was finally able to escape the tribe and set out on his own.
+
+He was able to form a bond with a hermit out in the wild. It was the hermit who
+enchanted his bow. This hermit is who taught him to appreciate the balance of
+nature: neither fear nor condemn the savagery of nature. Live in harmony with
+the wild.
+
+While Brodush identifies with Kord, it's more aspirational. Growing up in a wild
+orc tribe, he's heavily influenced by Gruumsh. Slaughter and pillage is all he
+new growing up. Kord gives him a way to harness that savagery rather than let it
+flow out unbridled.
 
 
 * Attributes
@@ -27,6 +41,7 @@
 |------------+-----+------+------+------|
 |         14 |   5 |    3 |    6 |    0 |
 #+TBLFM: $3=$halflevel
+#+TBLFM: $2='(org-lookup-first "DEX" '(remote(Abilities,@2$1..@>$1)) '(remote(Abilities,@2$3..@>$3)))
 #+TBLFM: $1=($2 + $3 + $4 + $5)
 - Improved Initiative: +4
 - Weapon of Speed: +2
@@ -465,7 +480,7 @@ of an eye, then clinging to you as a protective shroud./
   | +1 Freezing Arrow         |        6 |        30 |           .1 |                0.6 |             180 |
   | Arrows                    |       60 |       .05 |           .1 |                 6. |              3. |
   | Blood Apricot             |        2 |        50 |           .1 |                0.2 |             100 |
-  | Coin of Good Luck         |        2 |        50 |           .1 |                0.2 |             100 |
+  | Coin of Good Luck         |        1 |        50 |           .1 |                0.2 |             100 |
   |---------------------------+----------+-----------+--------------+--------------------+-----------------|
   | Carry Capacity            |      120 |           |              |               51.8 |           9653. |
   #+TBLFM: $5=($2 * $4)
@@ -623,7 +638,7 @@ encounter
 **** Sure Shot Gloves                             :hands:l9:common:
 /These slick gloves guide your shots unerringly./
 - https://iws.mx/dnd/?view=item2732
-- level 9, Common
+- level 9, 4,200gp, Common
 - Property: Your ranged weapon attacks ignore cover (but not superior cover).
 
 **** Gloves of Missile Avoidance               :hands:l11:uncommon:
@@ -754,7 +769,7 @@ create shock waves that hurl foes to the ground./
   turn.
 
 
-** Money: 160g
+** Money: 1160g
 *** Trades
 *** [[https://docs.google.com/document/d/1Py21g5j5ex1HJvPHVUp-BlBoXzpIoq80cpOqgHAfbRI/edit][Guild Items For Sale]]
 *** Sell Ghoststride boots in the market for 1/4 price: 450g -> 1,250g
@@ -773,3 +788,4 @@ create shock waves that hurl foes to the ground./
 **** 600g
 **** +2 Greatbow of Speed
 *** Buy Eagle Eye Goggles: 520gp -> 160g
+*** Encounter Rewards: 1000g -> 1160
