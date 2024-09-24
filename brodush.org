@@ -21,9 +21,9 @@ flow out unbridled.
 
 
 * Attributes
-| Class  | Paragon Path | Epic Destiny |
-|--------+--------------+--------------|
-| [[http://iws.mx/dnd/?view=class5][Ranger]] |              |              |
+| Class  | Theme          | Paragon Path | Epic Destiny |
+|--------+----------------+--------------+--------------|
+| [[http://iws.mx/dnd/?view=class5][Ranger]] | [[https://iws.mx/dnd/?view=theme768][Escaped Slave]]  |              |              |
 
 | Race     | Size | Age | Gender | Height | Weight |
 |----------+------+-----+--------+--------+--------|
@@ -35,7 +35,7 @@ flow out unbridled.
 
 |   XP | Next XP | Level |
 |------+---------+-------|
-| 8100 |   10000 |     6 |
+| 8800 |   10000 |     6 |
 
 | Initiative | Dex | 1/2L | Misc | Temp |
 |------------+-----+------+------+------|
@@ -79,17 +79,17 @@ flow out unbridled.
 * Defense
 | Total |      | Base | Arm. | Abil. | Mod. | Class | Feat | Enh. | Misc | Temp |
 |-------+------+------+------+-------+------+-------+------+------+------+------|
-|    22 | AC   |   13 |    3 | DEX   |    5 |       |      |    1 |      |      |
-|    18 | FORT |   13 |      | CON   |    3 |     1 |      |    1 |      |      |
-|    20 | REF  |   13 |      | DEX   |    5 |     1 |      |    1 |      |      |
-|    16 | WILL |   13 |      | WIS   |    2 |       |      |    1 |      |      |
+|    23 | AC   |   13 |    3 | DEX   |    5 |       |      |    2 |      |      |
+|    19 | FORT |   13 |      | CON   |    3 |     1 |      |    2 |      |      |
+|    21 | REF  |   13 |      | DEX   |    5 |     1 |      |    2 |      |      |
+|    17 | WILL |   13 |      | WIS   |    2 |       |      |    2 |      |      |
 #+TBLFM: $3=(10 + $halflevel)
 #+TBLFM: $6='(or (org-lookup-first $5 '(remote(Abilities,@2$1..@>$1)) '(remote(Abilities,@2$3..@>$3))) "")
 #+TBLFM: $1=($3 + $4 + $6 + $7 + $8 + $9 + $10 + $11)
 ** Bonuses
 - Ranger: +1 Fort, +1 Reflex
-- +1 Cloak of Distortion: +1 enhancement bonus to Fort, Ref, Will
-- +1 Serpentskin Armor: +1 enhancement bonus to AC
+- +2 Delvers Armor: +2 enhancement bonus to AC
+- +2 Sneak's Cloak: +2 enhancement bonus to Fort, Ref, Will
 
 | Armor Bonus | Shield Bonus | Check Penalty | Speed Penalty | Heavy? |
 |-------------+--------------+---------------+---------------+--------|
@@ -97,7 +97,6 @@ flow out unbridled.
 
 ** Conditionals
 - Defensive Mobility: +2 AC against opportunity attacks
-- Bow Expertise: +1 to all defenses from a ranged attack more than 5 squares
 
 
 * Quick Look Up
@@ -153,13 +152,15 @@ flow out unbridled.
 | Two-Fanged Strike        | Encounter | AC | 2x 1d20 |   +13 | 1d12 |   +10 | [ ] |
 | Furious Assault          | Encounter |    |         |       | 1d12 |       | [ ] |
 | Weapon of Speed          | Encounter | AC |    1d20 |   +14 | 1d12 |   +10 | [ ] |
+| No Bond Can Hold         | Encounter |    |         |       |      |       | [ ] |
 | Sure Shot                | Daily     | AC |    1d20 |   +13 | 3d12 |   +10 | [ ] |
 | Step of the Morning Mist | Daily     |    |         |       |      |       | [ ] |
 | Spitting-Cobra Stance    | Daily     |    |         |       |      |       | [ ] |
-| Begin the Hunt           | Daily     |    |         |       |      |       | [ ] |
-| Serpentskin Shift        | Daily     |    |         |       |      |       | [ ] |
+| Stalker's Mist           | Daily     |    |         |       |      |       | [ ] |
 | Bracers of Archery       | Daily     |    |         |       |      |       | [ ] |
 | Coin of Good Luck        | Daily     |    |         |       |      |       | [ ] |
+| Delver's Armor           | Daily     |    |         |       |      |       | [ ] |
+| Sneak's Cloak            | Daily     |    |         |       |      |       | [ ] |
 #+TBLFM: $5='(or (org-lookup-first $1 '(remote(attack,@2$1..@>$1)) '(remote(attack,@2$2..@>$2))) "")
 #+TBLFM: $7='(or (org-lookup-first $1 '(remote(damage,@2$1..@>$1)) '(remote(damage,@2$2..@>$2))) "")
 *** Conditionals
@@ -168,8 +169,8 @@ flow out unbridled.
 - Bow Expertise: +1 damage if the target is not adjacent to any other creature
 - Gauntlets of Blood: +2 damage if the target is bloodied
 - +2 Greatbow of Speed: +2d8 damage on critical
-- Magic Arrows: -1 to attack and damage (replaces weapon enhancement)
 - Coin of Good Luck: +1 item bonus to an attack roll, skill check, or saving throw you just made
+
 
 * Skills
 | Mod | Name          | Abil. | Train | Mod+ | Armor | Misc | Temp |
@@ -189,7 +190,7 @@ flow out unbridled.
 |  +5 | Nature        | WIS   |       |    5 |       |      |      |
 | +10 | Perception    | WIS   |     5 |    5 |       |      |      |
 |  +3 | Religion      | INT   |       |    3 |       |      |      |
-| +13 | Stealth       | DEX   |     5 |    8 |       |      |      |
+| +15 | Stealth       | DEX   |     5 |    8 |       |    2 |      |
 |  +2 | Streetwise    | CHA   |       |    2 |       |      |      |
 |  +8 | Theivery      | DEX   |       |    8 |       |      |      |
 #+TBLFM: $5='(blank-if-zero (org-lookup-first $3 '(remote(Abilities,@2$1..@>$1)) '(remote(Abilities,@2$4..@>$4))))
@@ -197,6 +198,7 @@ flow out unbridled.
 ** Bonuses
 - Half-Orc Skill Bonus: +2 Endurance, +2 Intimidate
 - Acrobat Boots: +1 Acrobatics
+- Sneak's Cloak: +2 Stealth
 
 
 * Powers
@@ -255,6 +257,7 @@ and then withdraw to a more advantageous position./
 *** Two-Fanged Strike              :encounter:standard:melee:ranged:
 /You sink two arrows or both of your blades into the flesh of your enemy,
 causing it to howl in pain./
+- Ranger Attack 1
 - Encounter | Martial, Weapon
 - Standard Action | Melee or Ranged weapon
 - Requirement: You must be wielding two melee weapons or a ranged weapon.
@@ -266,6 +269,7 @@ causing it to howl in pain./
 
 *** Sure Shot                                :daily:standard:ranged:
 /You line up your shot with meticulous care to strike at your foe's vital organs./
+- Ranger Attack 1
 - Daily | Martial, Weapon
 - Standard Action | Ranged weapon
 - Target: One creature
@@ -275,6 +279,9 @@ causing it to howl in pain./
 - http://iws.mx/dnd/?view=power883
 
 *** Disruptive Strike              :encounter:imm_intr:melee:ranged:
+/You thwart an enemy's attack with a timely thrust of your blade or a quick shot
+from your bow/
+- Ranger Attack 3
 - Trigger: You or an ally is attacked by a creature.
 - Encounter | Martial, Weapon
 - Immediate Interrupt | Melee or Ranged
@@ -293,6 +300,33 @@ causing it to howl in pain./
   immediate reaction against any enemy within 5 squares of you that moves closer
   to you.
 - http://iws.mx/dnd/?view=power4394
+*** Bracers of Archery                                 :daily:minor:
+- Ignore cover on your next attack this turn when using a bow or a crossbow.
+- http://iws.mx/dnd/?view=item783
+
+*** Weapon of Speed                         :encounter:minor:ranged:
+- You make a ranged basic attack with this weapon
+
+** Utility
+*** No Bonds Can Hold                          :encounter:imm_react:
+- Escaped Slave Utility 2
+- Trigger: You are affected by a grabbed, restrained, immobilized, or slowed
+  condition that can be ended by an escape attempt or saving throw.
+- Effect: You make an escape attempt or saving throw (as appropriate) to end the
+  triggering effect with a +2 power bonus.
+*** Stalker's Mist                         :daily:minor:primal:zone:
+/A thick fog settles over the area, blocking sight and muffling sound. Though
+the fog confounds other creatures, you can see through it with ease/
+- Ranger Utility 2
+- Daily | Primal, Zone
+- Minor Action
+- Area burst 1 within 10 squares
+- Effect: The burst creates a zone that lasts until the end of the encounter.
+  Squares in the zone are heavily obscured to your enemies.
+- Move Action: you move the zone up to 5 squares
+- Adjacent to you: partial concealment -2 penalty to attack rolls
+- Not adjacent to you: total concealment -5 penalty to attack rolls
+
 *** Step of the Morning Mist       :daily:move:primal:teleportation:
 /A magical mist wraps around you, letting you cross the battlefield in the blink
 of an eye, then clinging to you as a protective shroud./
@@ -302,27 +336,13 @@ of an eye, then clinging to you as a protective shroud./
 - Effect: You teleport up to 5 squares, then gain a +5 power bonus to all
   defenses until the end of your next turn.
 - https://iws.mx/dnd/?view=power13626
+*** Sneak's Cloak                                   :daily:illusion:
+- Utility Power (Illusion) | Daily (No Action)
+- Trigger: You hit a creature with a melee or a ranged attack while you have any cover or concealment.
+- Effect: The creature treats you as invisible (save ends).
+- https://iws.mx/dnd/?view=item3248
 
-*** Bracers of Archery                                 :daily:minor:
-- Ignore cover on your next attack this turn when using a bow or a crossbow.
-- http://iws.mx/dnd/?view=item783
-
-*** Weapon of Speed                         :encounter:minor:ranged:
-- You make a ranged basic attack with this weapon
-
-*** Foe-Seeking Bow                                     :daily:free:
-- Daily (Free Action)
-- Trigger: You would use this bow to make an attack against an enemy benefiting
-  from any concealment or cover.
-- Effect: The enemy loses concealment or cover and grants combat advantage to
-  you for the triggering attack.
-- http://iws.mx/dnd/?view=weapon1337
-
-*** Quick Weapon                                        :daily:free:
-- Trigger: When you hit a target with this weapon.
-- Effect: Make a basic attack with this weapon against a target of your choice
-- http://iws.mx/dnd/?view=weapon2116
-** Utility
+** Misc Powers
 *** Hunter's Quarry                                   :atwill:minor:
 - Hunter's Quarry Power
 - At-Will
@@ -354,6 +374,15 @@ of an eye, then clinging to you as a protective shroud./
    extra damage if it is not a weapon attack.
  - http://iws.mx/dnd/?view=race36
 
+*** Acrobat Boots                                     :atwill:minor:
+- At-Will (Minor Action)
+- You stand up from prone.
+- http://iws.mx/dnd/?view=item448
+*** Delver's Armor                                           :daily:
+- Daily (No Action)
+- You gain a +2 power bonus to a saving throw you just rolled; use the new result
+- https://iws.mx/dnd/?view=armor1061
+** Re-trained
 *** Begin the Hunt                                           :daily:
  - Ranger Attack 2
  - Daily | Martial
@@ -364,17 +393,6 @@ of an eye, then clinging to you as a protective shroud./
    power bonus to attack rolls against that creature until it is no longer your
    quarry.
  - http://iws.mx/dnd/?view=power10605
-
-*** Serpentskin Shift                                   :daily:move:
- - Daily (Move Action)
- - Shift 3 squares. This shift can move through enemies' spaces, though you must
-   end your move in a legal space.
- - http://iws.mx/dnd/?view=weapon2434
-
-*** Acrobat Boots                                     :atwill:minor:
-- At-Will (Minor Action)
-- You stand up from prone.
-- http://iws.mx/dnd/?view=item448
 
 
 * Features
@@ -418,7 +436,7 @@ of an eye, then clinging to you as a protective shroud./
   make with a bow against a single creature that is not adjacent to any other
   creature.
 - Both of these bonuses increase to +2 at 11th level and +3 at 21st level.
-- http://iws.mx/dnd/?view=feat1032
+- https://iws.mx/dnd/?view=feat3124
 
 ** Weapon Proficiency: Greatbow
 - Level 1
@@ -464,25 +482,19 @@ of an eye, then clinging to you as a protective shroud./
 * Items
 
 ** List with quantity, cost, and weight
-  | Name                      | Quantity | Cost (gp) | Weight (lbs) | Total Weight (lbs) | Total Cost (gp) |
-  |---------------------------+----------+-----------+--------------+--------------------+-----------------|
-  | +1 Foe-Seeking Greatbow   |        1 |       680 |            5 |                  5 |             680 |
-  | +2 Quick Greatbow         |        1 |      3400 |            5 |                  5 |            3400 |
-  | +2 Greatbow of Speed      |        1 |     5,000 |            5 |                  5 |            3400 |
-  | +1 Serpentskin Hide Armor |        1 |       680 |           25 |                 25 |             680 |
-  | Bracers of Archery        |        1 |      1800 |            1 |                  1 |            1800 |
-  | +1 Cloak of Distortion    |        1 |       840 |            5 |                  5 |             840 |
-  | Acrobatic Boots           |        1 |       520 |            1 |                  1 |             520 |
-  | Gauntlets of Blood        |        1 |       840 |            1 |                  1 |             840 |
-  | +1 Onslaught Arrow        |        6 |        25 |           .1 |                0.6 |             150 |
-  | +1 Firestorm Arrow        |        6 |        30 |           .1 |                0.6 |             180 |
-  | +1 Lightning Arrow        |        6 |        30 |           .1 |                0.6 |             180 |
-  | +1 Freezing Arrow         |        6 |        30 |           .1 |                0.6 |             180 |
-  | Arrows                    |       60 |       .05 |           .1 |                 6. |              3. |
-  | Blood Apricot             |        2 |        50 |           .1 |                0.2 |             100 |
-  | Coin of Good Luck         |        1 |        50 |           .1 |                0.2 |             100 |
-  |---------------------------+----------+-----------+--------------+--------------------+-----------------|
-  | Carry Capacity            |      120 |           |              |               51.8 |           9653. |
+  | Name                      | Quantity |  Cost | Weight | Total Weight | Total Cost |
+  |---------------------------+----------+-------+--------+--------------+------------|
+  | +2 Quick Greatbow         |        1 |  3400 |      5 |            5 |       3400 |
+  | +2 Greatbow of Speed      |        1 | 5,000 |      5 |            5 |       3400 |
+  | +1 Serpentskin Hide Armor |        1 |   680 |     25 |           25 |        680 |
+  | Bracers of Archery        |        1 |  1800 |      1 |            1 |       1800 |
+  | Acrobatic Boots           |        1 |   520 |      1 |            1 |        520 |
+  | Gauntlets of Blood        |        1 |   840 |      1 |            1 |        840 |
+  | Arrows                    |       60 |   .05 |     .1 |           6. |         3. |
+  | Blood Apricot             |        2 |    50 |     .1 |          0.2 |        100 |
+  | Coin of Good Luck         |        1 |    50 |     .1 |          0.2 |        100 |
+  |---------------------------+----------+-------+--------+--------------+------------|
+  | Carry Capacity            |      120 |       |        |         51.8 |      9653. |
   #+TBLFM: $5=($2 * $4)
   #+TBLFM: $6=($2 * $3)
   #+TBLFM: @>$5=vsum(@<<$5..@>>$5)
@@ -490,20 +502,16 @@ of an eye, then clinging to you as a protective shroud./
 
 
 ** Magic Items
-**** +1 Foe-Seeking Greatbow (for sale)        :weapon:l3:uncommon:
-/You feel the bow's hate for cowardly and furtive opponents./
-- +1 enhancement bonus to attack and damage rolls
-- Critical: 1d6 damage per plus, or +1d10 damage per plus against targets
-  granting combat advantage
-- Value: 680g
-- http://iws.mx/dnd/?view=weapon1337
-
 **** +2 Quick Greatbow  (for sale)               :weapon:l8:common:
 /You can use this weapon to attack with preternatural speed./
 - Power | Daily Use this power when you hit a target with this weapon. Make a
   basic attack with this weapon against a target of your choice.
 - Critical: +1d6 damage per plus
-- Value: 3400gp
+- Value: 3400gp (1700, 850)
+- http://iws.mx/dnd/?view=weapon2116
+***** Quick Weapon                                    :daily:free:
+- Trigger: When you hit a target with this weapon.
+- Effect: Make a basic attack with this weapon against a target of your choice
 - http://iws.mx/dnd/?view=weapon2116
 
 **** +2 Weapon of Speed                           :weapon:l10:rare:
@@ -516,21 +524,21 @@ with another one./
 - Property: While holding this weapon, you gain an item bonus to initiative
   checks equal to the weapon's enhancement bonus.
 - Attack Power | Encounter (Minor Action) You make a ranged basic attack with this weapon.
-**** +1 Serpentskin Armor                       :armor:l3:uncommon:
-/Made from the discarded scales of a giant snake, this armor still carries the
-serpent's resistance to poison./
-- +1 enhancement bonus AC
-- Value: 680 gp
-- http://iws.mx/dnd/?view=armor2434
-
-**** +1 Cloak of Distortion                      :neck:l3:uncommon:
-/This cloak roils about you like the rippling air of a scorching desert./
-- Enhancement Bonus: Fortitude, Reflex, and Will
-- Property: You gain an item bonus to all defenses against ranged attacks from
-  more than 5 squares away equal to this item's enhancement bonus.
-- Value: 840 gp
-- http://iws.mx/dnd/?view=item908
-
+**** +2 Delver's Armor                          :armor:l8:uncommon:
+/A popular armor among adventurers, now as in ancient times/
+- L8, +2, 3,400gp (1700)
+- Amor: any
+- Power: Daily (No Action) - You gain a +2 power bonus to a saving throw you just rolled; use the new result
+- https://iws.mx/dnd/?view=armor1061
+**** +2 Sneak's Cloak                            :neck:l9:uncommon:
+/As you wrap this voluminous cloak around you, its magic conceals your presence
+from your enemies/
+- Level 9, +2, 4,200gp (now 2,100 on Guild)
+- Property: You gain an item bonus to Stealth checks equal to the cloak's enhancement bonus
+- Utility Power (Illusion) | Daily (No Action)
+  - Trigger: You hit a creature with a melee or a ranged attack while you have any cover or concealment.
+  - Effect: The creature treats you as invisible (save ends).
+- https://iws.mx/dnd/?view=item3248
 **** Bracers of Archery                          :arms:l6:uncommon:
 /These leather armbands enhance your potency with bows and crossbows./
 - Gain a +2 item bonus to damage rolls when attacking with a bow or crossbow.
@@ -557,36 +565,6 @@ making ranged attacks./
 - Property: Gain a +1 item bonus to ranged basic attack rolls
 - http://iws.mx/dnd/?view=item1156
 
-**** +1 Onslaught Arrow                                :consumable:
-/This black arrow trails a bright pennant, flagging its target/
-- Enhancement Bonus: attack rolls and damage rolls
-- Value: 25 gp
-- http://iws.mx/dnd/?view=weapon2434
-
-**** +1 Firestorm Arrow                                :consumable:
-/The charred wood of this arrow seems to shimmer with heat./
-- Enhancement Bonus: attack rolls and damage rolls
-- Property: When you hit an enemy using this ammunition, that enemy and each
-  creature adjacent to it take 1d6 extra fire damage per plus
-- Value: 30 gp
-- http://iws.mx/dnd/?view=weapon1292
-
-**** +1 Lightning Arrow                                :consumable:
-/This arrow's blue and white streaks thrum with energy./
-- Enhancement Bonus: attack rolls and damage rolls
-- Property: When you hit an enemy using this ammunition, that enemy and each
-  creature adjacent to it take 1d6 extra lightning damage per plus
-- Value: 30 gp
-- http://iws.mx/dnd/?view=weapon1292
-
-**** +1 Freezing Arrow                                 :consumable:
-/Ths shaft of this arrow is shaved from unmelting ice./
-- Enhancement Bonus: attack rolls and damage rolls
-- Property: When you hit an enemy using this ammunition, that enemy and each
-  creature adjacent to it take 1d6 extra cold damage per plus and is slowed
-  until the end of its next turn.
-- Value: 30 gp
-- http://iws.mx/dnd/?view=weapon1357
 **** Eye of Accuracy                  :minor:consumable:l6:rare:l2:
 /Carved from the bones of a true marksman, this device temporarily confers the
 skill of that bone's owner to the weapon it touches./
@@ -598,6 +576,7 @@ skill of that bone's owner to the weapon it touches./
 
 **** Blood Apricot                                     :consumable:
 /A rich orange-red, this small fruit turns much darker if given a taste of blood./
+- Consumable: 50g
 - Power | Daily Utility (Standard Action)
   - Effect: You lose a healing surge, bleeding onto the apricot, which absorbs
     your blood and the healing surge.
@@ -622,19 +601,6 @@ success and utter failure./
   - https://iws.mx/dnd/?view=item3468
 
 *** Items I want
-**** Caustic Gauntlets                          :hands:l6:uncommon:
-- Level 6: 1,800gp
-- Power (Acid) | Daily (Free Action)
-Use this power when you make a ranged attack. Change the damage type dealty by
-that attack to acid. Hit or miss, creatures adjaced to the target of the attack
-take 1d6 acid damage. Also, you deal an extra 1 acid damage on successful ranged
-attacks until the end of the encounter.
-
-If you reached at least one milestone today, instead deal an extra 2 acid damage
-on successful ranged attacks with the acid keyword until the end of the
-encounter
-- http://iws.mx/dnd/?view=item843
-
 **** Sure Shot Gloves                             :hands:l9:common:
 /These slick gloves guide your shots unerringly./
 - https://iws.mx/dnd/?view=item2732
@@ -690,12 +656,6 @@ before you hurl it back as a deadly missile./
     including a surprise round).
 - http://iws.mx/dnd/?view=item1537
 
-**** Helm of Battle                                :head:l9:common:
-- Property: You and each ally within 5 squares of you gain a +1 item bonus to
-  initiative checks
-- Level 9: 4,200gp
-- https://iws.mx/dnd/?view=item1538
-
 **** Mask of Slitering                          :head:l11:uncommon:
 /This serpentine mask allows you to slink out of harm's way and cause another to
 suffer in your stead./
@@ -716,15 +676,6 @@ activated to improve a ranged attack./
 - Property: Gain a +3 item bonus to Perception checks.
 - Power | Daily (Minor Action): Gain a +2 power bonus to your next ranged attack
   roll this turn.
-
-**** Fireheart Tattoo                          :tattoo:l4:uncommon:
-/As you call upon its power, flames flare and twist around the heart at the
-center of this tattoo./
-- Value: 840gp
-- Wondrous Item
-- Property: When you spend an action point to take an extra action, you gain 5
-  temporary hit points
-- http://iws.mx/dnd/?view=item1291
 
 **** Backlash Tattoo                           :tattoo:l9:uncommon:
 /Boars, sharks, and other creatures that enter a frenzy when wounded are used
@@ -761,22 +712,124 @@ create shock waves that hurl foes to the ground./
 - Property: Prone creatures don't gain the normal +2 bonus to all defenses
   against your ranged attacks
 - Power | Daily (Minor Action) Make an attack: close burst 5; targets each enemy in burst
+- https://iws.mx/dnd/?view=item1581
 **** Gloves of Accuracy                        :hands:l16:uncommon:
 /While wearing these fingerless deerskin gloves, your shots bypass obstacles./
 - Hands Slot: 45,000gp
 - Power | At-Will (Minor Action) Your ranged attacks ignore concealment and
   cover (but not total concealment or superior cover) until the end of your
   turn.
+- https://iws.mx/dnd/?view=item1426
+**** Lukcy Charm                                 :neck:l9:uncommon:
+/Monkey's paw or rabbit's foot, this lucky charm helps you snatch victory from
+the jaws of defeat./
+- Level 9, +2, 4,200gp
+- Enhancement Bonus: Fortitude, Reflex, and Will
+- Power - Daily (No Action)
+  - Trigger: You miss with an attack or fail a skill check, ability check, or saving throw
+  - Effect: Roll a d6 and add the result to the attack roll, skill check, ability check, or saving throw
+- https://iws.mx/dnd/?view=item1759
+**** Amulet of Mental Resolve                    :neck:l7:uncommon:
+/Your mind is guarded when wearing this cold iron talisman./
+- Level 7, +2, 2,600gp
+- Property: Gain a +2 item bonus to saving throws against effects with the
+  charm, illusion, or sleep keyword
+- https://iws.mx/dnd/?view=item496
+**** Elemental Ward Cloak                        :neck:l9:uncommon:
+/This midnight blue cloak has many different and colorful hides stitched into
+its lining./
+- Level 9, +2, 4,200gp
+- Property: You gain an item bonus to all defenses against attacks with the
+  acid, fire, cold, thunder, or lightning keywords. The bonus equals the
+  enhancement bonus of this cloak
+- https://iws.mx/dnd/?view=item3463
 
 
-** Money: 1160g
+
+*** Old Items
+**** +1 Onslaught Arrow                                :consumable:
+/This black arrow trails a bright pennant, flagging its target/
+- Enhancement Bonus: attack rolls and damage rolls
+- Value: 25 gp
+- http://iws.mx/dnd/?view=weapon2434
+
+**** +1 Firestorm Arrow                                :consumable:
+/The charred wood of this arrow seems to shimmer with heat./
+- Enhancement Bonus: attack rolls and damage rolls
+- Property: When you hit an enemy using this ammunition, that enemy and each
+  creature adjacent to it take 1d6 extra fire damage per plus
+- Value: 30 gp
+- http://iws.mx/dnd/?view=weapon1292
+
+**** +1 Lightning Arrow                                :consumable:
+/This arrow's blue and white streaks thrum with energy./
+- Enhancement Bonus: attack rolls and damage rolls
+- Property: When you hit an enemy using this ammunition, that enemy and each
+  creature adjacent to it take 1d6 extra lightning damage per plus
+- Value: 30 gp
+- http://iws.mx/dnd/?view=weapon1292
+
+**** +1 Freezing Arrow                                 :consumable:
+/Ths shaft of this arrow is shaved from unmelting ice./
+- Enhancement Bonus: attack rolls and damage rolls
+- Property: When you hit an enemy using this ammunition, that enemy and each
+  creature adjacent to it take 1d6 extra cold damage per plus and is slowed
+  until the end of its next turn.
+- Value: 30 gp
+- http://iws.mx/dnd/?view=weapon1357
+
+**** Crown of Doors                              :head:l6:uncommon:
+/Architecture holds no secrets from those wearing this wood and stone headpiece/
+- Level 6, 1,800gp (sell value 450)
+- Property: Gain a +2 item bonus to Perception checks to find secret doors and
+  hidden passages
+- https://iws.mx/dnd/?view=item976
+
+**** +1 Foe-Seeking Greatbow (for sale)        :weapon:l3:uncommon:
+/You feel the bow's hate for cowardly and furtive opponents./
+- +1 enhancement bonus to attack and damage rolls
+- Critical: 1d6 damage per plus, or +1d10 damage per plus against targets
+  granting combat advantage
+- Value: 680g
+- http://iws.mx/dnd/?view=weapon1337
+***** Foe-Seeking Bow                                 :daily:free:
+- Daily (Free Action)
+- Trigger: You would use this bow to make an attack against an enemy benefiting
+  from any concealment or cover.
+- Effect: The enemy loses concealment or cover and grants combat advantage to
+  you for the triggering attack.
+- http://iws.mx/dnd/?view=weapon1337
+
+
+**** +1 Serpentskin Armor                       :armor:l3:uncommon:
+/Made from the discarded scales of a giant snake, this armor still carries the
+serpent's resistance to poison./
+- +1 enhancement bonus AC
+- Value: 680 gp
+- http://iws.mx/dnd/?view=armor2434
+***** Serpentskin Shift                                :daily:move:
+ - Daily (Move Action)
+ - Shift 3 squares. This shift can move through enemies' spaces, though you must
+   end your move in a legal space.
+ - http://iws.mx/dnd/?view=weapon2434
+
+
+**** +1 Cloak of Distortion                      :neck:l3:uncommon:
+/This cloak roils about you like the rippling air of a scorching desert./
+- Enhancement Bonus: Fortitude, Reflex, and Will
+- Property: You gain an item bonus to all defenses against ranged attacks from
+  more than 5 squares away equal to this item's enhancement bonus.
+- Value: 840 gp
+- http://iws.mx/dnd/?view=item908
+
+
+** Money: 1010
 *** Trades
 *** [[https://docs.google.com/document/d/1Py21g5j5ex1HJvPHVUp-BlBoXzpIoq80cpOqgHAfbRI/edit][Guild Items For Sale]]
 *** Sell Ghoststride boots in the market for 1/4 price: 450g -> 1,250g
 *** Buy Acrobat Boots: 520g -> 730g
-*** Encounter rewards:
-**** 800g -> 1530g
-**** +2 Quick Greatbow
+*** Encounter reward (2024-08-17): 800g -> 1530g
+*** Encounter reward (2024-08-17): +2 Quick Greatbow
 *** Buy coin of good luck x2: 1530 -> 1330g
 *** Buy arrows: 390 -> 940g
 **** Onslaught 6 x 25g: 125
@@ -784,8 +837,21 @@ create shock waves that hurl foes to the ground./
 **** Lightning Arrow 4 x 30g
 **** Freezing Arrow 3 x 30g
 *** Buy Gauntlets of Blood: 940g -> 100g
-*** Encounter rewards (2024-08-24):
-**** 600g
-**** +2 Greatbow of Speed
+*** Encounter reward (2024-08-24) 600g
+*** Encounter reward (2024-08-24) +2 Greatbow of Speed
 *** Buy Eagle Eye Goggles: 520gp -> 160g
-*** Encounter Rewards: 1000g -> 1160
+*** Encounter Rewards (2024-09-14): 1000g -> 1160
+*** Encounter Rewards (2024-09-21): 500gp -> 1660
+*** Encounter Rewards (2024-09-21): Crown of Doors
+*** Buy coin of good luck x1: 1560 -> 1510g
+*** Buy blood apricot: 1510 -> 1460g
+*** Sell Crown of Doors: 450 -> 1,910
+*** Vaporize onslaught arrows: 150 -> 2060
+*** Vaporize lightning arrows: 180 -> 2240
+*** Vaporize firestorm arrows: 180 -> 2420
+*** Vaporize frost arrows: 180 -> 2600
+*** Vaporize Foe-seeking: 680 -> 3290
+*** Vaporize Serpentskin armor: 680 -> 3,970
+*** Vaporize Cloak of Distortion: 840 -> 4,810
+*** Buy Delver's Armor from Guild: 1700 -> 3,110
+*** Buy Sneak's Cloak from Guild: 2100 -> 1,010
