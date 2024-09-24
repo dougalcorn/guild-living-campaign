@@ -46,7 +46,7 @@ from the pit.
 - apricot minor action? yes
 ** rewards: 800XP 900GB
 first, third, fifth
-- Ghststride boots, http://iws.mx/dnd/?view=item1402
+- Ghoststride boots, http://iws.mx/dnd/?view=item1402
   - These tattered gray boots have a haunting aspect, granting you the
     elusiveness of a ghost when you need it.
   - While you are running, you gain a +1 item bonus to AC and become elusiveness
